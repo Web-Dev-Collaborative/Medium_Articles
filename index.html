@@ -824,7 +824,7 @@
         </ul>
         <h2 class="mume-header" id="the-algorithm-divide-and-conquer">The Algorithm: "Divide and Conquer"</h2>
         <p>We're going to need a helper function that solves the first major point from above. How might we merge two sorted arrays? In other words we want a 
-        <code>merge</code> function that will behave like so:</p>
+        <pre><code>merge</code></pre> function that will behave like so:</p>
         <pre class="language-text">
 let arr1 = [1, 5, 10, 15];
 let arr2 = [0, 2, 3, 7, 10];
@@ -929,12 +929,12 @@ merge(arr1, arr2); // =&gt; [0, 1, 2, 3, 5, 7, 10, 10, 15]
         <p>If your JavaScript is rusty, don't freak out! Here are a few cool JS patterns that we leverage above.</p>
         <ul>
             <li>
-            <code>0</code> is considered a falsey value, meaning it acts like 
-            <code>false</code> when used in boolean expressions. All other numbers are truthy.</li>
+            <pre><code>0</code></pre> is considered a falsey value, meaning it acts like 
+            <pre><code>false</code></pre> when used in boolean expressions. All other numbers are truthy.</li>
             <li>
-            <code>Infinity</code> is a value that is guaranteed to be greater than any other quantity</li>
+            <pre><code>Infinity</code></pre> is a value that is guaranteed to be greater than any other quantity</li>
             <li>
-            <code>shift</code> is an array method that removes and returns the first element</li>
+            <pre><code>shift</code></pre> is an array method that removes and returns the first element</li>
         </ul>
         <p>Is the code still hazy? Let's look at an annotated version:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
@@ -1046,8 +1046,8 @@ merge(arr1, arr2); // =&gt; [0, 1, 2, 3, 5, 7, 10, 10, 15]
 <span class="token punctuation">}</span>
 </pre>
         <p>By using 
-        <code>Infinity</code> as the default ele when an array is empty, we are able to elegantly handle the scenario where one array empties before the other. We know that any actual element will be less than 
-        <code>Infinity</code> so we will continually take the other element into our merged array.</p>
+        <pre><code>Infinity</code></pre> as the default ele when an array is empty, we are able to elegantly handle the scenario where one array empties before the other. We know that any actual element will be less than 
+        <pre><code>Infinity</code></pre> so we will continually take the other element into our merged array.</p>
         <p>In other words, we can safely handle this edge case:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token function">merge</span>
@@ -1069,9 +1069,9 @@ merge(arr1, arr2); // =&gt; [0, 1, 2, 3, 5, 7, 10, 10, 15]
 <span class="token comment">// =&gt; [10, 13, 15, 25]</span>
 </pre>
         <p>Nice! We now have a way to merge two sorted arrays into a single sorted array. It's worth mentioning that 
-        <code>merge</code> will have a 
-        <code>O(n)</code> runtime where 
-        <code>n</code> is the combined length of the two input arrays. This is what we meant when we said it was "easy" to merge two sorted arrays; linear time is fast! We'll find fact this useful later.</p>
+        <pre><code>merge</code></pre> will have a 
+        <pre><code>O(n)</code></pre> runtime where 
+        <pre><code>n</code></pre> is the combined length of the two input arrays. This is what we meant when we said it was "easy" to merge two sorted arrays; linear time is fast! We'll find fact this useful later.</p>
         <h3 class="mume-header" id="merge-sort-recursion">Merge Sort Recursion</h3>
         <p>Now that we satisfied the merge idea, let's handle the second point. That is, we say an array of 1 or 0 elements is already sorted. This will be the base case of our recursion. Let's begin adding this code:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
@@ -1493,25 +1493,25 @@ merge(arr1, arr2); // =&gt; [0, 1, 2, 3, 5, 7, 10, 10, 15]
         <h3 class="mume-header" id="time-complexity-on-logn">Time Complexity: O(n log(n))</h3>
         <ul>
             <li>
-            <code>n</code> is the length of the input array</li>
+            <pre><code>n</code></pre> is the length of the input array</li>
             <li>We must calculate how many recursive calls we make. The number of recursive calls is the number of times we must split the array to reach the base case. Since we split in half each time, the number of recursive calls is 
-            <code>O(log(n))</code>.
+            <pre><code>O(log(n))</code></pre>.
             <ul>
                 <li>for example, say we had an array of length 
-                <code>32</code></li>
+                <pre><code>32</code></pre></li>
                 <li>then the length would change as 
-                <code>32 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1</code>, we have to split 5 times before reaching the base case, 
-                <code>log(32) = 5</code></li>
+                <pre><code>32 -&gt; 16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1</code></pre>, we have to split 5 times before reaching the base case, 
+                <pre><code>log(32) = 5</code></pre></li>
                 <li>in our algorithm, 
                 <strong>log(n)</strong> describes how many times we must halve 
                 <strong>n</strong> until the quantity reaches 1.</li>
             </ul></li>
             <li>Besides the recursive calls, we must consider the while loop within the 
-            <code>merge</code> function, which contributes 
-            <code>O(n)</code> in isolation</li>
+            <pre><code>merge</code></pre> function, which contributes 
+            <pre><code>O(n)</code></pre> in isolation</li>
             <li>We call 
-            <code>merge</code> in every recursive 
-            <code>mergeSort</code> call, so the total complexity is 
+            <pre><code>merge</code></pre> in every recursive 
+            <pre><code>mergeSort</code></pre> call, so the total complexity is 
             <strong>O(n * log(n))</strong></li>
         </ul>
         <h3 class="mume-header" id="space-complexity-on">Space Complexity: O(n)</h3>
@@ -1533,12 +1533,12 @@ merge(arr1, arr2); // =&gt; [0, 1, 2, 3, 5, 7, 10, 10, 15]
             <li>it is easy to sort elements of an array relative to a particular target value
             <ul>
                 <li>for example given 
-                <code>[7, 3, 8, 9, 2]</code> and a target of 
-                <code>5</code>, we know 
-                <code>[3, 2]</code> are numbers less than 
-                <code>5</code> and 
-                <code>[7, 8, 9]</code> are numbers greater than 
-                <code>5</code>.</li>
+                <pre><code>[7, 3, 8, 9, 2]</code></pre> and a target of 
+                <pre><code>5</code></pre>, we know 
+                <pre><code>[3, 2]</code></pre> are numbers less than 
+                <pre><code>5</code></pre> and 
+                <pre><code>[7, 8, 9]</code></pre> are numbers greater than 
+                <pre><code>5</code></pre>.</li>
             </ul></li>
             <li>we can consider an array of 0 or 1 elements as already trivially sorted</li>
         </ul>
@@ -1675,17 +1675,17 @@ partition(arr, 5);  // =&gt; [[3, 2], [7,8,9]]
 <span class="token punctuation">}</span>
 </pre>
         <p>Both of the above implementations are correct, but we'll use the second one as it is cleaner. It's worth mentioning that the 
-        <code>partition</code> function will have a runtime of 
-        <code>O(n)</code> . 
-        <code>forEach</code> and 
-        <code>filter</code> both have linear, 
-        <code>O(n)</code> , time complexity. Although our fancy 
-        <code>partition</code> does filter twice, this is a constant we drop, 
-        <code>O(2n) = O(n)</code> . Linear time is fast so we are quite happy with 
-        <code>partition</code> .</p>
+        <pre><code>partition</code></pre> function will have a runtime of 
+        <pre><code>O(n)</code></pre> . 
+        <pre><code>forEach</code></pre> and 
+        <pre><code>filter</code></pre> both have linear, 
+        <pre><code>O(n)</code></pre> , time complexity. Although our fancy 
+        <pre><code>partition</code></pre> does filter twice, this is a constant we drop, 
+        <pre><code>O(2n) = O(n)</code></pre> . Linear time is fast so we are quite happy with 
+        <pre><code>partition</code></pre> .</p>
         <p>We won't be using an explicit 
-        <code>partition</code> helper function in our 
-        <code>quickSort</code> implementation, however we will borrow heavily from this pattern. As you design algorithms, it helps to think about key patterns in isolation, although your solution may not feature that exact helper. Some would say we like to divide and conquer ??.</p>
+        <pre><code>partition</code></pre> helper function in our 
+        <pre><code>quickSort</code></pre> implementation, however we will borrow heavily from this pattern. As you design algorithms, it helps to think about key patterns in isolation, although your solution may not feature that exact helper. Some would say we like to divide and conquer ??.</p>
         <h3 class="mume-header" id="quick-sort-recursion">Quick Sort Recursion</h3>
         <p>Let's begin structuring the recursion. The base case of any recursive problem is where the input is so trivial, we immediately know the answer without calculation. If our problem is to sort an array, what is the trivial array? An array of 1 or 0 elements! Let's establish the code:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
@@ -1712,8 +1712,8 @@ partition(arr, 5);  // =&gt; [[3, 2], [7,8,9]]
 <span class="token punctuation">}</span>
 </pre>
         <p>If our base case pretains to an array of a very small size, then the design of our recursive case should make progress toward hitting this base scenario. In other words, we should recursively call 
-        <code>quickSort</code> on smaller and smaller arrays. This is very similar to our previous 
-        <code>mergeSort</code> , except we don't just split the array down the middle. Instead we should arbitrarily choose an element of the array as a pivot and partition the remaining elements relative to this pivot:</p>
+        <pre><code>quickSort</code></pre> on smaller and smaller arrays. This is very similar to our previous 
+        <pre><code>mergeSort</code></pre> , except we don't just split the array down the middle. Instead we should arbitrarily choose an element of the array as a pivot and partition the remaining elements relative to this pivot:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
     
 <span class="token keyword">function</span> 
@@ -1774,9 +1774,9 @@ partition(arr, 5);  // =&gt; [[3, 2], [7,8,9]]
 </pre>
         <p>Here is what to notice about the partition step above: 1. the pivot is an element of the array; we arbitrarily chose the first element 2. we removed the pivot from the master array before we filter into the left and right partitions</p>
         <p>Now that we have the two subarrays of 
-        <code>left</code> and 
-        <code>right</code> we have our subproblems! To solve these subproblems we must sort the subarrays. I wish we had a function that sorts an array...oh wait we do, 
-        <code>quickSort</code> ! Recursively:</p>
+        <pre><code>left</code></pre> and 
+        <pre><code>right</code></pre> we have our subproblems! To solve these subproblems we must sort the subarrays. I wish we had a function that sorts an array...oh wait we do, 
+        <pre><code>quickSort</code></pre> ! Recursively:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
     
 <span class="token keyword">function</span> 
@@ -1849,12 +1849,12 @@ partition(arr, 5);  // =&gt; [[3, 2], [7,8,9]]
 <span class="token comment">//...some code here</span>
 </pre>
         <p>Okay, so we have the two sorted partitions. This means we have the two subsolutions. But how do we put them together? Think about how we partitioned them in the first place. Everything in 
-        <code>leftSorted</code> is 
+        <pre><code>leftSorted</code></pre> is 
         <strong>guaranteed</strong> to be less than everything in 
-        <code>rightSorted</code> . On top of that, 
-        <code>pivot</code> should be placed after the last element in 
-        <code>leftSorted</code> , but before the first element in 
-        <code>rightSorted</code> . So all we need to do is to combine the elements in the order "left, pivot, right"!</p>
+        <pre><code>rightSorted</code></pre> . On top of that, 
+        <pre><code>pivot</code></pre> should be placed after the last element in 
+        <pre><code>leftSorted</code></pre> , but before the first element in 
+        <pre><code>rightSorted</code></pre> . So all we need to do is to combine the elements in the order "left, pivot, right"!</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">quickSort</span>
@@ -1943,8 +1943,8 @@ partition(arr, 5);  // =&gt; [[3, 2], [7,8,9]]
 <span class="token punctuation">}</span>
 </pre>
         <p>That last 
-        <code>concat</code> line is a bit clunky. Bonus JS Lesson: we can use the spread 
-        <code>...</code> operator to elegantly concat arrays. In general:</p>
+        <pre><code>concat</code></pre> line is a bit clunky. Bonus JS Lesson: we can use the spread 
+        <pre><code>...</code></pre> operator to elegantly concat arrays. In general:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">let</span> one 
 <span class="token operator">=</span> 
@@ -2065,7 +2065,7 @@ newArr
         <p>I'd hire that programmer.</p>
         <h3 class="mume-header" id="quicksort-sort-js-implementation">Quicksort Sort JS Implementation</h3>
         <p>That code was so clean we should show it again. Here's the complete code for your reference, for when you 
-        <code>ctrl+F "quicksort"</code> the night before an interview:</p>
+        <pre><code>ctrl+F "quicksort"</code></pre> the night before an interview:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">quickSort</span>
@@ -2158,21 +2158,21 @@ newArr
             <li>Worst Case: O(n2)</li>
         </ul>
         <p>The runtime analysis of 
-        <code>quickSort</code> is more complex than 
-        <code>mergeSort</code></p>
+        <pre><code>quickSort</code></pre> is more complex than 
+        <pre><code>mergeSort</code></pre></p>
         <ul>
             <li>
-            <code>n</code> is the length of the input array</li>
+            <pre><code>n</code></pre> is the length of the input array</li>
             <li>The partition step alone is 
-            <code>O(n)</code></li>
+            <pre><code>O(n)</code></pre></li>
             <li>We must calculate how many recursive calls we make. The number of recursive calls is the number of times we must split the array to reach the base case. This is dependent on how we choose the pivot. Let's analyze the best and worst case:
             <ul>
                 <li>
                 <strong>Best Case:</strong> We are lucky and always choose the median as the pivot. This means the left and right partitions will have equal length. This will halve the array length at every step of the recursion. We benefit from this halving with 
-                <code>O(log(n))</code> recursive calls to reach the base case.</li>
+                <pre><code>O(log(n))</code></pre> recursive calls to reach the base case.</li>
                 <li>
                 <strong>Worst Case:</strong> We are unlucky and always choose the min or max as the pivot. This means one partition will contain everything, and the other partition is empty. This will decrease the array length by 1 at every step of the recursion. We suffer from 
-                <code>O(n)</code> recursive calls to reach the base case.</li>
+                <pre><code>O(n)</code></pre> recursive calls to reach the base case.</li>
             </ul></li>
             <li>The partition step occurs in every recursive call, so our total complexities are:
             <ul>
@@ -2183,25 +2183,25 @@ newArr
             </ul></li>
         </ul>
         <p>Although we typically take the worst case when describing Big-O for an algorithm, much research on 
-        <code>quickSort</code> has shown the worst case to be an exceedingly rare occurance even if we choose the pivot at random. Because of this we still consider 
-        <code>quickSort</code> an efficient algorithm. This is a common interview talking point, so you should be familiar with the relationship between the choice of pivot and efficiency of the algorithm.</p>
+        <pre><code>quickSort</code></pre> has shown the worst case to be an exceedingly rare occurance even if we choose the pivot at random. Because of this we still consider 
+        <pre><code>quickSort</code></pre> an efficient algorithm. This is a common interview talking point, so you should be familiar with the relationship between the choice of pivot and efficiency of the algorithm.</p>
         <p>Just in case: A somewhat common question a student may ask when studying 
-        <code>quickSort</code> is, "If the median is the best pivot, why don't we always just choose the median when we partition?" Don't overthink this. To know the median of an array, it must be sorted in the first place.</p>
+        <pre><code>quickSort</code></pre> is, "If the median is the best pivot, why don't we always just choose the median when we partition?" Don't overthink this. To know the median of an array, it must be sorted in the first place.</p>
         <h3 class="mume-header" id="space-complexity">Space Complexity</h3>
         <p>Our implementation of 
-        <code>quickSort</code> uses 
-        <code>O(n)</code> space because of the partition arrays we create. There is an in-place version of 
-        <code>quickSort</code> that uses 
-        <code>O(log(n))</code> space. 
-        <code>O(log(n))</code> space is not huge benefit over 
-        <code>O(n)</code> . You'll also find our version of 
-        <code>quickSort</code> as easier to remember, easier to implement. Just know that a 
-        <code>O(logn)</code> space 
-        <code>quickSort</code> exists.</p>
+        <pre><code>quickSort</code></pre> uses 
+        <pre><code>O(n)</code></pre> space because of the partition arrays we create. There is an in-place version of 
+        <pre><code>quickSort</code></pre> that uses 
+        <pre><code>O(log(n))</code></pre> space. 
+        <pre><code>O(log(n))</code></pre> space is not huge benefit over 
+        <pre><code>O(n)</code></pre> . You'll also find our version of 
+        <pre><code>quickSort</code></pre> as easier to remember, easier to implement. Just know that a 
+        <pre><code>O(logn)</code></pre> space 
+        <pre><code>quickSort</code></pre> exists.</p>
         <h3 class="mume-header" id="when-should-we-use-quick-sort">When should we use Quick Sort?</h3>
         <ul>
             <li>When you are in a pinch and need to throw down an efficent sort (on average). The recursive code is light and simple to implement; much smaller than 
-            <code>mergeSort</code>.</li>
+            <pre><code>mergeSort</code></pre>.</li>
             <li>When constant space is important to you, use the in-place version. This will of course trade off some simplicity of implementation.</li>
         </ul>
         <hr />
@@ -2211,8 +2211,8 @@ newArr
         <h1 class="mume-header" id="binary-search">Binary Search</h1>
         <hr />
         <p>We've explored many ways to sort arrays so far, but why did we go through all of that trouble? By sorting elements of an array, we are organizing the data in a way that gives us a quick way to look up elements later on. For simplicity, we have been using arrays of numbers up until this point. However, these sorting concepts can be generalized to other data types. For example, it would be easy to modify our comparison-based sorting algorithms to sort strings: instead of leveraging facts like 
-        <code>0 &lt; 1</code> , we can say 
-        <code>'A' &lt; 'B'</code> .</p>
+        <pre><code>0 &lt; 1</code></pre> , we can say 
+        <pre><code>'A' &lt; 'B'</code></pre> .</p>
         <p>Think of a dictionary. A dictionary contains alphabetically sorted words and their definitions. A dictionary is pretty much only useful if it is ordered in this way. Let's say you wanted to look up the definition of "stupendous." What steps might you take?</p>
         <ul>
             <li>you open up the dictionary at the roughly middle page
@@ -2227,10 +2227,10 @@ newArr
             <li>...</li>
         </ul>
         <p>You are essentially using the 
-        <code>binarySearch</code> algorithm in the real world.</p>
+        <pre><code>binarySearch</code></pre> algorithm in the real world.</p>
         <h2 class="mume-header" id="the-algorithm-check-the-middle-and-half-the-search-space">The Algorithm: "check the middle and half the search space"</h2>
         <p>Formally, our 
-        <code>binarySearch</code> will seek to solve the following problem:</p>
+        <pre><code>binarySearch</code></pre> will seek to solve the following problem:</p>
         <pre class="language-text">
 Given a sorted array of numbers and a target num, return a boolean indicating whether or not that target is contained in the array.
 </pre>
@@ -2282,10 +2282,10 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
 <span class="token comment">// =&gt; false</span>
 </pre>
         <p>Before we move on, really internalize the fact that 
-        <code>binarySearch</code> will only work on 
+        <pre><code>binarySearch</code></pre> will only work on 
         <strong>sorted</strong> arrays! Obviously we can search any array, sorted or unsorted, in 
-        <code>O(n)</code> time. But now our goal is be able to search the array with a sub-linear time complexity (less than 
-        <code>O(n)</code> ).</p>
+        <pre><code>O(n)</code></pre> time. But now our goal is be able to search the array with a sub-linear time complexity (less than 
+        <pre><code>O(n)</code></pre> ).</p>
         <h3 class="mume-header" id="binary-search-recursion">Binary Search Recursion</h3>
         <p>We'll implement binary search recursively. As always, we start with a base case that captures the scenario of the input array being so trivial, that we know the answer without further calculation. If we are given an empty array and a target, we can be certain that the target is not inside of the array:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
@@ -2316,8 +2316,8 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
 <span class="token punctuation">}</span>
 </pre>
         <p>Now for our recursive case. If we want to get a time complexity less than 
-        <code>O(n)</code> , we must avoid touching all 
-        <code>n</code> elements. Adopting our dictionary strategy, let's find the middle element and grab references to the left and right halves of the sorted array:</p>
+        <pre><code>O(n)</code></pre> , we must avoid touching all 
+        <pre><code>n</code></pre> elements. Adopting our dictionary strategy, let's find the middle element and grab references to the left and right halves of the sorted array:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">binarySearch</span>
@@ -2381,7 +2381,7 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
 </pre>
         <p>It's worth pointing out that the left and right halves do not contain the middle element we chose.</p>
         <p>Here is where we leverage the sorted property of the array. If the target is less than the middle, then the target must be in the left half of the array. If the target is greater than the middle, then the target must be in the right half of the array. So we can narrow our search to one of these halves, and ignore the other. Luckily we have a function that can search the half, its 
-        <code>binarySearch</code> :</p>
+        <pre><code>binarySearch</code></pre> :</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">binarySearch</span>
@@ -2479,12 +2479,12 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
 <span class="token punctuation">}</span>
 </pre>
         <p>We know 
-        <code>binarySeach</code> will return the correct boolean, so we just pass that result up by returning it ourselves. However, something is lacking in our code. It is only possible to get a false from the literal 
-        <code>return false</code> line, but there is no 
-        <code>return true</code> . Looking at our conditionals, we handle the cases where the target is less than middle or the target is greater than the middle, but what if the product is 
+        <pre><code>binarySeach</code></pre> will return the correct boolean, so we just pass that result up by returning it ourselves. However, something is lacking in our code. It is only possible to get a false from the literal 
+        <pre><code>return false</code></pre> line, but there is no 
+        <pre><code>return true</code></pre> . Looking at our conditionals, we handle the cases where the target is less than middle or the target is greater than the middle, but what if the product is 
         <strong>equal</strong> to the middle? If the target is equal to the middle, then we found the target and should 
-        <code>return true</code> ! This is easy to add with an 
-        <code>else</code> :</p>
+        <pre><code>return true</code></pre> ! This is easy to add with an 
+        <pre><code>else</code></pre> :</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">binarySearch</span>
@@ -2698,23 +2698,23 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
         <h3 class="mume-header" id="time-complexity-ologn">Time Complexity: O(log(n))</h3>
         <ul>
             <li>
-            <code>n</code> is the length of the input array</li>
+            <pre><code>n</code></pre> is the length of the input array</li>
             <li>We have no loops, so we must only consider the number of recursive calls it takes to hit the base case</li>
             <li>The number of recursive calls is the number of times we must halve the array until it's length becomes 0. This number can be described by 
-            <code>log(n)</code>
+            <pre><code>log(n)</code></pre>
             <ul>
                 <li>for example, say we had an array of 8 elements, 
-                <code>n = 8</code></li>
+                <pre><code>n = 8</code></pre></li>
                 <li>the length would halve as 
-                <code>8 -&gt; 4 -&gt; 2 -&gt; 1</code></li>
+                <pre><code>8 -&gt; 4 -&gt; 2 -&gt; 1</code></pre></li>
                 <li>it takes 3 calls, 
-                <code>log(8) = 3</code></li>
+                <pre><code>log(8) = 3</code></pre></li>
             </ul></li>
         </ul>
         <h3 class="mume-header" id="space-complexity-on-1">Space Complexity: O(n)</h3>
         <p>Our implementation uses 
-        <code>n</code> space due to half arrays we create using slice. Note that JavaScript 
-        <code>slice</code> creates a new array, so it requires additional memory to be allocated.</p>
+        <pre><code>n</code></pre> space due to half arrays we create using slice. Note that JavaScript 
+        <pre><code>slice</code></pre> creates a new array, so it requires additional memory to be allocated.</p>
         <h3 class="mume-header" id="when-should-we-use-binary-search">When should we use Binary Search?</h3>
         <p>Use this algorithm when the input data is sorted!!! This is a heavy requirement, but if you have it, you'll have an insanely fast algorithm.</p>
         <hr />
@@ -2745,13 +2745,13 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
         </ul>
         <h3 class="mume-header" id="memoizing-factorial-kind-of">Memoizing Factorial (kind of)</h3>
         <p>Let's begin by memoizing our previous 
-        <code>factorial</code> recursive function. As it is, our 
-        <code>factorial</code> is pretty fast with a 
-        <code>O(n)</code> runtime. This is because we simply subtract 
-        <code>1</code> from 
-        <code>n</code> for every recursive call until 
-        <code>n</code> reaches 
-        <code>0</code> . This is feasibly the fastest we could ever do, but we'll memoize it nonetheless to explore the mechanics of memoization:</p>
+        <pre><code>factorial</code></pre> recursive function. As it is, our 
+        <pre><code>factorial</code></pre> is pretty fast with a 
+        <pre><code>O(n)</code></pre> runtime. This is because we simply subtract 
+        <pre><code>1</code></pre> from 
+        <pre><code>n</code></pre> for every recursive call until 
+        <pre><code>n</code></pre> reaches 
+        <pre><code>0</code></pre> . This is feasibly the fastest we could ever do, but we'll memoize it nonetheless to explore the mechanics of memoization:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">factorial</span>
@@ -2805,12 +2805,12 @@ Given a sorted array of numbers and a target num, return a boolean indicating wh
 <span class="token comment">// =&gt; 5040, requires 7 calls</span>
 </pre>
         <p>From our plain 
-        <code>factorial</code> above, it is clear that every time we call 
-        <code>factorial(6)</code> we should get the same result of 
-        <code>720</code> each time. The code is somewhat inefficient because we must go down the full recursive stack for each top level call to 
-        <code>factorial(6)</code> . It would be great if we could store the result of 
-        <code>factorial(6)</code> the first time we calculate it, then on subsequent calls to 
-        <code>factorial(6)</code> we simply fetch the stored result in constant time. We can accomplish exactly this by memoizing with an object! We'll refactor the code later, but for now:</p>
+        <pre><code>factorial</code></pre> above, it is clear that every time we call 
+        <pre><code>factorial(6)</code></pre> we should get the same result of 
+        <pre><code>720</code></pre> each time. The code is somewhat inefficient because we must go down the full recursive stack for each top level call to 
+        <pre><code>factorial(6)</code></pre> . It would be great if we could store the result of 
+        <pre><code>factorial(6)</code></pre> the first time we calculate it, then on subsequent calls to 
+        <pre><code>factorial(6)</code></pre> we simply fetch the stored result in constant time. We can accomplish exactly this by memoizing with an object! We'll refactor the code later, but for now:</p>
         <pre class="language-text">
 let memo = {}
 </pre>
@@ -2895,10 +2895,10 @@ memo
 <span class="token comment">// =&gt; { '2': 2, '3': 6, '4': 24, '5': 120, '6': 720, '7': 5040 }</span>
 </pre>
         <p>The 
-        <code>memo</code> object above will map an argument of 
-        <code>factorial</code> to it's return value. That is, the keys will be arguments and their values will be the corresponding results returned. By using the memo, we are able to avoid duplicate recursive calls! Here's some food for thought: By the time our first call to 
-        <code>factorial(6)</code> returns, we will not have just the arg 
-        <code>6</code> stored in the memo. Rather, we will have 
+        <pre><code>memo</code></pre> object above will map an argument of 
+        <pre><code>factorial</code></pre> to it's return value. That is, the keys will be arguments and their values will be the corresponding results returned. By using the memo, we are able to avoid duplicate recursive calls! Here's some food for thought: By the time our first call to 
+        <pre><code>factorial(6)</code></pre> returns, we will not have just the arg 
+        <pre><code>6</code></pre> stored in the memo. Rather, we will have 
         <em>all</em> args 2 to 6 stored in the memo.</p>
         <p>Hopefully you sense the efficiency we can get by memoizing our functions, but maybe you are not convinced by the last example for two reasons:</p>
         <ul>
@@ -2908,7 +2908,7 @@ memo
         <p>Both of those points are true, so let's take a look at a more advanced but also practical example that benefits from memoization.</p>
         <h3 class="mume-header" id="memoizing-fib-actually">Memoizing Fib (actually)</h3>
         <p>Let's begin with our previous 
-        <code>fib</code> implementation that calculates the n-th number in the fibonacci sequence:</p>
+        <pre><code>fib</code></pre> implementation that calculates the n-th number in the fibonacci sequence:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">fib</span>
@@ -2953,16 +2953,16 @@ fib(6);     // =&gt; 8
             <img src="./DATA-Structures_files/fib_tree.png" alt="fib_tree" />
         </p>
         <p>In general, the height of this tree will be 
-        <code>n</code> . We derive this by following the path going straight down the left side of the tree. We can also see that each internal node leads to two more nodes. Overall, this means our tree will have roughly 2n nodes which is the same as saying our 
-        <code>fib</code> function has an exponential time complexity of 2n. That is very slow! See for yourself, try running 
-        <code>fib(50)</code> - you'll be waiting for quite a while (it took 3 minutes on our machine).</p>
+        <pre><code>n</code></pre> . We derive this by following the path going straight down the left side of the tree. We can also see that each internal node leads to two more nodes. Overall, this means our tree will have roughly 2n nodes which is the same as saying our 
+        <pre><code>fib</code></pre> function has an exponential time complexity of 2n. That is very slow! See for yourself, try running 
+        <pre><code>fib(50)</code></pre> - you'll be waiting for quite a while (it took 3 minutes on our machine).</p>
         <p>Okay. So our 
-        <code>fib</code> is slow, but is there anyway to speed it up? Take a look at the tree above. Can you find any repetitive regions of the tree? We'll highlight a few:</p>
+        <pre><code>fib</code></pre> is slow, but is there anyway to speed it up? Take a look at the tree above. Can you find any repetitive regions of the tree? We'll highlight a few:</p>
         <p>
             <img src="./DATA-Structures_files/fib_tree_duplicates.png" alt="fib_tree_duplicates" />
         </p>
         <p>As the 
-        <code>n</code> grows bigger, the number of duplicate subtrees grows exponentially. Luckily we can fix this using memoization. We'll use a similar object strategy as before, but we'll indulge in some JavaScript default arguments to clean things up:</p>
+        <pre><code>n</code></pre> grows bigger, the number of duplicate subtrees grows exponentially. Luckily we can fix this using memoization. We'll use a similar object strategy as before, but we'll indulge in some JavaScript default arguments to clean things up:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">fastFib</span>
@@ -3026,13 +3026,13 @@ fastFib(6);     // =&gt; 8
 fastFib(50);    // =&gt; 12586269025
 </pre>
         <p>The code above can calculate the 50th fibonacci number almost instantly! Thanks to our memo, we only need to explore a subtree fully once. Visually, our 
-        <code>fastFib</code> recursion has this structure:</p>
+        <pre><code>fastFib</code></pre> recursion has this structure:</p>
         <p>
             <img src="./DATA-Structures_files/fib_memoized.png" alt="fib_memoized" />
         </p>
         <p>We marked nodes (function calls) that access the memo in green. It's easy to see that we will do far less computations as 
-        <code>n</code> grows larger! In fact, we have brought the time complexity down to linear 
-        <code>O(n)</code> time because the tree only branches on the left side. This is an enormous gain if you recall the complexity class hierarchy.</p>
+        <pre><code>n</code></pre> grows larger! In fact, we have brought the time complexity down to linear 
+        <pre><code>O(n)</code></pre> time because the tree only branches on the left side. This is an enormous gain if you recall the complexity class hierarchy.</p>
         <h3 class="mume-header" id="the-memoization-formula">The Memoization Formula</h3>
         <p>Now that we have memoization under our belts, when should we apply it? Memoization is useful when attacking recursive problems that have many overlapping subproblems. You'll find it most useful to draw out the visual tree first. If you notice duplicate subtrees, time to memoize. Here are the hard and fast rules you can use to memoize a slow function:</p>
         <ol>
@@ -3058,8 +3058,8 @@ fastFib(50);    // =&gt; 12586269025
         <h3 class="mume-header" id="tabulating-fib">Tabulating Fib</h3>
         <p>Tabulation is all about creating a table (array) and filling it out with elements. In general, we will complete the table by filling entries from left to right. This means that the first entry of our table (first element of the array) will correspond to the smallest subproblem. Naturally, the final entry of our table (last element of the array) will correspond to the largest problem, which is also our final answer.</p>
         <p>Let's tabulate 
-        <code>fib</code> . As always, we want 
-        <code>fib(n)</code> to return the n-th number of the Fibonacci sequence:</p>
+        <pre><code>fib</code></pre> . As always, we want 
+        <pre><code>fib(n)</code></pre> to return the n-th number of the Fibonacci sequence:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token comment">// fib(0);      // =&gt; 0</span>
 <span class="token comment">// fib(1);      // =&gt; 1</span>
@@ -3165,13 +3165,13 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <tbody>
                 <tr>
                     <td>
-                        <code>table[i]</code>
+                        <pre><code>table[i]</code></pre>
                     </td>
                     <td>
-                        <code>0</code>
+                        <pre><code>0</code></pre>
                     </td>
                     <td colspan="7">
-                        <code>1</code>
+                        <pre><code>1</code></pre>
                     </td>
                 </tr>
             </tbody>
@@ -3194,42 +3194,42 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <tbody>
                 <tr>
                     <td>
-                        <code>table[i]</code>
+                        <pre><code>table[i]</code></pre>
                     </td>
                     <td>
-                        <code>0</code>
+                        <pre><code>0</code></pre>
                     </td>
                     <td>
-                        <code>1</code>
+                        <pre><code>1</code></pre>
                     </td>
                     <td>
-                        <code>1</code>
+                        <pre><code>1</code></pre>
                     </td>
                     <td>
-                        <code>2</code>
+                        <pre><code>2</code></pre>
                     </td>
                     <td>
-                        <code>3</code>
+                        <pre><code>3</code></pre>
                     </td>
                     <td>
-                        <code>5</code>
+                        <pre><code>5</code></pre>
                     </td>
                     <td>
-                        <code>8</code>
+                        <pre><code>8</code></pre>
                     </td>
                     <td>
-                        <code>13</code>
+                        <pre><code>13</code></pre>
                     </td>
                 </tr>
             </tbody>
         </table>
         <p>Similar to our previous 
-        <code>memo</code> , by the time our function completes, our 
-        <code>table</code> will contain our final solution as well as all subsolutions calculated along the way.</p>
+        <pre><code>memo</code></pre> , by the time our function completes, our 
+        <pre><code>table</code></pre> will contain our final solution as well as all subsolutions calculated along the way.</p>
         <h4 class="mume-header" id="complexity-analysis">Complexity Analysis</h4>
         <p>The analysis of our 
-        <code>tabulatedFib</code> is very straightforward, since the code is iterative. The dominant operation in the function is the loop used to fill out the entire table. The length of the table is roughly 
-        <code>n</code> elements long, so our algorithm will have an 
+        <pre><code>tabulatedFib</code></pre> is very straightforward, since the code is iterative. The dominant operation in the function is the loop used to fill out the entire table. The length of the table is roughly 
+        <pre><code>n</code></pre> elements long, so our algorithm will have an 
         <em>O(n)</em> runtime. The space taken by our algorithm is also 
         <em>O(n)</em> due to the size of the table. Overall, we should be satisfied with the effiency of our algorithm.</p>
         <h3 class="mume-header" id="aside-refactoring-for-o1-space">Aside: Refactoring for O(1) Space</h3>
@@ -3303,7 +3303,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
 <span class="token punctuation">}</span>
 </pre>
         <p>Bam! We now have O(n) runtime and O(1) space. This is the most optimal algorithm for calculating 
-        <code>fib</code> . Note that this strategy is not quite Tabulation, since there is no table array being used. However, this still falls under the overarching category of Dynamic Programming since we saved previous subproblem results in order to calculate the final answer. There's no fancy name for this strategy; it's just amazing.</p>
+        <pre><code>fib</code></pre> . Note that this strategy is not quite Tabulation, since there is no table array being used. However, this still falls under the overarching category of Dynamic Programming since we saved previous subproblem results in order to calculate the final answer. There's no fancy name for this strategy; it's just amazing.</p>
         <h3 class="mume-header" id="the-tabulation-formula">The Tabulation Formula</h3>
         <p>Here are our general guidelines for implementing a Tabulation strategy. Bear in mind that Dynamic Programming (whether it be by Tabulation or Memoization) is only applicable to problems that can be divided into many subproblems of similar structure. This is just a 
         <em>general</em> recipe so adjust for taste depending on your problem:</p>
@@ -3343,19 +3343,19 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <tbody>
                 <tr>
                     <td>
-                        <code>head</code>
+                        <pre><code>head</code></pre>
                     </td>
                     <td>The first node in the list.</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>tail</code>
+                        <pre><code>tail</code></pre>
                     </td>
                     <td>The last node in the list.</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>length</code>
+                        <pre><code>length</code></pre>
                     </td>
                     <td>The number of nodes in the list; the list's length.</td>
                 </tr>
@@ -3376,19 +3376,19 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <tbody>
                 <tr>
                     <td>
-                        <code>value</code>
+                        <pre><code>value</code></pre>
                     </td>
                     <td>The actual value this node represents.</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>next</code>
+                        <pre><code>next</code></pre>
                     </td>
                     <td>The next node in the list (relative to this node).</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>previous</code>
+                        <pre><code>previous</code></pre>
                     </td>
                     <td>The previous node in the list (relative to this node).</td>
                 </tr>
@@ -3396,7 +3396,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </table>
         <p>
         <strong>NOTE:</strong> The 
-        <code>previous</code> property is for Doubly Linked Lists only!</p>
+        <pre><code>previous</code></pre> property is for Doubly Linked Lists only!</p>
         <p>Linked Lists contain 
         <em>ordered</em> data, just like arrays. The first node in the list is, indeed, first. From the perspective of the very first node in the list, the 
         <em>next</em> node is the second node. From the perspective of the second node in the list, the 
@@ -3424,7 +3424,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         <em>represent</em> data that is ordered linearly, that mental model is just that - an interpretation of the 
         <em>representation</em> of information, not reality.</p>
         <p>In reality, in the actual hardware of your machine, whether it be in disk or in memory, a Linked List's Nodes are not stored in a single continuous block of addresses. Rather, Linked List Nodes live at randomly distributed addresses throughout your machine! The only reason we know which node comes next in the list is because we've assigned its reference to the current node's 
-        <code>next</code> pointer.</p>
+        <pre><code>next</code></pre> pointer.</p>
         <p>
             <img src="./DATA-Structures_files/SLL-diagram.png" alt="Array in Memory" />
         </p>
@@ -3469,7 +3469,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Circularly Linked</td>
                     <td>Final node's 
-                    <code>next</code> pointer points to the first node, creating a non-linear, circular version of a Linked List.</td>
+                    <pre><code>next</code></pre> pointer points to the first node, creating a non-linear, circular version of a Linked List.</td>
                     <td>Head?Tail?Head?Tail</td>
                 </tr>
             </tbody>
@@ -3500,7 +3500,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>addToTail</code>
+                        <pre><code>addToTail</code></pre>
                     </td>
                     <td>Adds a new node to the tail of the Linked List.</td>
                     <td>Updated Linked List</td>
@@ -3508,7 +3508,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>addToHead</code>
+                        <pre><code>addToHead</code></pre>
                     </td>
                     <td>Adds a new node to the head of the Linked List.</td>
                     <td>Updated Linked List</td>
@@ -3516,7 +3516,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>insertAt</code>
+                        <pre><code>insertAt</code></pre>
                     </td>
                     <td>Inserts a new node at the "index", or position, specified.</td>
                     <td>Boolean</td>
@@ -3524,7 +3524,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>removeTail</code>
+                        <pre><code>removeTail</code></pre>
                     </td>
                     <td>Removes the node at the tail of the Linked List.</td>
                     <td>Removed node</td>
@@ -3532,7 +3532,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>removeHead</code>
+                        <pre><code>removeHead</code></pre>
                     </td>
                     <td>Removes the node at the head of the Linked List.</td>
                     <td>Removed node</td>
@@ -3540,7 +3540,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>removeFrom</code>
+                        <pre><code>removeFrom</code></pre>
                     </td>
                     <td>Removes the node at the "index", or position, specified.</td>
                     <td>Removed node</td>
@@ -3548,7 +3548,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Search</td>
                     <td>
-                        <code>contains</code>
+                        <pre><code>contains</code></pre>
                     </td>
                     <td>Searches the Linked List for a node with the value specified.</td>
                     <td>Boolean</td>
@@ -3556,7 +3556,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Access</td>
                     <td>
-                        <code>get</code>
+                        <pre><code>get</code></pre>
                     </td>
                     <td>Gets the node at the "index", or position, specified.</td>
                     <td>Node at index</td>
@@ -3564,7 +3564,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Access</td>
                     <td>
-                        <code>set</code>
+                        <pre><code>set</code></pre>
                     </td>
                     <td>Updates the value of a node at the "index", or position, specified.</td>
                     <td>Boolean</td>
@@ -3572,7 +3572,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Meta</td>
                     <td>
-                        <code>size</code>
+                        <pre><code>size</code></pre>
                     </td>
                     <td>Returns the current size of the Linked List.</td>
                     <td>Integer</td>
@@ -3594,49 +3594,49 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Access</td>
                     <td>
-                        <code>T(n)</code>
+                        <pre><code>T(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
                 <tr>
                     <td>Search</td>
                     <td>
-                        <code>T(n)</code>
+                        <pre><code>T(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>T(1)</code>
+                        <pre><code>T(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(1)</code>
+                        <pre><code>O(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>T(1)</code>
+                        <pre><code>T(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(1)</code>
+                        <pre><code>O(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
             </tbody>
@@ -3662,20 +3662,20 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </ol>
         <h3 class="mume-header" id="discussion-1">Discussion:</h3>
         <p>Since we have our Linked List Nodes stored in a non-contiguous manner that relies on pointers to keep track of where the next and previous nodes live, Linked Lists liberate us from the linear time nature of Array insertions and deletions. We no longer have to adjust the position at which each node/element is stored after making an insertion at a particular position in the list. Instead, if we want to insert a new node at position 
-        <code>i</code> , we can simply:</p>
+        <pre><code>i</code></pre> , we can simply:</p>
         <ol>
             <li>Create a new node.</li>
             <li>Set the new node's 
-            <code>next</code> and 
-            <code>previous</code> pointers to the nodes that live at postions 
-            <code>i</code> and 
-            <code>i - 1</code>, respectively.</li>
+            <pre><code>next</code></pre> and 
+            <pre><code>previous</code></pre> pointers to the nodes that live at postions 
+            <pre><code>i</code></pre> and 
+            <pre><code>i - 1</code></pre>, respectively.</li>
             <li>Adjust the 
-            <code>next</code> pointer of the node that lives at position 
-            <code>i - 1</code> to point to the new node.</li>
+            <pre><code>next</code></pre> pointer of the node that lives at position 
+            <pre><code>i - 1</code></pre> to point to the new node.</li>
             <li>Adjust the 
-            <code>previous</code> pointer of the node that lives at position 
-            <code>i</code> to point to the new node.</li>
+            <pre><code>previous</code></pre> pointer of the node that lives at position 
+            <pre><code>i</code></pre> to point to the new node.</li>
         </ol>
         <p>And we're done, in Constant Time. No iterating across the entire list necessary.</p>
         <p>"But hold on one second, " you may be thinking. "In order to insert a new node in the middle of the list, don't we have to lookup its position? Doesn't that take linear time?!"</p>
@@ -3723,8 +3723,8 @@ console.log(tabulatedFib(7));      // =&gt; 13
         <em>top</em> of a stack. We never add things to, or remove things from, the 
         <em>bottom</em> of the stack. That's just crazy.</p>
         <p>Note: We can use JavaScript Arrays to implement a basic stack. 
-        <code>Array#push</code> adds to the top of the stack and 
-        <code>Array#pop</code> will remove from the top of the stack. In the exercise that follows, we'll build our own Stack class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a stack.</p>
+        <pre><code>Array#push</code></pre> adds to the top of the stack and 
+        <pre><code>Array#pop</code></pre> will remove from the top of the stack. In the exercise that follows, we'll build our own Stack class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a stack.</p>
         <h2 class="mume-header" id="what-is-a-queue">What is a Queue?</h2>
         <p>Queues are a First In First Out (FIFO) data structure. The first Node added to the queue is always the first Node to be removed.</p>
         <p>The name Queue comes from this characteristic, as it is helpful to visualize this data structure as a horizontal line of items with a beginning and an end. Personally, I like to think of a Queue as the line one waits on for an amusement park, at a grocery store checkout, or to see the teller at a bank.</p>
@@ -3736,8 +3736,8 @@ console.log(tabulatedFib(7));      // =&gt; 13
         <em>front</em> of a queue, but only when they have made their way to being first in line.</p>
         <p>We never add ourselves to the front of a queue (unless there is no one else in line), otherwise we would be "cutting" the line, and other humans don't seem to appreciate that.</p>
         <p>Note: We can use JavaScript Arrays to implement a basic queue. 
-        <code>Array#push</code> adds to the back (enqueue) and 
-        <code>Array#shift</code> will remove from the front (dequeue). In the exercise that follows, we'll build our own Queue class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a queue.</p>
+        <pre><code>Array#push</code></pre> adds to the back (enqueue) and 
+        <pre><code>Array#shift</code></pre> will remove from the front (dequeue). In the exercise that follows, we'll build our own Queue class from scratch (without using any arrays). In an interview setting, your evaluator may be okay with you using an array as a queue.</p>
         <h2 class="mume-header" id="stack-and-queue-properties">Stack and Queue Properties</h2>
         <p>Stacks and Queues are so similar in composition that we can discuss their properties together. They track the following three properties:</p>
         <p>
@@ -3755,43 +3755,43 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <tbody>
                 <tr>
                     <td>
-                        <code>top</code>
+                        <pre><code>top</code></pre>
                     </td>
                     <td>The first node in the Stack</td>
                     <td>
-                        <code>front</code>
+                        <pre><code>front</code></pre>
                     </td>
                     <td>The first node in the Queue</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>bottom</code>
+                        <pre><code>bottom</code></pre>
                     </td>
                     <td>The last node in the Stack. (Optional)</td>
                     <td>
-                        <code>back</code>
+                        <pre><code>back</code></pre>
                     </td>
                     <td>The last node in the Queue.</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>length</code>
+                        <pre><code>length</code></pre>
                     </td>
                     <td>The number of nodes in the Stack; the Stack's length.</td>
                     <td>
-                        <code>length</code>
+                        <pre><code>length</code></pre>
                     </td>
                     <td>The number of nodes in the Queue; the Queue's length.</td>
                 </tr>
             </tbody>
         </table>
         <p>Notice that rather than having a 
-        <code>head</code> and a 
-        <code>tail</code> like Linked Lists, Stacks have a 
-        <code>top</code> and a 
-        <code>bottom</code> , and Queues have a 
-        <code>front</code> and a 
-        <code>back</code> instead. These properties are essentially the same; pointers to the end points of the respective List ADT where important actions way take place. The differences in naming conventions are strictly for human comprehension.</p>
+        <pre><code>head</code></pre> and a 
+        <pre><code>tail</code></pre> like Linked Lists, Stacks have a 
+        <pre><code>top</code></pre> and a 
+        <pre><code>bottom</code></pre> , and Queues have a 
+        <pre><code>front</code></pre> and a 
+        <pre><code>back</code></pre> instead. These properties are essentially the same; pointers to the end points of the respective List ADT where important actions way take place. The differences in naming conventions are strictly for human comprehension.</p>
         <hr />
         <p>Similarly to Linked Lists, the values stored inside a Stack or a Queue are actually contained within Stack Node and Queue Node instances. Stack, Queue, and Singly Linked List Nodes are all identical, but just as a reminder and for the sake of completion, these List Nodes track the following two properties:</p>
         <p>
@@ -3807,13 +3807,13 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <tbody>
                 <tr>
                     <td>
-                        <code>value</code>
+                        <pre><code>value</code></pre>
                     </td>
                     <td>The actual value this node represents.</td>
                 </tr>
                 <tr>
                     <td>
-                        <code>next</code>
+                        <pre><code>next</code></pre>
                     </td>
                     <td>The next node in the Stack (relative to this node).</td>
                 </tr>
@@ -3834,7 +3834,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>push</code>
+                        <pre><code>push</code></pre>
                     </td>
                     <td>Adds a Node to the top of the Stack.</td>
                     <td>Integer - New size of stack</td>
@@ -3842,7 +3842,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>pop</code>
+                        <pre><code>pop</code></pre>
                     </td>
                     <td>Removes a Node from the top of the Stack.</td>
                     <td>Node removed from top of Stack</td>
@@ -3850,7 +3850,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Meta</td>
                     <td>
-                        <code>size</code>
+                        <pre><code>size</code></pre>
                     </td>
                     <td>Returns the current size of the Stack.</td>
                     <td>Integer</td>
@@ -3859,7 +3859,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </table>
         <h2 class="mume-header" id="stack-javascript-implementation">Stack JavaScript Implementation</h2>
         <p>The following code is the preferred implementation of a 
-        <code>Stack</code> ADT:</p>
+        <pre><code>Stack</code></pre> ADT:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">class</span> 
 <span class="token class-name">Node</span> 
@@ -4094,7 +4094,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>enqueue</code>
+                        <pre><code>enqueue</code></pre>
                     </td>
                     <td>Adds a Node to the front of the Queue.</td>
                     <td>Integer - New size of Queue</td>
@@ -4102,7 +4102,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>dequeue</code>
+                        <pre><code>dequeue</code></pre>
                     </td>
                     <td>Removes a Node from the front of the Queue.</td>
                     <td>Node removed from front of Queue</td>
@@ -4110,7 +4110,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Meta</td>
                     <td>
-                        <code>size</code>
+                        <pre><code>size</code></pre>
                     </td>
                     <td>Returns the current size of the Queue.</td>
                     <td>Integer</td>
@@ -4119,7 +4119,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </table>
         <h2 class="mume-header" id="queue-javascript-implementation">Queue JavaScript Implementation</h2>
         <p>The following code is the preferred implementation of a 
-        <code>Queue</code> ADT:</p>
+        <pre><code>Queue</code></pre> ADT:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">class</span> 
 <span class="token class-name">Node</span> 
@@ -4347,49 +4347,49 @@ console.log(tabulatedFib(7));      // =&gt; 13
                 <tr>
                     <td>Access</td>
                     <td>
-                        <code>T(n)</code>
+                        <pre><code>T(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
                 <tr>
                     <td>Search</td>
                     <td>
-                        <code>T(n)</code>
+                        <pre><code>T(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
                 <tr>
                     <td>Insertion</td>
                     <td>
-                        <code>T(1)</code>
+                        <pre><code>T(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(1)</code>
+                        <pre><code>O(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
                 <tr>
                     <td>Deletion</td>
                     <td>
-                        <code>T(1)</code>
+                        <pre><code>T(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(1)</code>
+                        <pre><code>O(1)</code></pre>
                     </td>
                     <td>
-                        <code>O(n)</code>
+                        <pre><code>O(n)</code></pre>
                     </td>
                 </tr>
             </tbody>
@@ -4398,23 +4398,23 @@ console.log(tabulatedFib(7));      // =&gt; 13
         <h4 class="mume-header" id="time-complexity-access-and-search-1">Time Complexity - Access and Search:</h4>
         <p>When the Stack ADT was first conceived, its inventor definitely did not prioritize searching and accessing individual Nodes or values in the list. The same idea applies for the Queue ADT. There are certainly better data structures for speedy search and lookup, and if these operations are a priority for your use case, it would be best to choose something else!</p>
         <p>Search and Access are both linear time operations for Stacks and Queues, and that shouldn't be too unclear. Both ADTs are nearly identical to Linked Lists in this way. The only way to find a Node somewhere in the middle of a Stack or a Queue, is to start at the 
-        <code>top</code> (or the 
-        <code>back</code> ) and traverse downward (or forward) toward the 
-        <code>bottom</code> (or 
-        <code>front</code> ) one node at a time via each Node's 
-        <code>next</code> property.</p>
+        <pre><code>top</code></pre> (or the 
+        <pre><code>back</code></pre> ) and traverse downward (or forward) toward the 
+        <pre><code>bottom</code></pre> (or 
+        <pre><code>front</code></pre> ) one node at a time via each Node's 
+        <pre><code>next</code></pre> property.</p>
         <p>This is a linear time operation, O(n).</p>
         <h4 class="mume-header" id="time-complexity-insertion-and-deletion-1">Time Complexity - Insertion and Deletion:</h4>
         <p>For Stacks and Queues, insertion and deletion is what it's all about. If there is one feature a Stack absolutely must have, it's constant time insertion and removal to and from the 
-        <code>top</code> of the Stack (FIFO). The same applies for Queues, but with insertion occuring at the 
-        <code>back</code> and removal occuring at the 
-        <code>front</code> (LIFO).</p>
+        <pre><code>top</code></pre> of the Stack (FIFO). The same applies for Queues, but with insertion occuring at the 
+        <pre><code>back</code></pre> and removal occuring at the 
+        <pre><code>front</code></pre> (LIFO).</p>
         <p>Think about it. When you add a plate to the top of a stack of plates, do you have to iterate through all of the other plates first to do so? Of course not. You simply add your plate to the top of the stack, and that's that. The concept is the same for removal.</p>
         <p>Therefore, Stacks and Queues have constant time Insertion and Deletion via their 
-        <code>push</code> and 
-        <code>pop</code> or 
-        <code>enqueue</code> and 
-        <code>dequeue</code> methods, O(1).</p>
+        <pre><code>push</code></pre> and 
+        <pre><code>pop</code></pre> or 
+        <pre><code>enqueue</code></pre> and 
+        <pre><code>dequeue</code></pre> methods, O(1).</p>
         <h4 class="mume-header" id="space-complexity-2">Space Complexity:</h4>
         <p>The space complexity of Stacks and Queues is very simple. Whether we are instantiating a new instance of a Stack or Queue to store a set of data, or we are using a Stack or Queue as part of a strategy to solve some problem, Stacks and Queues always store one Node for each value they receive as input.</p>
         <p>For this reason, we always consider Stacks and Queues to have a linear space complexity, O(n).</p>
@@ -4430,11 +4430,11 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <li>Undo/Redo functionality in just about any application. For example:
             <ul>
                 <li>When you're coding in your text editor, each of the actions you take on your keyboard are recorded by 
-                <code>push</code>ing that event to a Stack.</li>
+                <pre><code>push</code></pre>ing that event to a Stack.</li>
                 <li>When you hit cmd + z to undo your most recent action, that event is 
-                <code>pop</code>ed off the Stack, because the last event that occured should be the first one to be undone (LIFO).</li>
+                <pre><code>pop</code></pre>ed off the Stack, because the last event that occured should be the first one to be undone (LIFO).</li>
                 <li>When you hit cmd + y to redo your most recent action, that event is 
-                <code>push</code>ed back onto the Stack.</li>
+                <pre><code>push</code></pre>ed back onto the Stack.</li>
             </ul></li>
         </ul>
         <h4 class="mume-header" id="queues">Queues:</h4>
@@ -4491,13 +4491,13 @@ console.log(tabulatedFib(7));      // =&gt; 13
         <p>Take a moment to use the definitions we explored to verify that each of the three statements above is true. We bring up these three scenarios in particular because they are the simplest types of Binary Trees. We want to eventually build elegant algorithms and these simple scenarios will fuel our design.</p>
         <h3 class="mume-header" id="representing-a-tree-with-node-instances">Representing a Tree with Node Instances</h3>
         <p>Let's explore a common way to represent binary trees using some object oriented design. A tree is a collection of nodes, so let's implement a 
-        <code>TreeNode</code> class. We'll use properties of 
-        <code>left</code> and 
-        <code>right</code> to reference the children of a 
-        <code>TreeNode</code> . That is, 
-        <code>left</code> and 
-        <code>right</code> will reference other 
-        <code>TreeNode</code> s:</p>
+        <pre><code>TreeNode</code></pre> class. We'll use properties of 
+        <pre><code>left</code></pre> and 
+        <pre><code>right</code></pre> to reference the children of a 
+        <pre><code>TreeNode</code></pre> . That is, 
+        <pre><code>left</code></pre> and 
+        <pre><code>right</code></pre> will reference other 
+        <pre><code>TreeNode</code></pre> s:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
     
 <span class="token keyword">class</span> 
@@ -4636,7 +4636,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
             <img src="./DATA-Structures_files/graph_a.png" alt="graph_a" />
         </p>
         <p>To simplify our diagrams, we'll omit the arrowheads on the edges. Moving forward you can assume that the top node is the root and the direction of edges points downward. In other words, node A is the Root. Node A can access node B through 
-        <code>a.left</code> , but Node B cannot access Node A.</p>
+        <pre><code>a.left</code></pre> , but Node B cannot access Node A.</p>
         <p>We now have a data structure we can use to explore Binary Tree algorithms! Creating a tree in this way may be tedious and repetitive, however it allows us to decide exactly what nodes are connected and in what direction. This is will be useful as we account for edge cases in our design.</p>
         <h3 class="mume-header" id="basic-tree-terminology">Basic Tree Terminology</h3>
         <ul>
@@ -4653,7 +4653,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </p>
         <h2 class="mume-header" id="in-order">In-Order</h2>
         <p>Let's begin with the 
-        <code>inOrderPrint</code> function. All three of our algorithms will be recursive and have the same base case. As always, our base case should cover the scenario where the input is trivially small enough so that we don't need to perform further calculation. Since our "problem" is to print all values in a tree, what is the simplest tree we can be given? The empty tree! A common mistake when designing recursive tree algorithms is to make the base case about the root being a leaf, instead we'll want the basecase to cover the root being empty:</p>
+        <pre><code>inOrderPrint</code></pre> function. All three of our algorithms will be recursive and have the same base case. As always, our base case should cover the scenario where the input is trivially small enough so that we don't need to perform further calculation. Since our "problem" is to print all values in a tree, what is the simplest tree we can be given? The empty tree! A common mistake when designing recursive tree algorithms is to make the base case about the root being a leaf, instead we'll want the basecase to cover the root being empty:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">inOrderPrint</span>
@@ -4675,7 +4675,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
 </pre>
         <p>Note that taking in an entire tree as input is really just a matter of taking in the root node. This is because the root node can access every other node through a path of edges. Our base case says, "if the tree is empty, return since there is nothing to print."</p>
         <p>Here is where the meat of the algorithm comes in. Given the root of a tree, the steps for 
-        <code>inOrderPrint</code> are:</p>
+        <pre><code>inOrderPrint</code></pre> are:</p>
         <pre class="language-text">
 - print all nodes in the left subtree
 - print root
@@ -4829,8 +4829,8 @@ console.log(tabulatedFib(7));      // =&gt; 13
 
 </pre>
         <p>Given our tree, 
-        <code>preOrderPrint</code> would print the values in the order: 
-        <code>a, b, d, e, c, f</code></p>
+        <pre><code>preOrderPrint</code></pre> would print the values in the order: 
+        <pre><code>a, b, d, e, c, f</code></pre></p>
         <p>Pre-Order has the patten of self, left, right. This means:</p>
         <ul>
             <li>a node must be printed before it's children</li>
@@ -4838,7 +4838,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </ul>
         <h2 class="mume-header" id="post-order">Post-Order</h2>
         <p>Given the root of a tree, the steps for 
-        <code>postOrderPrint</code> are:</p>
+        <pre><code>postOrderPrint</code></pre> are:</p>
         <pre class="language-text">
 - print all nodes in the left subtree
 - print all nodes in the right subtree
@@ -4886,8 +4886,8 @@ console.log(tabulatedFib(7));      // =&gt; 13
 <span class="token punctuation">}</span>
 </pre>
         <p>Given our Tree, 
-        <code>postOrderPrint</code> would print the values in the order: 
-        <code>d, e, b, f, c, a</code></p>
+        <pre><code>postOrderPrint</code></pre> would print the values in the order: 
+        <pre><code>d, e, b, f, c, a</code></pre></p>
         <p>Post-Order has the pattern of left, right, self. This means:</p>
         <ul>
             <li>a node can only be printed after it's left and right subtrees</li>
@@ -4922,7 +4922,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
         </p>
         <h3 class="mume-header" id="a-bst-is-a-sorted-data-structure">A BST is a Sorted Data Structure</h3>
         <p>So what's the big deal with BSTs? Well, because of the properties of a BST, we can consider the tree as having an order to the values. That means the values are fully sorted! By looking at the three BST examples above, you are probably not convinced of things being sorted. This is because the ordering is encoded by an inorder traversal. Let's recall our previous 
-        <code>inOrderPrint</code> function:</p>
+        <pre><code>inOrderPrint</code></pre> function:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">inOrderPrint</span>
@@ -4964,7 +4964,7 @@ console.log(tabulatedFib(7));      // =&gt; 13
 <span class="token punctuation">}</span>
 </pre>
         <p>If we run 
-        <code>inOrderPrint</code> on the three BSTs, we will get the following output:</p>
+        <pre><code>inOrderPrint</code></pre> on the three BSTs, we will get the following output:</p>
         <pre class="language-text">
 BST 1: 42
 BST 2: 4, 5, 6
@@ -4973,12 +4973,12 @@ BST 3: 1, 5, 7, 10, 16, 16
         <p>For each tree, we printed out values in increasing order! A binary search tree contains sorted data; this will come into play when we perform algorithms on this data structure.</p>
         <h3 class="mume-header" id="naive-bst-implementation">Naive BST Implementation</h3>
         <p>Let's implement a 
-        <code>BST</code> class that will maintain the ordered property through any number of insertions into the tree. We are going to avoid manually creating all nodes and explicitly setting 
-        <code>left</code> s and 
-        <code>right</code> s, so we don't have to worry about breaking order. We'll use our classic 
-        <code>TreeNode</code> as a component of 
-        <code>BST</code> . In addition, we'll need a proper 
-        <code>BST#insert</code> method that will conduct legal insertions on the tree. Interpret the code below and scroll further to our annotated version when you need clarification:</p>
+        <pre><code>BST</code></pre> class that will maintain the ordered property through any number of insertions into the tree. We are going to avoid manually creating all nodes and explicitly setting 
+        <pre><code>left</code></pre> s and 
+        <pre><code>right</code></pre> s, so we don't have to worry about breaking order. We'll use our classic 
+        <pre><code>TreeNode</code></pre> as a component of 
+        <pre><code>BST</code></pre> . In addition, we'll need a proper 
+        <pre><code>BST#insert</code></pre> method that will conduct legal insertions on the tree. Interpret the code below and scroll further to our annotated version when you need clarification:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">class</span> 
 <span class="token class-name">TreeNode</span> 
@@ -5436,20 +5436,20 @@ BST 3: 1, 5, 7, 10, 16, 16
             <img src="./DATA-Structures_files/good_bad_bst.png" alt="good_bad_bst" />
         </p>
         <p>Are you cringing at 
-        <code>tree2</code> ? You should be. Although we have the same values in both trees, they display drastically different structures because of the insertion order we used. This is why we have been referring to our 
-        <code>BST</code> implementation as 
+        <pre><code>tree2</code></pre> ? You should be. Although we have the same values in both trees, they display drastically different structures because of the insertion order we used. This is why we have been referring to our 
+        <pre><code>BST</code></pre> implementation as 
         <strong>naive</strong>. Both of these trees are Binary Search Trees, however not all BSTs are created equal. A worst case BST degenerates into a linked list. The "best" BSTs are 
         <strong>height balanced</strong>, we'll explore this concept soon</p>
         <h3 class="mume-header" id="implementing-binary-search-on-a-bst">Implementing Binary Search on a BST</h3>
         <p>Our goal is to implement a 
-        <code>#search</code> method on our previous 
-        <code>BST</code> class that will solve the problem:</p>
+        <pre><code>#search</code></pre> method on our previous 
+        <pre><code>BST</code></pre> class that will solve the problem:</p>
         <pre class="language-text">
 Given a binary search tree and a target value, return a boolean indicating whether or not the target is
 contained in the tree.
 </pre>
         <p>In other words, our 
-        <code>BST#search</code> should satisfy the following behavior:</p>
+        <pre><code>BST#search</code></pre> should satisfy the following behavior:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">let</span> tree 
 <span class="token operator">=</span> 
@@ -5527,8 +5527,8 @@ tree
 <span class="token comment">// =&gt; false</span>
 </pre>
         <p>As with many tree problems, this problem lends itself nicely to recursion! Like always, our base case should capture the scenario where the input tree is trivial and we know the answer to the problem without further calculation. If the given tree is empty, then we can be certain that the target is not found in the tree. The logic of our 
-        <code>BST#search</code> method will be much the same compared to our 
-        <code>binarySearch</code> function for sorted arrays. Try to interpret the code below and scroll further to the annotated version when you need clarification</p>
+        <pre><code>BST#search</code></pre> method will be much the same compared to our 
+        <pre><code>binarySearch</code></pre> function for sorted arrays. Try to interpret the code below and scroll further to the annotated version when you need clarification</p>
         <pre class="language-text">
 // assuming our BST class from the previous section
 </pre>
@@ -5714,7 +5714,7 @@ tree
 </pre>
         <h3 class="mume-header" id="height-balance">Height Balance</h3>
         <p>Before we analyze the time complexity of 
-        <code>BST#search</code> , we'll first need to learn about height balance. Recalling what we touched on briefly in our chat on binary trees, 
+        <pre><code>BST#search</code></pre> , we'll first need to learn about height balance. Recalling what we touched on briefly in our chat on binary trees, 
         <strong>height</strong> is defined as the number of edges between the root and farthest leaf in a tree. Note that height is dictated by the 
         <strong>farthest</strong> leaf (think worst case):</p>
         <p>
@@ -5725,9 +5725,9 @@ tree
             <img src="./DATA-Structures_files/balanced_unbalanced.png" alt="balanced_unbalanced" />
         </p>
         <p>
-        <code>Tree 1</code> is preferred over 
-        <code>Tree 2</code> , because 
-        <code>Tree 1</code> is 
+        <pre><code>Tree 1</code></pre> is preferred over 
+        <pre><code>Tree 2</code></pre> , because 
+        <pre><code>Tree 1</code></pre> is 
         <strong>balanced</strong>. Balanced Binary Trees will be the most efficient to perform operations on.</p>
         <p>For a binary tree to be 
         <strong>balanced</strong>:</p>
@@ -5748,8 +5748,8 @@ tree
         <h3 class="mume-header" id="time-complexity-analysis-of-binary-search-for-bsts">Time Complexity Analysis of Binary Search for BSTs</h3>
         <p>Worst case for the algorithm occurs when the target value is not present in the tree. This means that we must traverse a path from root to a leaf, so we must travel the full 
         <strong>height</strong> of the tree in the worst case. However, like we discussed, the height of a tree can vary wildly. We can have a tree with minimal height (a balanced tree like 
-        <code>Tree 1</code> ), or we can have a tree with maximal height (a linked list like 
-        <code>Tree 2</code> ).</p>
+        <pre><code>Tree 1</code></pre> ), or we can have a tree with maximal height (a linked list like 
+        <pre><code>Tree 2</code></pre> ).</p>
         <ul>
             <li>
             <strong>O(log(n))</strong> time for a balanced tree:</li>
@@ -5803,29 +5803,29 @@ c.right = f;
         <p>To help verbalize Depth-First (DF), we'll be using a few familial terms to describe the relative positions of the nodes. Think of the words you would use if viewing a family tree! Here are some examples:</p>
         <ul>
             <li>
-            <code>B</code> and 
-            <code>C</code> are siblings</li>
+            <pre><code>B</code></pre> and 
+            <pre><code>C</code></pre> are siblings</li>
             <li>
-            <code>D</code> and 
-            <code>E</code> are descendants of 
-            <code>B</code></li>
+            <pre><code>D</code></pre> and 
+            <pre><code>E</code></pre> are descendants of 
+            <pre><code>B</code></pre></li>
             <li>
-            <code>B</code>, 
-            <code>C</code>, 
-            <code>D</code>, 
-            <code>E</code>, 
-            <code>F</code> are all descendants of 
-            <code>A</code></li>
+            <pre><code>B</code></pre>, 
+            <pre><code>C</code></pre>, 
+            <pre><code>D</code></pre>, 
+            <pre><code>E</code></pre>, 
+            <pre><code>F</code></pre> are all descendants of 
+            <pre><code>A</code></pre></li>
         </ul>
         <p>A Depth-First traversal will continually travel deeper into a tree before switching branches. This means that, given a node, we must visit all of it's descendants before visiting it's sibling.</p>
         <p>Performing DF on our tree will hit the nodes in the order: 
-        <code>A, B, D, E, C, F</code></p>
+        <pre><code>A, B, D, E, C, F</code></pre></p>
         <h3 class="mume-header" id="depth-first-implementation">Depth-First Implementation</h3>
         <p>To travel the nodes of a tree according to Depth-First behavior, we'll utilize a 
         <strong>stack.</strong> Recall from earlier that a stack is LIFO (Last In, First Out). Our strategy is to use an array as a stack. We'll use 
-        <code>push</code> to add to the top of our stack and 
-        <code>pop</code> to remove the top. Below is a complete implementation of 
-        <code>depthFirst</code> . Try to interpret the code below and scroll further to see the annotated version:</p>
+        <pre><code>push</code></pre> to add to the top of our stack and 
+        <pre><code>pop</code></pre> to remove the top. Below is a complete implementation of 
+        <pre><code>depthFirst</code></pre> . Try to interpret the code below and scroll further to see the annotated version:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
     
 <span class="token keyword">function</span> 
@@ -6029,30 +6029,30 @@ c.right = f;
 <span class="token punctuation">}</span>
 </pre>
         <p>Does this code look familiar? It's identical to the 
-        <code>preOrderPrint</code> function we wrote previously. That's right, pre-order and depth-first are identical tree node orderings.</p>
+        <pre><code>preOrderPrint</code></pre> function we wrote previously. That's right, pre-order and depth-first are identical tree node orderings.</p>
         <p>You should study both the iterative and recursive implementations as they will both prove valuable to solving problems.</p>
         <h2 class="mume-header" id="breadth-first">Breadth-First</h2>
         <p>This algorithm has nothing to do with bread. The word "breadth" is the same as "width". To help veribalize Breadth-First (BF) we'll need to understand the simple concept of tree 
         <strong>levels</strong>. With the tree at the top of this reading in mind, we can say the following:</p>
         <ul>
             <li>level 0 contains 
-            <code>A</code></li>
+            <pre><code>A</code></pre></li>
             <li>level 1 contains 
-            <code>B</code>, 
-            <code>C</code></li>
+            <pre><code>B</code></pre>, 
+            <pre><code>C</code></pre></li>
             <li>level 2 contains 
-            <code>D</code>, 
-            <code>E</code>, 
-            <code>F</code></li>
+            <pre><code>D</code></pre>, 
+            <pre><code>E</code></pre>, 
+            <pre><code>F</code></pre></li>
         </ul>
         <p>A Breadth-First traversal will visit all nodes across a level, before moving to the next level. This means we travel laterally as much as we can before going deeper into the tree.</p>
         <p>Perform BF on our tree will hit the nodes in the order: 
-        <code>A, B, C, D, E, F</code></p>
+        <pre><code>A, B, C, D, E, F</code></pre></p>
         <h3 class="mume-header" id="breadth-first-implementation">Breadth-First Implementation</h3>
         <p>While DF uses a stack, BF will use a 
         <strong>queue</strong>. Recall that a queue is FIFO (First In, First Out). The code is very similar to our iterative DF, except we will use an array as a queue. 
-        <code>shift</code> will remove the front of the queue and 
-        <code>push</code> will add to the back of the queue. Interpret the implementation below and scroll further to the annotated version when you need more insight:</p>
+        <pre><code>shift</code></pre> will remove the front of the queue and 
+        <pre><code>push</code></pre> will add to the back of the queue. Interpret the implementation below and scroll further to the annotated version when you need more insight:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
     
 <span class="token keyword">function</span> 
@@ -6233,29 +6233,29 @@ c.right = f;
         <p>Here are some highlights:</p>
         <ul>
             <li>
-            <code>Graph 1</code> lacks a root. This means there is no single node that can access all other nodes in a path through edges. This is important because we previously referenced "entire" trees by referring to the ultimate root. We can no longer do that in a graph. If we provide just 
-            <code>T</code>, you can't access 
-            <code>U</code>. If we provide just 
-            <code>U</code>, you can't access 
-            <code>T</code>. If we provide just 
-            <code>V</code>, you can't access 
-            <code>T</code> or 
-            <code>U</code>.</li>
+            <pre><code>Graph 1</code></pre> lacks a root. This means there is no single node that can access all other nodes in a path through edges. This is important because we previously referenced "entire" trees by referring to the ultimate root. We can no longer do that in a graph. If we provide just 
+            <pre><code>T</code></pre>, you can't access 
+            <pre><code>U</code></pre>. If we provide just 
+            <pre><code>U</code></pre>, you can't access 
+            <pre><code>T</code></pre>. If we provide just 
+            <pre><code>V</code></pre>, you can't access 
+            <pre><code>T</code></pre> or 
+            <pre><code>U</code></pre>.</li>
             <li>
-            <code>Graph 2</code> has a cycle. This means there is no longer a parent-child relationship. Choose any node in 
-            <code>Graph 2</code>, its grandchild will also be its parent. Wait - what? From now on we'll have to use less specific language such as "
-            <code>X</code> is a neighbor of 
-            <code>Y</code>." Perhaps even more deadly, imagine we ran a "simple" Depth-First traversal on this graph. We could get trapped in an infinite loop if we are not careful.</li>
+            <pre><code>Graph 2</code></pre> has a cycle. This means there is no longer a parent-child relationship. Choose any node in 
+            <pre><code>Graph 2</code></pre>, its grandchild will also be its parent. Wait - what? From now on we'll have to use less specific language such as "
+            <pre><code>X</code></pre> is a neighbor of 
+            <pre><code>Y</code></pre>." Perhaps even more deadly, imagine we ran a "simple" Depth-First traversal on this graph. We could get trapped in an infinite loop if we are not careful.</li>
             <li>
-            <code>Graph 3</code> features nodes that have more than 2 edges. Anarchy!</li>
+            <pre><code>Graph 3</code></pre> features nodes that have more than 2 edges. Anarchy!</li>
         </ul>
         <h2 class="mume-header" id="graph-implementations">Graph Implementations</h2>
         <p>There are many ways to represent a graph programmatically. Let's take a moment to explore each and describe the tradeoffs we make when choosing among them. We will use 
-        <code>Graph 3</code> from above as our candidate. Bear in mind that our graph is directed. For example, this means that 
-        <code>C</code> can access 
-        <code>D</code> , but 
-        <code>D</code> cannot access 
-        <code>C</code> .</p>
+        <pre><code>Graph 3</code></pre> from above as our candidate. Bear in mind that our graph is directed. For example, this means that 
+        <pre><code>C</code></pre> can access 
+        <pre><code>D</code></pre> , but 
+        <pre><code>D</code></pre> cannot access 
+        <pre><code>C</code></pre> .</p>
         <h3 class="mume-header" id="graphnode-class">GraphNode Class</h3>
         <p>This implementation is most similar to how we implemented binary trees. That is, we create a node class that maintains a value and an array of references to neighboring nodes. This easily solves the problem that a node can have any number of neighbors, no longer just a left and right.</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
@@ -6369,15 +6369,15 @@ f
         <p>This implementation is great because it feels familiar to how we implemented trees. However, this implementation is clunky in that we have no easy way to refer to the entire graph. How can we pass this graph to a function? Recall that there is no root to act as the definite starting point.</p>
         <h3 class="mume-header" id="adjacency-matrix">Adjacency Matrix</h3>
         <p>This is the often the mathematician's preferred way of representing a graph. We use a 2D array to represent edges. We'll first map each node's value to an index. This means 
-        <code>A -&gt; 0</code> , 
-        <code>B -&gt; 1</code> , 
-        <code>C -&gt; 2</code> , etc.. Below is the mapping for 
-        <code>Graph 3</code> :</p>
+        <pre><code>A -&gt; 0</code></pre> , 
+        <pre><code>B -&gt; 1</code></pre> , 
+        <pre><code>C -&gt; 2</code></pre> , etc.. Below is the mapping for 
+        <pre><code>Graph 3</code></pre> :</p>
         <p>
             <img src="./DATA-Structures_files/adj_matrix_graph.png" alt="adj_matrix_graph" />
         </p>
         <p>From here, the row index will correspond to the source of an edge and the column index will correspond to its destination. A value of 
-        <code>true</code> will mean that there does exist an edge from source to destination.</p>
+        <pre><code>true</code></pre> will mean that there does exist an edge from source to destination.</p>
         <pre class="language-text">
 let matrix = [
 /*          A       B       C       D       E       F   */
@@ -6392,14 +6392,14 @@ let matrix = [
         <p>A few things to note about using an adjacency matrix:</p>
         <ul>
             <li>when the edges have direction, 
-            <code>matrix[i][j]</code> may not be the same as 
-            <code>matrix[j][i]</code></li>
+            <pre><code>matrix[i][j]</code></pre> may not be the same as 
+            <pre><code>matrix[j][i]</code></pre></li>
             <li>it is common to say that a node is adjacent to itself, so 
-            <code>matrix[x][x] === true</code> for any 
-            <code>x</code></li>
+            <pre><code>matrix[x][x] === true</code></pre> for any 
+            <pre><code>x</code></pre></li>
         </ul>
         <p>An advantage of the matrix implementation is that it allows us to refer to the entire graph by simply referring to the 2D array. A huge disadvantage of using a matrix is the space required. To represent a graph of n nodes, we must allocate n2 space for the 2D array. This is even more upsetting when there are few edges in graph. We will have to use n2 space, even though the array would be sparse with only a few 
-        <code>true</code> elements.</p>
+        <pre><code>true</code></pre> elements.</p>
         <h3 class="mume-header" id="adjacency-list">Adjacency List</h3>
         <p>An adjacency list seeks to solve the shortcomings of the matrix implementation. We use an object where keys represent the node labels. The values associated with the keys will be an array containing all adjacent nodes:</p>
         <pre class="language-text">
@@ -6415,15 +6415,15 @@ let graph = {
         <p>An adjacency list is easy to implement and allows us to refer to the entire graph by simply referencing the object. The space required for an adjacency list is the number of edges in the graph. Since there will be at most n2 edges in a graph of n nodes, the adjacency list will use at most the same amount of space as the matrix. You'll find adjacency lists useful when attacking problems that are not explicitly about graphs. We'll elaborate more on this soon.</p>
         <p>Let's explore our classic Depth-First, but for 
         <strong>graphs</strong> this time! We'll be utilizing the 
-        <code>GraphNode</code> and 
-        <code>Adjacency List</code> implementations of the following graph:</p>
+        <pre><code>GraphNode</code></pre> and 
+        <pre><code>Adjacency List</code></pre> implementations of the following graph:</p>
         <p>
             <img src="./DATA-Structures_files/graph.png" alt="graph" />
         </p>
         <p>Since we already discussed the differences between Depth-First and Breadth-First, we'll focus just on Depth-First here. We'll leave the Breadth-First exploration in the upcoming project.</p>
         <h3 class="mume-header" id="graph-traversal-w-graphnode">Graph Traversal w/ GraphNode</h3>
         <p>Let's begin by assuming we have our candidate graph implemented using our 
-        <code>GraphNode</code> class:</p>
+        <pre><code>GraphNode</code></pre> class:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">class</span> 
 <span class="token class-name">GraphNode</span> 
@@ -6533,11 +6533,11 @@ f
 <span class="token punctuation">;</span>
 </pre>
         <p>One thing we'll have to decide on is what node to begin our traversal. Depending on the structure of the graph, there may not be a suitable starting point. Remember that a graph may not have a "root". However in our candidate, 
-        <code>F</code> is like a root. It is the only valid choice because it is the only node that may access all other nodes through some path of edges. We admit, the choice of 
-        <code>F</code> is somewhat contrived and in a practical setting you may not have a nice starting point like this. We'll cover how to overcome this obstacle soon. For now we'll take 
-        <code>F</code> .</p>
+        <pre><code>F</code></pre> is like a root. It is the only valid choice because it is the only node that may access all other nodes through some path of edges. We admit, the choice of 
+        <pre><code>F</code></pre> is somewhat contrived and in a practical setting you may not have a nice starting point like this. We'll cover how to overcome this obstacle soon. For now we'll take 
+        <pre><code>F</code></pre> .</p>
         <p>We want to build a recursive 
-        <code>depthFirstRecur</code> function that accepts a node and performs a Depth-First traversal through the graph. Let's begin with a baseline solution, although it is not yet complete to handle all graphs: // broken</p>
+        <pre><code>depthFirstRecur</code></pre> function that accepts a node and performs a Depth-First traversal through the graph. Let's begin with a baseline solution, although it is not yet complete to handle all graphs: // broken</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
 <span class="token function">depthFirstRecur</span>
@@ -6578,7 +6578,7 @@ f
 <span class="token punctuation">}</span>
 </pre>
         <pre data-role="codeBlock" data-info="" class="language-">
-<code>    depthFirstRecur(f);
+<pre><code>    depthFirstRecur(f);
 
 Can you see where this code goes wrong? It will get caught in an infinite cycle `f, e, a, e, a, e, a, e, ...` ! To fix this, simply store which nodes we have visited already. Whenever we hit a node that has previously been visited, then return early. We'll use JavaScript [Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) to store `visited` because they allow for constant time lookup.
 
@@ -6599,13 +6599,13 @@ Can you see where this code goes wrong? It will get caught in an infinite cycle 
         });
     }
 
-</code>
+</code></pre>
 </pre>
         <pre class="language-text">
 depthFirstRecur(f);
 </pre>
         <p>This code works well and will print the values in the order 
-        <code>f, e, a, c, b, d</code> . Note that this strategy only works if the values are guaranteed to be unique.</p>
+        <pre><code>f, e, a, c, b, d</code></pre> . Note that this strategy only works if the values are guaranteed to be unique.</p>
         <p>If you are averse to recursion (don't be), we can write an iterative version using the same principles:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
 <span class="token keyword">function</span> 
@@ -6757,7 +6757,7 @@ depthFirstIter(f);
 <span class="token punctuation">;</span>
 </pre>
         <p>Bear in mind that the nodes are just strings now, not 
-        <code>GraphNode</code> s. Other than that, the code shares many details from our previous implementations:</p>
+        <pre><code>GraphNode</code></pre> s. Other than that, the code shares many details from our previous implementations:</p>
         <pre class="language-text">
 // using Adjacency List representation
 </pre>
@@ -6827,13 +6827,13 @@ depthFirstIter(f);
 depthFirstRecur('f', graph);
 </pre>
         <p>Cool! We print values in the order 
-        <code>f, e, a, b, c, d</code> . We'll leave the iterative version to you as an exercise for later.</p>
+        <pre><code>f, e, a, b, c, d</code></pre> . We'll leave the iterative version to you as an exercise for later.</p>
         <p>Instead, let's draw our attention to a point from before: having to choose 
-        <code>f</code> as the starting point isn't dynamic enough to be impressive. Also, if we choose a poor initial node, some nodes may be unreachable. For example, choosing 
-        <code>a</code> as the starting point with a call to 
-        <code>depthFirstRecur('a', graph)</code> will only print 
-        <code>a, b, c, d, e</code> . We missed out on 
-        <code>f</code> . Bummer.</p>
+        <pre><code>f</code></pre> as the starting point isn't dynamic enough to be impressive. Also, if we choose a poor initial node, some nodes may be unreachable. For example, choosing 
+        <pre><code>a</code></pre> as the starting point with a call to 
+        <pre><code>depthFirstRecur('a', graph)</code></pre> will only print 
+        <pre><code>a, b, c, d, e</code></pre> . We missed out on 
+        <pre><code>f</code></pre> . Bummer.</p>
         <p>We can fix this. A big advantage of using an Adjacency List is that it contains the full graph! We can use a surrounding loop to allow our traversal to jump between disconnected regions of the graph. Refactoring our code:</p>
         <pre data-role="codeBlock" data-info="js" class="language-javascript">
     
@@ -6936,17 +6936,17 @@ depthFirstRecur('f', graph);
 depthFirst(graph);
 </pre>
         <p>Notice that our main function 
-        <code>depthFirst</code> is iterative and accepts the entire Adjacency List as an arg. Our helper 
-        <code>_depthFirstRecur</code> is recursive. 
-        <code>_depthFirstRecur</code> serves the same job as before, it will explore a full connected region in a graph. The main 
-        <code>depthFirst</code> method will allow us to "bridge" the gap between connection regions.</p>
+        <pre><code>depthFirst</code></pre> is iterative and accepts the entire Adjacency List as an arg. Our helper 
+        <pre><code>_depthFirstRecur</code></pre> is recursive. 
+        <pre><code>_depthFirstRecur</code></pre> serves the same job as before, it will explore a full connected region in a graph. The main 
+        <pre><code>depthFirst</code></pre> method will allow us to "bridge" the gap between connection regions.</p>
         <p>Still fuzzy? Imagine we had the following graph. Before you ask, these are not two separate graphs. This is a 
         <strong>single</strong> graph that contains two connected components. Another term for a graph of this structure is a "Forest" because it contains multiple "Trees", ha:</p>
         <p>
             <img src="./DATA-Structures_files/forest.png" alt="forest" />
         </p>
         <p>It is easy to represent this graph using an Adjacency List. We can then pass the graph into our 
-        <code>depthFirst</code> from above:</p>
+        <pre><code>depthFirst</code></pre> from above:</p>
         <pre class="language-text">
 let graph = {
     'h': ['i', 'j'],
@@ -6958,11 +6958,11 @@ let graph = {
 }
 </pre>
         <pre data-role="codeBlock" data-info="" class="language-">
-<code>    depthFirst(graph);
+<pre><code>    depthFirst(graph);
     // prints h, i, j, k, l, m
 
 Here's the description for how `depthFirst` operates above. We enter `depthFirst` and the for loop begins on `h` . This means we enter our `_depthFirstRecur` , which will continue to explore the "local" region as far as possible. When this recursion ends, we would have explored the entire connected region of `h, i, j, k` (note that we add these nodes to visited as well). Our recursive call then returns to the main `depthFirst` function, where we continue the for loop. We iterate it until we hit an unvisited node ( `l` ) and then explore it's local region as far as possible using `_depthFirstRecur` , hitting the last node `m` .
-</code>
+</code></pre>
 </pre>
     </div>
     <div class="md-sidebar-toc">
