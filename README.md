@@ -3,7 +3,64 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html">
   <meta name="Author" content="Bryan Guner">
-  <title> directory </title>
+  <title> directory   <style> * {
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 17px;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.6;
+      margin: 30px 0 0 0;
+      margin-bottom: 18px;
+      margin-top: 33px;
+      color: #333;
+    }
+
+    h3 {
+      font-size: 30px;
+      margin: 10px 0 20px 0;
+      color: #333;
+    }
+
+    header {
+      width: 640px;
+      margin: auto;
+    }
+
+    section {
+      width: 640px;
+      margin: auto;
+    }
+
+    section p {
+      margin-bottom: 27px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    section img {
+      max-width: 640px;
+    }
+
+    footer {
+      padding: 0 20px;
+      margin: 50px 0;
+      text-align: center;
+      font-size: 12px;
+    }</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.4.0/css/grid.min.css">
   <link rel=stylesheet href="./style.css">
   <link rel="stylesheet" href="./toc.css">
@@ -57,7 +114,64 @@ clear: both;
   <link rel="stylesheet" href="./assets/prism.css">
   <link rel="stylesheet" href="./assets/style.css">
   <script async defer src="./assets/prism.js"></script>
-  <title> directory </title>
+  <title> directory   <style> * {
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 17px;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.6;
+      margin: 30px 0 0 0;
+      margin-bottom: 18px;
+      margin-top: 33px;
+      color: #333;
+    }
+
+    h3 {
+      font-size: 30px;
+      margin: 10px 0 20px 0;
+      color: #333;
+    }
+
+    header {
+      width: 640px;
+      margin: auto;
+    }
+
+    section {
+      width: 640px;
+      margin: auto;
+    }
+
+    section p {
+      margin-bottom: 27px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    section img {
+      max-width: 640px;
+    }
+
+    footer {
+      padding: 0 20px;
+      margin: 50px 0;
+      text-align: center;
+      font-size: 12px;
+    }</style>
 
   <style>
     body {
