@@ -113,7 +113,8 @@ clear: both;
     <script async defer src="./assets/prism.js"></script>
     </head>
 
-    <body>
+    <body> <a href="https://604a9a491d62aa00071b4153--youthful-mahavira-d6eff7.netlify.app/"> ✅HOME &nbsp;</a>
+
       <div id="ToC" class="my_class " style="font-weight:800;">
 
   RESIZABLE(bottom right corner)</div>
