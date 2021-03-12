@@ -1,5 +1,4 @@
-/* PrismJS 1.23.0
-https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+bash+c+cpp+css-extras+docker+git+go+graphql+groovy+http+json+json5+jsonp+jsstacktrace+js-templates+markdown+markup-templating+matlab+mongodb+perl+php+powershell+python+racket+jsx+tsx+regex+rest+ruby+rust+sas+sass+scss+scheme+sql+typescript+xml-doc+yaml&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language+highlight-keywords+inline-color+autoloader+command-line+toolbar+copy-to-clipboard+download-button+match-braces+treeview */
+
 /**
  * prism.js Twilight theme
  * Based (more or less) on the Twilight theme originally of Textmate fame.
@@ -10,9 +9,9 @@ pre[class*="language-"] {
     color: white;
     background: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 1em;
+    font-size: 18px;
     text-align: left;
-    text-shadow: 0 -.1em .2em black;
+zoom:3;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
@@ -582,7 +581,7 @@ span.inline-color {
 .token.treeview-part .entry-name:before {
     content: "\ea01";
     font-family: "PrismTreeview";
-    font-size: inherit;
+    /* font-size: inherit; */
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
