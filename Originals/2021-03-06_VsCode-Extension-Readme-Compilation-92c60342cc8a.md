@@ -840,7 +840,7 @@ Please use the following to insert a page break.
 -   [Backslash false encoded
     [\#124](https://github.com/yzane/vscode-markdown-pdf/issues/124){.markup--anchor
     .markup--li-anchor}]{#132d}
--   [Errors in which í•œê¸€(korean word) is not properly printed
+-   [Errors in which í*œê¸&euro;(korean word) is not properly printed
     [\#148](https://github.com/yzane/vscode-markdown-pdf/issues/148){.markup--anchor
     .markup--li-anchor}]{#2aa7}
 -   [Fix: Improve the configuration schema of package.json]{#cc46}

@@ -68,6 +68,7 @@ Documents">
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body class="font-sans border-t-8 border-blue-darker bg-grey-lightest">
   <div class="flex flex-col h-screen">
     <div id="app" class="flex-auto">
@@ -3099,21 +3100,21 @@ Documents">
   <script src="https://gistlog.co/js/app.js"></script>
   <script>
     ( function () {
-    autosize( document.querySelectorAll( 'textarea' ) );
+      autosize( document.querySelectorAll( 'textarea' ) );
     } )();
   </script>
   <script>
     ( function () {
-    const alerts = document.querySelectorAll( '.js-auto_dismiss' );
-    if ( typeof ( alerts ) !== undefined ) {
-    alerts.forEach( ( el ) => setTimeout( () => fadeOut( el ), 4500 ) );
+      const alerts = document.querySelectorAll( '.js-auto_dismiss' );
+      if ( typeof ( alerts ) !== undefined ) {
+        alerts.forEach( ( el ) => setTimeout( () => fadeOut( el ), 4500 ) );
       }
     } )();
 
     function fadeOut( el ) {
       el.style.opacity = 1;
       ( function fade() {
-      if ( ( el.style.opacity -= .1 ) < 0 ) {
+        if ( ( el.style.opacity -= .1 ) < 0 ) {
           el.style.display = "none";
         } else {
           requestAnimationFrame( fade );

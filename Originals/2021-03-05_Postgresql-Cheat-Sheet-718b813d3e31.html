@@ -228,22 +228,33 @@
             <pre name="fa48" id="fa48"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT column_1 AS new_column_1, ...<br>FROM table;</code></pre>
             <p name="f4d7" id="f4d7" class="graf graf--p graf-after--pre">Query data using the <code
-                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-like/" data-href="https://www.postgresqltutorial.com/postgresql-like/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">LIKE</a></code>
+                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-like/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-like/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">LIKE</a></code>
               operator:</p>
             <pre name="78a0" id="78a0"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table_name<br>WHERE column LIKE &#39;%value%&#39;</code></pre>
             <p name="79b2" id="79b2" class="graf graf--p graf-after--pre">Query data using the <code
-                class="markup--code markup--p-code u-paddingRight0 u-marginRight0"><a href="https://www.postgresqltutorial.com/postgresql-between/" data-href="https://www.postgresqltutorial.com/postgresql-between/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">BETWEEN</a> </code>operator:
+                class="markup--code markup--p-code u-paddingRight0 u-marginRight0"><a
+                  href="https://www.postgresqltutorial.com/postgresql-between/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-between/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">BETWEEN</a>
+              </code>operator:
             </p>
             <pre name="4d45" id="4d45"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table_name<br>WHERE column BETWEEN low AND high;</code></pre>
             <p name="006a" id="006a" class="graf graf--p graf-after--pre">Query data using the <code
-                class="markup--code markup--p-code u-paddingRight0 u-marginRight0"><a href="https://www.postgresqltutorial.com/postgresql-in/" data-href="https://www.postgresqltutorial.com/postgresql-in/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">IN</a> </code>operator:
+                class="markup--code markup--p-code u-paddingRight0 u-marginRight0"><a
+                  href="https://www.postgresqltutorial.com/postgresql-in/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-in/" class="markup--anchor markup--p-anchor"
+                  rel="nofollow noopener" target="_blank">IN</a> </code>operator:
             </p>
             <pre name="5367" id="5367"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table_name<br>WHERE column IN (value1, value2,...);</code></pre>
             <p name="40b8" id="40b8" class="graf graf--p graf-after--pre">Constrain the returned rows with the <code
-                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-limit/" data-href="https://www.postgresqltutorial.com/postgresql-limit/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">LIMIT</a></code>
+                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-limit/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-limit/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">LIMIT</a></code>
               clause:</p>
             <pre name="58d9" id="58d9"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table_name<br>LIMIT limit OFFSET offset<br>ORDER BY column_name;</code></pre>
@@ -273,24 +284,33 @@
             <pre name="6901" id="6901"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT select_list<br>FROM table<br>ORDER BY column ASC [DESC], column2 ASC [DESC],...;</code></pre>
             <p name="0667" id="0667" class="graf graf--p graf-after--pre">Group rows using <code
-                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-group-by/" data-href="https://www.postgresqltutorial.com/postgresql-group-by/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">GROUP BY</a></code>
+                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-group-by/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-group-by/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">GROUP BY</a></code>
               clause.</p>
             <pre name="c594" id="c594"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT *<br>FROM table<br>GROUP BY column_1, column_2, ...;</code></pre>
             <p name="b5c6" id="b5c6" class="graf graf--p graf-after--pre">Filter groups using the <code
-                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-having/" data-href="https://www.postgresqltutorial.com/postgresql-having/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">HAVING</a></code>
+                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-having/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-having/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">HAVING</a></code>
               clause.</p>
             <pre name="6a2a" id="6a2a"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT *<br>FROM table<br>GROUP BY column_1<br>HAVING condition;</code></pre>
             <h3 name="7e5a" id="7e5a" class="graf graf--h3 graf-after--pre">Set operations</h3>
             <p name="73cb" id="73cb" class="graf graf--p graf-after--h3">Combine the result set of two or more queries
-              with <code
-                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-union/" data-href="https://www.postgresqltutorial.com/postgresql-union/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">UNION</a></code>
+              with <code class="markup--code markup--p-code"><a
+                  href="https://www.postgresqltutorial.com/postgresql-union/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-union/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">UNION</a></code>
               operator:</p>
             <pre name="f700" id="f700"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table1<br>UNION<br>SELECT * FROM table2;</code></pre>
             <p name="95ad" id="95ad" class="graf graf--p graf-after--pre">Minus a result set using <code
-                class="markup--code markup--p-code"><a href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/" data-href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">EXCEPT</a></code>
+                class="markup--code markup--p-code"><a
+                  href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/"
+                  data-href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/"
+                  class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">EXCEPT</a></code>
               operator:</p>
             <pre name="cb48" id="cb48"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table1<br>EXCEPT<br>SELECT * FROM table2;</code></pre>
@@ -449,7 +469,8 @@
             <ul class="postList">
               <li name="4ffd" id="4ffd" class="graf graf--li graf-after--p">Lets see browser usage:</li>
               <li name="261c" id="261c" class="graf graf--li graf-after--li"><code
-                  class="markup--code markup--li-code">SELECT browser-&gt;&gt;&#39;name&#39; AS browser, count(browser) FROM events GROUP BY browser-&gt;&gt;&#39;name&#39;;</code>
+                  class="markup--code markup--li-code">SELECT browser-&gt;&gt;&#39;name&#39; AS browser, count(browser)
+                  FROM events GROUP BY browser-&gt;&gt;&#39;name&#39;;</code>
               </li>
             </ul>
             <p name="d3d9" id="d3d9" class="graf graf--p graf-after--li">Output:</p>
@@ -460,7 +481,9 @@
               <li name="946c" id="946c" class="graf graf--li graf-after--figure">Total revenue per visitor:</li>
             </ul>
             <p name="5472" id="5472" class="graf graf--p graf-after--li"><code
-                class="markup--code markup--p-code">SELECT visitor_id, SUM(CAST(properties-&gt;&gt;&#39;amount&#39; AS integer)) AS total FROM events WHERE CAST(properties-&gt;&gt;&#39;amount&#39; AS integer) &gt; 0 GROUP BY visitor_id;</code>
+                class="markup--code markup--p-code">SELECT visitor_id, SUM(CAST(properties-&gt;&gt;&#39;amount&#39; AS
+                integer)) AS total FROM events WHERE CAST(properties-&gt;&gt;&#39;amount&#39; AS integer) &gt; 0 GROUP
+                BY visitor_id;</code>
             </p>
             <p name="7d27" id="7d27" class="graf graf--p graf-after--p">Output:</p>
             <figure name="cbce" id="cbce" class="graf graf--figure graf-after--p"><img class="graf-image"
@@ -469,7 +492,10 @@
             <ul class="postList">
               <li name="9850" id="9850" class="graf graf--li graf-after--figure">Average screen resolution</li>
               <li name="132f" id="132f" class="graf graf--li graf-after--li"><code
-                  class="markup--code markup--li-code">SELECT AVG(CAST(browser-&gt;&#39;resolution&#39;-&gt;&gt;&#39;x&#39; AS integer)) AS width, AVG(CAST(browser-&gt;&#39;resolution&#39;-&gt;&gt;&#39;y&#39; AS integer)) AS height FROM events;</code>
+                  class="markup--code markup--li-code">SELECT
+                  AVG(CAST(browser-&gt;&#39;resolution&#39;-&gt;&gt;&#39;x&#39; AS integer)) AS width,
+                  AVG(CAST(browser-&gt;&#39;resolution&#39;-&gt;&gt;&#39;y&#39; AS integer)) AS height FROM
+                  events;</code>
               </li>
             </ul>
             <p name="b5a2" id="b5a2" class="graf graf--p graf-after--li">Output:</p>

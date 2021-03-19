@@ -166,21 +166,21 @@ If given a linked">
   <script src="https://gistlog.co/js/app.js"></script>
   <script>
     ( function () {
-    autosize( document.querySelectorAll( 'textarea' ) );
+      autosize( document.querySelectorAll( 'textarea' ) );
     } )();
   </script>
   <script>
     ( function () {
-    const alerts = document.querySelectorAll( '.js-auto_dismiss' );
-    if ( typeof ( alerts ) !== undefined ) {
-    alerts.forEach( ( el ) => setTimeout( () => fadeOut( el ), 4500 ) );
+      const alerts = document.querySelectorAll( '.js-auto_dismiss' );
+      if ( typeof ( alerts ) !== undefined ) {
+        alerts.forEach( ( el ) => setTimeout( () => fadeOut( el ), 4500 ) );
       }
     } )();
 
     function fadeOut( el ) {
       el.style.opacity = 1;
       ( function fade() {
-      if ( ( el.style.opacity -= .1 ) < 0 ) {
+        if ( ( el.style.opacity -= .1 ) < 0 ) {
           el.style.display = "none";
         } else {
           requestAnimationFrame( fade );

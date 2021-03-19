@@ -7591,7 +7591,7 @@ Equivalent to \[0--9\].
 
 `\D` 
 
-Equivalent to \[⁰-9\].
+Equivalent to \[<sup>0</sup>-9\].
 
 `[\b]` 
 

@@ -193,7 +193,7 @@ length of a string.**
 
 ```
  {#425a .graf .graf--pre .graf-after--p name="425a"}
-print(len(“Spaghetti”)) # => 9
+print(len("Spaghetti")) # => 9
 ```
 
 
@@ -203,13 +203,13 @@ print(len(“Spaghetti”)) # => 9
 
 ```
  {#7d56 .graf .graf--pre .graf-after--h4 name="7d56"}
-print(“Spaghetti”[-1]) # => i 
+print("Spaghetti"[-1]) # => i 
 ```
 
 
 ```
  {#f11f .graf .graf--pre .graf-after--pre name="f11f"}
-print(“Spaghetti”[-4]) # => e
+print("Spaghetti"[-4]) # => e
 ```
 
 
@@ -225,9 +225,9 @@ initialization if it were not for this bit of syntactic sugar.)*
 
 ```
  {#f1fb .graf .graf--pre .graf-after--p name="f1fb"}
-print(“Spaghetti”[1:4]) # => pag 
-print(“Spaghetti”[4:-1]) # => hett 
-print(“Spaghetti”[4:4]) # => (empty string)
+print("Spaghetti"[1:4]) # => pag 
+print("Spaghetti"[4:-1]) # => hett 
+print("Spaghetti"[4:4]) # => (empty string)
 ```
 
 
@@ -885,16 +885,16 @@ greeting("Monica", saying="Hi")
 
 ```
  {#c199 .graf .graf--pre .graf-after--blockquote name="c199"}
-shopping_list = [‘bread’,’milk’,’eggs’]
-print(‘,’.join(shopping_list))
+shopping_list = ['bread','milk','eggs']
+print(','.join(shopping_list))
  
 
 ### Comma Thousands Separator {#5fda .graf .graf--h3 .graf-after--pre name="5fda"}
 
 ```
  {#5939 .graf .graf--pre .graf-after--h3 name="5939"}
-print(‘{:,}’.format(1234567890))
-‘1,234,567,890’
+print('{:,}'.format(1234567890))
+'1,234,567,890'
 ```
 
 
@@ -903,8 +903,8 @@ print(‘{:,}’.format(1234567890))
 ```
  {#94fd .graf .graf--pre .graf-after--h3 name="94fd"}
 d = datetime.datetime(2020, 7, 4, 12, 15, 58)
-print(‘{:%Y-%m-%d %H:%M:%S}’.format(d))
-‘2020–07–04 12:15:58’
+print('{:%Y-%m-%d %H:%M:%S}'.format(d))
+'2020–07–04 12:15:58'
 ```
 
 
@@ -914,7 +914,7 @@ print(‘{:%Y-%m-%d %H:%M:%S}’.format(d))
  {#4b6c .graf .graf--pre .graf-after--h3 name="4b6c"}
 points = 190
 total = 220
-print(‘Correct answers: {:.2%}’.format(points/total))
+print('Correct answers: {:.2%}'.format(points/total))
 Correct answers: 86.36%
 ```
 
@@ -924,18 +924,18 @@ Correct answers: 86.36%
 ```
  {#198e .graf .graf--pre .graf-after--h3 name="198e"}
 width=8
-print(‘ decimal hex binary’)
-print(‘-’*27)
+print(' decimal hex binary')
+print('-'*27)
 for num in range(1,16):
-for base in ‘dXb’:
-print(‘{0:{width}{base}}’.format(num, base=base, width=width), end=’ ‘)
+for base in 'dXb':
+print('{0:{width}{base}}'.format(num, base=base, width=width), end=' ')
 print()
 Getting Input from the Command Line
 Python runs synchronously, all programs and processes will stop when listening for a user input.
-The input function shows a prompt to a user and waits for them to type ‘ENTER’.
+The input function shows a prompt to a user and waits for them to type 'ENTER'.
 Scripts vs Programs
 Programming Script : A set of code that runs in a linear fashion.
-The largest difference between scripts and programs is the level of complexity and purpose. Programs typically have many UI’s.
+The largest difference between scripts and programs is the level of complexity and purpose. Programs typically have many UI's.
 ```
 
 
@@ -983,7 +983,7 @@ Interface)*
 ```
  {#7f66 .graf .graf--pre .graf-after--h3 name="7f66"}
 empty_list = []
-departments = [‘HR’,’Development’,’Sales’,’Finance’,’IT’,’Customer Support’]
+departments = ['HR','Development','Sales','Finance','IT','Customer Support']
 ```
 
 
@@ -1009,7 +1009,7 @@ print(4 in [1, 2, 3]) #> False
 
 ```
  {#9549 .graf .graf--pre .graf-after--h4 name="9549"}
-time_blocks = (‘AM’,’PM’)
+time_blocks = ('AM','PM')
 ```
 
 
@@ -1017,7 +1017,7 @@ time_blocks = (‘AM’,’PM’)
 
 ```
  {#f1f1 .graf .graf--pre .graf-after--h4 name="f1f1"}
-colors = ‘red’,’blue’,’green’
+colors = 'red','blue','green'
 numbers = 1, 2, 3
 ```
 
@@ -1026,7 +1026,7 @@ numbers = 1, 2, 3
 
 ```
  {#9cb9 .graf .graf--pre .graf-after--h4 name="9cb9"}
-tuple(‘abc’) # returns (‘a’, ‘b’, ‘c’)
+tuple('abc') # returns ('a', 'b', 'c')
 tuple([1,2,3]) # returns (1, 2, 3)
 # Think of tuples as constant variables.
 ```
@@ -1060,9 +1060,9 @@ for let(i = 0; i = 0; i++)
 
 ```
  {#43ed .graf .graf--pre .graf-after--h4 name="43ed"}
-a = {‘one’:1, ‘two’:2, ‘three’:3}
+a = {'one':1, 'two':2, 'three':3}
 b = dict(one=1, two=2, three=3)
-c = dict([(‘two’, 2), (‘one’, 1), (‘three’, 3)])
+c = dict([('two', 2), ('one', 1), ('three', 3)])
 # a, b, and c are all equal
 ```
 
@@ -1093,7 +1093,7 @@ Sets created by putting comma seperated values inside braces:**
 
 ```
  {#d97e .graf .graf--pre .graf-after--p name="d97e"}
-school_bag = {‘book’,’paper’,’pencil’,’pencil’,’book’,’book’,’book’,’eraser’}
+school_bag = {'book','paper','pencil','pencil','book','book','book','eraser'}
 print(school_bag)
 ```
 
@@ -1102,7 +1102,7 @@ print(school_bag)
 
 ```
  {#6ad6 .graf .graf--pre .graf-after--h4 name="6ad6"}
-letters = set(‘abracadabra’)
+letters = set('abracadabra')
 print(letters)
 #Built-In Functions
 #Functions using iterables
@@ -1130,7 +1130,7 @@ to a series of tuples**
 
 ```
  {#64d4 .graf .graf--pre .graf-after--p name="64d4"}
-quarters = [‘First’, ‘Second’, ‘Third’, ‘Fourth’]
+quarters = ['First', 'Second', 'Third', 'Fourth']
 print(enumerate(quarters))
 print(enumerate(quarters, start=1))
 ```
@@ -1232,9 +1232,9 @@ Always Includes:
 **You can use the range function as the iterable for the for loop.**
 
  ame="9439"}
-print(‘My name is’)
+print('My name is')
 for i in range(5):
-print(‘Carlita Cinco (‘ + str(i) + ‘)’)
+print('Carlita Cinco (' + str(i) + ')')
 ```
 
 
@@ -1245,7 +1245,7 @@ for num in range(101):
 total += num
 print(total)
 Looping over a list in Python
-for c in [‘a’, ‘b’, ‘c’]:
+for c in ['a', 'b', 'c']:
 print(c)
 ```
 
@@ -1263,9 +1263,9 @@ loop to iterate over the indices of the list.***
 
 ```
  {#e5df .graf .graf--pre .graf-after--p name="e5df"}
-supplies = [‘pens’, ‘staplers’, ‘flame-throwers’, ‘binders’]
+supplies = ['pens', 'staplers', 'flame-throwers', 'binders']
 for i in range(len(supplies)):
-print(‘Index ‘ + str(i) + ‘ in supplies is: ‘ + supplies[i])
+print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
 ```
 
 
@@ -1275,7 +1275,7 @@ print(‘Index ‘ + str(i) + ‘ in supplies is: ‘ + supplies[i])
  {#ce98 .graf .graf--pre .graf-after--p name="ce98"}
 l = 1, 2], [3, 4], [5, 6
 for a, b in l:
-print(a, ‘, ‘, b)
+print(a, ', ', b)
 ```
 
 
@@ -1289,7 +1289,7 @@ print(a, ‘, ‘, b)
 
 ```
  {#5888 .graf .graf--pre .graf-after--p name="5888"}
-spam = {‘color’: ‘red’, ‘age’: 42}
+spam = {'color': 'red', 'age': 42}
 for v in spam.values():
 print(v)
 ```
@@ -1330,7 +1330,7 @@ print(i)
 ```
  {#e21f .graf .graf--pre .graf-after--p name="e21f"}
 for k, v in spam.items():
-print(‘Key: ‘ + k + ‘ Value: ‘ + str(v))
+print('Key: ' + k + ' Value: ' + str(v))
 ```
 
 
@@ -1342,7 +1342,7 @@ print(‘Key: ‘ + k + ‘ Value: ‘ + str(v))
 
 ```
  {#e44e .graf .graf--pre .graf-after--p name="e44e"}
-for c in “abcdefg”:
+for c in "abcdefg":
 print(c)
 ```
 
@@ -1367,7 +1367,7 @@ pass
 
 ```
  {#137b .graf .graf--pre .graf-after--pre .graf--trailing name="137b"}
-def example2(arg_1, arg_2, *args, kw_1=”shark”, kw_2=”blowfish”, **kwargs):
+def example2(arg_1, arg_2, *args, kw_1="shark", kw_2="blowfish", **kwargs):
 pass
 ```
 

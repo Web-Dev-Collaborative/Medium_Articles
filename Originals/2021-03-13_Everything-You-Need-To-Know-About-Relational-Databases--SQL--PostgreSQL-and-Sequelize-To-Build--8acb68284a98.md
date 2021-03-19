@@ -456,7 +456,7 @@ autoincremented, so we provide DEFAULT for this field
  {#db9b .graf .graf--pre .graf-after--p name="db9b"}
 INSERT INTO friends (id, first_name, last_name)
 VALUES
-(DEFAULT, ‘Amy’, ‘Pond’);
+(DEFAULT, 'Amy', 'Pond');
 ```
 
 
@@ -467,10 +467,10 @@ value will be used if none is provided
  {#a343 .graf .graf--pre .graf-after--p name="a343"}
 INSERT INTO friends (first_name, last_name)
 VALUES
-(‘Rose’, ‘Tyler’),
-(‘Martha’, ‘Jones’),
-(‘Donna’, ‘Noble’),
-(‘River’, ‘Song’);
+('Rose', 'Tyler'),
+('Martha', 'Jones'),
+('Donna', 'Noble'),
+('River', 'Song');
 ```
 
 
@@ -495,7 +495,7 @@ VALUES
 UPDATE
 pets
 SET
-(name, breed) = (‘Floofy’, ‘Fluffy Dog Breed’) WHERE id = 4;
+(name, breed) = ('Floofy', 'Fluffy Dog Breed') WHERE id = 4;
 ```
 
 
@@ -517,7 +517,7 @@ Floofy, a name Doggo, or an id of 3.
 DELETE FROM
 pets
 WHERE
-name IN (‘Floofy’, ‘Doggo’) OR id = 3;
+name IN ('Floofy', 'Doggo') OR id = 3;
 ```
 
 
@@ -583,13 +583,13 @@ succeed or fail operation**
  {#de92 .graf .graf--pre .graf-after--li name="de92"}
 BEGIN;
 UPDATE accounts SET balance = balance — 100.00
-WHERE name = ‘Alice’;
+WHERE name = 'Alice';
 UPDATE branches SET balance = balance — 100.00
-WHERE name = (SELECT branch_name FROM accounts WHERE name = ‘Alice’);
+WHERE name = (SELECT branch_name FROM accounts WHERE name = 'Alice');
 UPDATE accounts SET balance = balance + 100.00
-WHERE name = ‘Bob’;
+WHERE name = 'Bob';
 UPDATE branches SET balance = balance + 100.00
-WHERE name = (SELECT branch_name FROM accounts WHERE name = ‘Bob’);
+WHERE name = (SELECT branch_name FROM accounts WHERE name = 'Bob');
 COMMIT;
 ```
 
@@ -599,8 +599,8 @@ COMMIT;
 BEGIN;
 EXPLAIN ANALYZE
 UPDATE cities
-SET city = ‘New York City’
-WHERE city = ‘New York’;
+SET city = 'New York City'
+WHERE city = 'New York';
 ROLLBACK;
 ```
 
@@ -668,7 +668,7 @@ Pool class to query a PostgreSQL-managed database
 
 ```
  {#a04e .graf .graf--pre .graf-after--li name="a04e"}
-const { Pool } = require(‘pg’);
+const { Pool } = require('pg');
 ```
 
 
@@ -678,7 +678,7 @@ in to psql are used:
 
 ```
  {#2cb8 .graf .graf--pre .graf-after--p name="2cb8"}
-const pool = new Pool({ username: ‘<<username>>’, password: ‘<<password>>’, database: ‘<<database>>’})
+const pool = new Pool({ username: '<<username>>', password: '<<password>>', database: '<<database>>'})
 ```
 
 
@@ -741,7 +741,7 @@ pool.end(); // invoking end() will close our connection to the database\
 ```
  {#20be .graf .graf--pre .graf-after--p name="20be"}
 // Get the airport name from the command line and store it
-// in the variable “name”. Pass that value to the
+// in the variable "name". Pass that value to the
 // selectAirportsByName function.
 const name = process.argv[2];
 // console.log(name);
@@ -758,7 +758,7 @@ selectAirportsByName(name);
 -   [npm init -y]{#7bf0}
 -   [Add in the packages we will need (sequelize, sequelize-cli, and
     pg)]{#564b}
--   [npm install sequelize\@⁵.0.0 sequelize-cli\@⁵.0.0 pg\@⁸.0.0]{#9c9b}
+-   [npm install sequelize\@<sup>5</sup>.0.0 sequelize-cli\@<sup>5</sup>.0.0 pg\@<sup>8</sup>.0.0]{#9c9b}
 -   [Initialize sequelize in our project]{#0b1c}
 -   [npx sequelize-cli init]{#8052}
 -   [Create a database user with credentials we will use for the
@@ -802,29 +802,29 @@ CREATE DATABASE example_app_production WITH OWNER example_user
 ```
  {#3bab .graf .graf--pre .graf-after--li name="3bab"}
 {
-“development”: {
-“username”: “sequelize_recipe_box_app”,
-“password”: “HfKfK79k”,
-“database”: “recipe_box_development”,
-“host”: “127.0.0.1”,
-“dialect”: “postgres”,
-“seederStorage”: “sequelize”
+"development": {
+"username": "sequelize_recipe_box_app",
+"password": "HfKfK79k",
+"database": "recipe_box_development",
+"host": "127.0.0.1",
+"dialect": "postgres",
+"seederStorage": "sequelize"
 },
-“test”: {
-“username”: “sequelize_recipe_box_app”,
-“password”: “HfKfK79k”,
-“database”: “recipe_box_test”,
-“host”: “127.0.0.1”,
-“dialect”: “postgres”,
-“seederStorage”: “sequelize”
+"test": {
+"username": "sequelize_recipe_box_app",
+"password": "HfKfK79k",
+"database": "recipe_box_test",
+"host": "127.0.0.1",
+"dialect": "postgres",
+"seederStorage": "sequelize"
 },
-“production”: {
-“username”: “sequelize_recipe_box_app”,
-“password”: “HfKfK79k”,
-“database”: “recipe_box_production”,
-“host”: “127.0.0.1”,
-“dialect”: “postgres”,
-“seederStorage”: “sequelize”
+"production": {
+"username": "sequelize_recipe_box_app",
+"password": "HfKfK79k",
+"database": "recipe_box_production",
+"host": "127.0.0.1",
+"dialect": "postgres",
+"seederStorage": "sequelize"
 }
 }
 ```
@@ -841,7 +841,7 @@ application in a source-control enabled way
 
 ```
  {#7ce9 .graf .graf--pre .graf-after--li name="7ce9"}
-npx sequelize-cli model:generate — name Cat — attributes “firstName:string,specialSkill:string”
+npx sequelize-cli model:generate — name Cat — attributes "firstName:string,specialSkill:string"
 ```
 
 
@@ -959,7 +959,7 @@ const columnMapping = {
 
 ```
  {#efeb .graf .graf--pre .graf-after--pre name="efeb"}
-through: ‘PetOwner’,
+through: 'PetOwner',
 ```
 
 
@@ -971,13 +971,13 @@ through: ‘PetOwner’,
 
 ```
  {#5397 .graf .graf--pre .graf-after--pre name="5397"}
-otherKey: ‘petId’,
+otherKey: 'petId',
 ```
 
 
 ```
  {#433e .graf .graf--pre .graf-after--pre name="433e"}
-// key that connects to other table we have a many association with foreignKey: ‘ownerId’
+// key that connects to other table we have a many association with foreignKey: 'ownerId'
 ```
 
 
@@ -1013,7 +1013,7 @@ Owner.belongsToMany( models.Pet, columnMapping );
 
 ```
  {#4e21 .graf .graf--pre .graf-after--pre name="4e21"}
-const columnMapping = { through: ‘PetOwner’,
+const columnMapping = { through: 'PetOwner',
 ```
 
 
@@ -1025,7 +1025,7 @@ const columnMapping = { through: ‘PetOwner’,
 
 ```
  {#dfb9 .graf .graf--pre .graf-after--pre name="dfb9"}
-otherKey: ‘ownerId’,
+otherKey: 'ownerId',
 ```
 
 
@@ -1037,7 +1037,7 @@ otherKey: ‘ownerId’,
 
 ```
  {#2493 .graf .graf--pre .graf-after--pre name="2493"}
-foreignKey: ‘petId’
+foreignKey: 'petId'
 ```
 
 
@@ -1097,13 +1097,13 @@ up: (queryInterface, Sequelize) => {
  {#d6ae .graf .graf--pre .graf-after--li name="d6ae"}
 // If we want to specify what to remove:
 down: (queryInterface, Sequelize) => {
-return queryInterface.bulkDelete(‘<<TableName>>’, {
+return queryInterface.bulkDelete('<<TableName>>', {
 field1: [value1a, value1b, value1c], //…etc.
 });
 };
 // If we want to remove everything from the table:
 down: (queryInterface, Sequelize) => {
-return queryInterface.bulkDelete(‘<<TableName>>’, null, {});
+return queryInterface.bulkDelete('<<TableName>>', null, {});
 };
 ```
 
@@ -1184,7 +1184,7 @@ console.log(JSON.stringify(cats, null, 2));
 
 ```
  {#c50b .graf .graf--pre .graf-after--li name="c50b"}
-const cats = await Cat.findAll({ where: { firstName: “Markov” } }); console.log(JSON.stringify(cats, null, 2));
+const cats = await Cat.findAll({ where: { firstName: "Markov" } }); console.log(JSON.stringify(cats, null, 2));
 ```
 
 
@@ -1198,7 +1198,7 @@ value2)
 
 ```
  {#aa84 .graf .graf--pre .graf-after--p name="aa84"}
-const cats = await Cat.findAll({ where: { firstName: [“Markov”, “Curie”] } });const cats = await Cat.findAll({
+const cats = await Cat.findAll({ where: { firstName: ["Markov", "Curie"] } });const cats = await Cat.findAll({
     where: {
         firstName: "Markov",
         age: 4
@@ -1347,7 +1347,7 @@ console.log(JSON.stringify(cats, null, 2));
 
 ```
  {#f26a .graf .graf--pre .graf-after--li name="f26a"}
-// finds the oldest cat const cat = await Cat.findOne({ order: [[“age”, “DESC”]], }); console.log(JSON.stringify(cat, null, 2));
+// finds the oldest cat const cat = await Cat.findOne({ order: [["age", "DESC"]], }); console.log(JSON.stringify(cat, null, 2));
 ```
 
 

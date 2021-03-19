@@ -116,7 +116,10 @@
               we&#39;ll opt for the asynchronous flavors of these methods.</p>
             <h3 name="4935" id="4935" class="graf graf--h3 graf-after--p">Creating a new file</h3>
             <p name="9056" id="9056" class="graf graf--p graf-after--h3">To create a file, we can use the <code
-                class="markup--code markup--p-code"><a href="https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback" data-href="https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">writeFile</a></code>
+                class="markup--code markup--p-code"><a
+                  href="https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback"
+                  data-href="https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback"
+                  class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">writeFile</a></code>
               method. According to the documentation, there are a few ways to use it. The most straight forward way is:
             </p>
             <figure name="3928" id="3928" class="graf graf--figure graf--iframe graf-after--p">
@@ -142,9 +145,9 @@
                 class="markup--em markup--p-em">callback chaining</em> if we want to guarantee that commands occur <em
                 class="markup--em markup--p-em">after</em> the write is complete or fails.</p>
             <p name="86a2" id="86a2" class="graf graf--p graf-after--p"><em class="markup--em markup--p-em">Beware! If
-                the file name specified to </em><code
-                class="markup--code markup--p-code"><em class="markup--em markup--p-em">writeFile</em></code><em
-                class="markup--em markup--p-em"> already exists, it will completely overwrite the contents of that
+                the file name specified to </em><code class="markup--code markup--p-code"><em
+                  class="markup--em markup--p-em">writeFile</em></code><em class="markup--em markup--p-em"> already
+                exists, it will completely overwrite the contents of that
                 file.</em></p>
             <p name="9ed1" id="9ed1" class="graf graf--p graf-after--p">We won’t be using the <code
                 class="markup--code markup--p-code">foo.txt</code> file in the rest of this reading.</p>
@@ -164,7 +167,10 @@
             <pre name="af50" id="af50"
               class="graf graf--pre graf-after--pre"><code class="markup--code markup--pre-code"><em class="markup--em markup--pre-em">I do not know why</em></code></pre>
             <p name="eaa0" id="eaa0" class="graf graf--p graf-after--pre">We can use the <code
-                class="markup--code markup--p-code"><a href="https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback" data-href="https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">readFile</a></code>
+                class="markup--code markup--p-code"><a
+                  href="https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback"
+                  data-href="https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback"
+                  class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">readFile</a></code>
               method to read the contents of this file. The method accepts very similar arguments to <code
                 class="markup--code markup--p-code">writeFile</code>, except that the callback may be passed an error
               object and string containing the file contents. In the snippet below, we have replaced our previous <code
@@ -207,9 +213,9 @@
               class="graf graf--pre graf-after--pre"><code class="markup--code markup--pre-code">The third line is My code works</code></pre>
             <h3 name="4ead" id="4ead" class="graf graf--h3 graf-after--pre">File I/O</h3>
             <p name="21f5" id="21f5" class="graf graf--p graf-after--h3"><em class="markup--em markup--p-em">Using the
-                same </em><code
-                class="markup--code markup--p-code"><em class="markup--em markup--p-em">poetry.txt</em></code><em
-                class="markup--em markup--p-em"> file from before:</em></p>
+                same </em><code class="markup--code markup--p-code"><em
+                  class="markup--em markup--p-em">poetry.txt</em></code><em class="markup--em markup--p-em"> file from
+                before:</em></p>
             <pre name="ccdf" id="ccdf"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">My code fails</code></pre>
             <pre name="1b83" id="1b83"

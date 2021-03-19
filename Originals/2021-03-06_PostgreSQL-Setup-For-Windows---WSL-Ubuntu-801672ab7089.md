@@ -383,12 +383,12 @@ first.js
 
 ```
  {#7928 .graf .graf--pre .graf-after--p name="7928"}
-const pg = require(‘pg’);
-const R = require(‘ramda’);
-const cs = ‘postgres://post res:s$cret@localhost:5432/ydb’;
+const pg = require('pg');
+const R = require('ramda');
+const cs = 'postgres://post res:s$cret@localhost:5432/ydb';
 const client = new pg.Client(cs);
 client.connect();
-client.query(‘SELECT 1 + 4’).then(res => {
+client.query('SELECT 1 + 4').then(res => {
 ```
 
 
@@ -409,8 +409,8 @@ The example connects to the database and issues a SELECT statement.
 
 ```
  {#4b98 .graf .graf--pre .graf-after--p name="4b98"}
-const pg = require(‘pg’);
-const R = require(‘ramda’);
+const pg = require('pg');
+const R = require('ramda');
 ```
 
 
@@ -419,7 +419,7 @@ We include the `pg`{.markup--code .markup--p-code} and
 
 ```
  {#9141 .graf .graf--pre .graf-after--p name="9141"}
-const cs = ‘postgres://postgres:s$cret@localhost:5432/ydb’;
+const cs = 'postgres://postgres:s$cret@localhost:5432/ydb';
 ```
 
 
@@ -438,7 +438,7 @@ A client is created. We connect to the database with
 
 ```
  {#852f .graf .graf--pre .graf-after--p name="852f"}
-client.query(‘SELECT 1 + 4’).then(res => {
+client.query('SELECT 1 + 4').then(res => {
 ```
 
 
@@ -482,13 +482,13 @@ In the following example, we get the columns names of a database.
 
 ```
  {#c321 .graf .graf--pre .graf-after--blockquote name="c321"}
-const pg = require(‘pg’);
+const pg = require('pg');
 ```
 
 
 ```
  {#eef8 .graf .graf--pre  graf-after--pre name="eef8"}
-const cs = ‘postgres://postgres:s$cret@localhost:5432/ydb’;
+const cs = 'postgres://postgres:s$cret@localhost:5432/ydb';
 ```
 
 
@@ -506,7 +506,7 @@ client.connect();
 
 ```
  {#e567 .graf .graf--pre .graf-after--pre name="e567"}
-client.query(‘SELECT * FROM cars’).then(res => {
+client.query('SELECT * FROM cars').then(res => {
 ```
 
 
@@ -537,7 +537,7 @@ The column names are retrieved with `res.fields`  attribute. We also use the `ca
 ```
  {#f16d .graf .graf--pre .graf-after--p name="f16d"}
 node column_names.js
-‘id’, ‘name’, ‘price’′id′,′name′,′price′
+'id', 'name', 'price'′id′,′name′,′price′
 ```
 
 
@@ -551,14 +551,14 @@ In the next example, we select all rows from the database table.
 
 ```
  {#218a .graf .graf--pre .graf-after--blockquote name="218a"}
-const pg = require(‘pg’);
-const R = require(‘ramda’);
+const pg = require('pg');
+const R = require('ramda');
 ```
 
 
 ```
  {#dc07 .graf .graf--pre .graf-after--pre name="dc07"}
-const cs = ‘postgres://postgres:s$cret@localhost:5432/ydb’;
+const cs = 'postgres://postgres:s$cret@localhost:5432/ydb';
 ```
  
 
@@ -576,7 +576,7 @@ client.connect();
 
 ```
  {#5bd0 .graf .graf--pre .graf-after--pre name="5bd0"}
-client.query(‘SELECT * FROM cars’).then(res => {
+client.query('SELECT * FROM cars').then(res => {
 ```
 
 

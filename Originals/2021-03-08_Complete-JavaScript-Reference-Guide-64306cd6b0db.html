@@ -613,7 +613,8 @@
                 q.y</code></p>
             <h3 name="9f04" id="9f04" class="graf graf--h3 graf-after--p">How to query for property which may be
               undefined</h3>
-            <p name="bb35" id="bb35" class="graf graf--p graf-after--h3"><code class="markup--code markup--p-code">surname = book &amp;&amp; book.author &amp;&amp;
+            <p name="bb35" id="bb35" class="graf graf--p graf-after--h3"><code
+                class="markup--code markup--p-code">surname = book &amp;&amp; book.author &amp;&amp;
                 book.author.surname;</code></p>
             <p name="b505" id="b505" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let
                 surname = book?.author?.surname;</code></p>
@@ -1466,7 +1467,8 @@
             <p name="0759" id="0759" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">Array.prototype.join.call(a, &quot;+&quot;)</code></p>
             <p name="1ce6" id="1ce6" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“a+b+c”</p>
-            <p name="e5af" id="e5af" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">Array.prototype.join.call(&quot;JavaScript&quot;, &quot;
+            <p name="e5af" id="e5af" class="graf graf--p graf-after--p"><code
+                class="markup--code markup--p-code">Array.prototype.join.call(&quot;JavaScript&quot;, &quot;
                 &quot;)</code></p>
             <p name="1c80" id="1c80" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“J a v a S c r i p
               t”</p>
@@ -1776,7 +1778,8 @@
             <pre name="791a" id="791a"
               class="graf graf--pre graf-after--pre">else throw &quot;unknown operator&quot;;</pre>
             <pre name="4794" id="4794" class="graf graf--pre graf-after--pre">}</pre>
-            <p name="c004" id="c004" class="graf graf--p graf-after--pre"><code class="markup--code markup--p-code">operate2(&quot;add&quot;, &quot;hello&quot;,
+            <p name="c004" id="c004" class="graf graf--p graf-after--pre"><code
+                class="markup--code markup--p-code">operate2(&quot;add&quot;, &quot;hello&quot;,
                 operate2(&quot;add&quot;, &quot; &quot;, &quot;world&quot;))</code></p>
             <p name="73f7" id="73f7" class="graf graf--p graf-after--p">// “hello world”</p>
             <p name="d55b" id="d55b" class="graf graf--p graf-after--p"><code
@@ -1962,7 +1965,8 @@
             <pre name="de92" id="de92" class="graf graf--pre graf-after--pre">}</pre>
             <p name="f5d7" id="f5d7" class="graf graf--p graf-after--pre"><code class="markup--code markup--p-code">let
                 o = {};</code></p>
-            <p name="0902" id="0902" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">addPrivateProperty(o, &quot;Name&quot;, x =&gt; typeof x ===
+            <p name="0902" id="0902" class="graf graf--p graf-after--p"><code
+                class="markup--code markup--p-code">addPrivateProperty(o, &quot;Name&quot;, x =&gt; typeof x ===
                 &quot;string&quot;);</code></p>
             <p name="93de" id="93de" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">o.setName(&quot;Frank&quot;);</code></p>
@@ -3088,14 +3092,16 @@
               other characters:</p>
             <p name="db1c" id="db1c" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let
                 quote = /&quot;([^&quot;]*)&quot;/g;</code></p>
-            <p name="9c86" id="9c86" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
+            <p name="9c86" id="9c86" class="graf graf--p graf-after--p"><code
+                class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
                 &#39;«$1»&#39;)</code></p>
             <p name="354e" id="354e" class="graf graf--p graf--startsWithSingleQuote graf-after--p">‘He said «stop»’</p>
             <p name="a23f" id="a23f" class="graf graf--p graf-after--p">If your RegExp uses named capture groups, then
               you can refer to the matching text by name rather than by number:</p>
             <p name="0620" id="0620" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let
                 quote = /&quot;(?&lt;quotedText&gt;[^&quot;]*)&quot;/g;</code></p>
-            <p name="8c54" id="8c54" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
+            <p name="8c54" id="8c54" class="graf graf--p graf-after--p"><code
+                class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
                 &#39;«$&lt;quotedText&gt;»&#39;)</code></p>
             <p name="28c6" id="28c6" class="graf graf--p graf--startsWithSingleQuote graf-after--p">‘He said «stop»’</p>
             <p name="e45e" id="e45e" class="graf graf--p graf-after--p">Instead of passing a replacement string as the
@@ -3906,7 +3912,8 @@
             <p name="7e91" id="7e91" class="graf graf--p graf-after--h3">Asynchronous operations, particularly those
               that involve networking, can typically fail in a number of ways, and robust code has to be written to
               handle the errors that will inevitably occur.</p>
-            <p name="54c7" id="54c7" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">getJSON(&quot;/api/user/profile&quot;).then(displayUserProfile,
+            <p name="54c7" id="54c7" class="graf graf--p graf-after--p"><code
+                class="markup--code markup--p-code">getJSON(&quot;/api/user/profile&quot;).then(displayUserProfile,
                 handleProfileError);</code></p>
             <p name="33c1" id="33c1" class="graf graf--p graf-after--p">if <code
                 class="markup--code markup--p-code">getJSON()</code> runs normally, it passes its result to <code
