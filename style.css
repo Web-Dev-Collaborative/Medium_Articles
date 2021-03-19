@@ -53,6 +53,7 @@ li {
   -o-border-radius: 15px;
   overflow-wrap: break-word;
 }
+
 div.my_class {
   resize: both;
   overflow: auto;
