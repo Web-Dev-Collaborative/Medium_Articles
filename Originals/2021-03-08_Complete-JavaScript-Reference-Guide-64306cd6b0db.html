@@ -8,16 +8,19 @@
     * {
       font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     }
-html,
-body {
+
+    html,
+    body {
       margin: 0;
       padding: 0;
     }
+
     h1 {
       font-size: 50px;
       margin-bottom: 17px;
       color: #333;
     }
+
     h2 {
       font-size: 24px;
       line-height: 1.6;
@@ -26,51 +29,73 @@ body {
       margin-top: 33px;
       color: #333;
     }
+
     h3 {
       font-size: 30px;
       margin: 10px 0 20px 0;
       color: #333;
     }
+
     header {
       width: 640px;
       margin: auto;
     }
+
     section {
       width: 640px;
       margin: auto;
     }
+
     section p {
       margin-bottom: 27px;
       font-size: 20px;
       line-height: 1.6;
       color: #333;
     }
+
     section img {
       max-width: 640px;
     }
+
     footer {
       padding: 0 20px;
       margin: 50px 0;
       text-align: center;
       font-size: 12px;
     }
+
     .aspectRatioPlaceholder {
       max-width: auto !important;
       max-height: auto !important;
     }
+
     .aspectRatioPlaceholder-fill {
       padding-bottom: 0 !important;
     }
+
     header,
     section[data-field=subtitle],
     section[data-field=description] {
       display: none;
     }
   </style>
-  </head>
+</head>
 
-  <body>
-    <article class="h-entry">
+<body>
+  <a href="https://github.com/bgoonz" class="github-corner" aria-label="View source on Github"><svg width="80"
+      height="80" viewBox="0 0 250 250"
+      style="z-index: 100000; fill:#194ccdaf; color:#fff; position: fixed; top: 20px; border: 0; left: 20px; transform: scale(-1.5, 1.5);"
+      aria-hidden="true">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path
+        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm">
+      </path>
+      <path
+        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+        fill="currentColor" class="octo-body"></path>
+    </svg></a>
+  <article class="h-entry">
     <header>
       <h1 class="p-name">Complete JavaScript Reference Guide</h1>
     </header>
@@ -268,7 +293,8 @@ body {
               the <code class="markup--code markup--p-code">?.</code> evaluates to <code
                 class="markup--code markup--p-code">null</code> or <code
                 class="markup--code markup--p-code">undefined</code>, then the entire invocation expression evaluates to
-              <code class="markup--code markup--p-code">undefined </code>and no exception is thrown.</p>
+              <code class="markup--code markup--p-code">undefined </code>and no exception is thrown.
+            </p>
             <p name="b4ca" id="b4ca" class="graf graf--p graf-after--p">Write the function invocation using <code
                 class="markup--code markup--p-code">?.(),</code> knowing that invocation will only happen if there is
               actually a value to be invoked</p>
@@ -390,7 +416,8 @@ body {
             <pre name="83c0" id="83c0" class="graf graf--pre graf-after--pre">}</pre>
             <p name="142f" id="142f" class="graf graf--p graf-after--pre">Objects are not (by default) iterable.
               Attempting to use <code class="markup--code markup--p-code">for/of</code> on a regular object throws a
-              <code class="markup--code markup--p-code">TypeError</code> at runtime.</p>
+              <code class="markup--code markup--p-code">TypeError</code> at runtime.
+            </p>
             <p name="70b1" id="70b1" class="graf graf--p graf-after--p">If you want to iterate through the properties of
               an object, you can use the <code class="markup--code markup--p-code">for/in</code> loop.</p>
             <p name="dbc6" id="dbc6" class="graf graf--p graf-after--p">Note: <code
@@ -586,8 +613,7 @@ body {
                 q.y</code></p>
             <h3 name="9f04" id="9f04" class="graf graf--h3 graf-after--p">How to query for property which may be
               undefined</h3>
-            <p name="bb35" id="bb35" class="graf graf--p graf-after--h3"><code
-                class="markup--code markup--p-code">surname = book &amp;&amp; book.author &amp;&amp;
+            <p name="bb35" id="bb35" class="graf graf--p graf-after--h3"><code class="markup--code markup--p-code">surname = book &amp;&amp; book.author &amp;&amp;
                 book.author.surname;</code></p>
             <p name="b505" id="b505" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let
                 surname = book?.author?.surname;</code></p>
@@ -914,7 +940,8 @@ body {
             <h3 name="a7fa" id="a7fa" class="graf graf--h3 graf-after--p">Reading and Writing Array Elements</h3>
             <p name="7b20" id="7b20" class="graf graf--p graf-after--h3">What is special about arrays is that when you
               use property names that are non-negative integers , the array automatically maintains the value of the
-              <code class="markup--code markup--p-code">length</code> property for you.</p>
+              <code class="markup--code markup--p-code">length</code> property for you.
+            </p>
             <p name="4c53" id="4c53" class="graf graf--p graf-after--p">JavaScript converts the numeric array index you
               specify to a string — the index 1 becomes the string “1”, then uses that string as a property name.</p>
             <p name="b723" id="b723" class="graf graf--p graf-after--p">It is helpful to clearly distinguish an array
@@ -1032,7 +1059,8 @@ body {
             <pre name="0ffd" id="0ffd" class="graf graf--pre graf-after--pre">}</pre>
             <p name="a713" id="a713" class="graf graf--p graf-after--pre">Another good way to iterate arrays is with
               <code class="markup--code markup--p-code">forEach()</code>. This is not a new form of the for loop, but an
-              array method that offers a functional approach to array iteration.</p>
+              array method that offers a functional approach to array iteration.
+            </p>
             <pre name="c7c9" id="c7c9"
               class="graf graf--pre graf-after--p">let letters = [...&quot;Hello world&quot;];</pre>
             <pre name="b35b" id="b35b" class="graf graf--pre graf-after--pre">let uppercase = &quot;&quot;;</pre>
@@ -1362,7 +1390,8 @@ body {
               treated as an offset from the end of the array.</p>
             <p name="0481" id="0481" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">indexOf()</code> will not detect the NaN value in an array, but
-              <code class="markup--code markup--p-code">includes()</code> will</p>
+              <code class="markup--code markup--p-code">includes()</code> will
+            </p>
             <p name="d672" id="d672" class="graf graf--p graf-after--p">When <code
                 class="markup--code markup--p-code">sort()</code> is called with no arguments, it sorts the array
               elements in alphabetical order. To sort an array into some order other than alphabetical, you must pass a
@@ -1389,7 +1418,8 @@ body {
             <p name="c70b" id="c70b" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“ — — — — -”</p>
             <p name="5d18" id="5d18" class="graf graf--p graf-after--p">Arrays, like all JavaScript objects, have a
               <code class="markup--code markup--p-code">toString()</code> method. For an array, this method works just
-              like the <code class="markup--code markup--p-code">join()</code> method with no arguments:</p>
+              like the <code class="markup--code markup--p-code">join()</code> method with no arguments:
+            </p>
             <p name="b72a" id="b72a" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">[1,2,3].toString()</code></p>
             <p name="3746" id="3746" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“1,2,3”</p>
@@ -1427,7 +1457,8 @@ body {
             <p name="2317" id="2317" class="graf graf--p graf-after--pre">Since array-like objects do not inherit from
               <code class="markup--code markup--p-code">Array.prototype</code>, you cannot invoke array methods on them
               directly. You can invoke them indirectly using the <code
-                class="markup--code markup--p-code">Function.call</code> method.</p>
+                class="markup--code markup--p-code">Function.call</code> method.
+            </p>
             <p name="bbd4" id="bbd4" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let a
                 = {&quot;0&quot;: &quot;a&quot;, &quot;1&quot;: &quot;b&quot;, &quot;2&quot;: &quot;c&quot;, length:
                 3};</code></p>
@@ -1435,8 +1466,7 @@ body {
             <p name="0759" id="0759" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">Array.prototype.join.call(a, &quot;+&quot;)</code></p>
             <p name="1ce6" id="1ce6" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“a+b+c”</p>
-            <p name="e5af" id="e5af" class="graf graf--p graf-after--p"><code
-                class="markup--code markup--p-code">Array.prototype.join.call(&quot;JavaScript&quot;, &quot;
+            <p name="e5af" id="e5af" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">Array.prototype.join.call(&quot;JavaScript&quot;, &quot;
                 &quot;)</code></p>
             <p name="1c80" id="1c80" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“J a v a S c r i p
               t”</p>
@@ -1548,7 +1578,8 @@ body {
             <h3 name="f888" id="f888" class="graf graf--h3 graf-after--h3">Optional Parameters and Defaults</h3>
             <p name="c803" id="c803" class="graf graf--p graf-after--h3">When a function is invoked with fewer arguments
               than declared parameters, the additional parameters are set to their default value, which is normally
-              <code class="markup--code markup--p-code">undefined</code>.</p>
+              <code class="markup--code markup--p-code">undefined</code>.
+            </p>
             <pre name="fb8b" id="fb8b" class="graf graf--pre graf-after--p">function getPropertyNames(o, a) {</pre>
             <pre name="6b4b" id="6b4b" class="graf graf--pre graf-after--pre">a = a || [];</pre>
             <pre name="c56e" id="c56e"
@@ -1590,7 +1621,8 @@ body {
             <h3 name="ef1b" id="ef1b" class="graf graf--h3 graf-after--p">The Arguments Object</h3>
             <p name="cc80" id="cc80" class="graf graf--p graf-after--h3">Within the body of any function, the identifier
               <code class="markup--code markup--p-code">arguments</code> refers to the Arguments object for that
-              invocation.</p>
+              invocation.
+            </p>
             <pre name="4635" id="4635" class="graf graf--pre graf-after--p">function max(x) {</pre>
             <pre name="5982" id="5982" class="graf graf--pre graf-after--pre">let maxValue = -Infinity;</pre>
             <pre name="6eae" id="6eae"
@@ -1744,8 +1776,7 @@ body {
             <pre name="791a" id="791a"
               class="graf graf--pre graf-after--pre">else throw &quot;unknown operator&quot;;</pre>
             <pre name="4794" id="4794" class="graf graf--pre graf-after--pre">}</pre>
-            <p name="c004" id="c004" class="graf graf--p graf-after--pre"><code
-                class="markup--code markup--p-code">operate2(&quot;add&quot;, &quot;hello&quot;,
+            <p name="c004" id="c004" class="graf graf--p graf-after--pre"><code class="markup--code markup--p-code">operate2(&quot;add&quot;, &quot;hello&quot;,
                 operate2(&quot;add&quot;, &quot; &quot;, &quot;world&quot;))</code></p>
             <p name="73f7" id="73f7" class="graf graf--p graf-after--p">// “hello world”</p>
             <p name="d55b" id="d55b" class="graf graf--p graf-after--p"><code
@@ -1931,8 +1962,7 @@ body {
             <pre name="de92" id="de92" class="graf graf--pre graf-after--pre">}</pre>
             <p name="f5d7" id="f5d7" class="graf graf--p graf-after--pre"><code class="markup--code markup--p-code">let
                 o = {};</code></p>
-            <p name="0902" id="0902" class="graf graf--p graf-after--p"><code
-                class="markup--code markup--p-code">addPrivateProperty(o, &quot;Name&quot;, x =&gt; typeof x ===
+            <p name="0902" id="0902" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">addPrivateProperty(o, &quot;Name&quot;, x =&gt; typeof x ===
                 &quot;string&quot;);</code></p>
             <p name="93de" id="93de" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">o.setName(&quot;Frank&quot;);</code></p>
@@ -2030,7 +2060,8 @@ body {
             <h3 name="0ed5" id="0ed5" class="graf graf--h3 graf-after--p">The toString() Method</h3>
             <p name="e8ca" id="e8ca" class="graf graf--p graf-after--h3">Most (but not all) implementations of this
               <code class="markup--code markup--p-code">toString()</code> method return the complete source code for the
-              function</p>
+              function
+            </p>
             <h3 name="67ad" id="67ad" class="graf graf--h3 graf-after--p">The Function() Constructor</h3>
             <p name="4702" id="4702" class="graf graf--p graf-after--h3">The Function() constructor is best thought of
               as a globally scoped version of <code class="markup--code markup--p-code">eval()</code> that defines new
@@ -2090,7 +2121,8 @@ body {
             <h3 name="ffac" id="ffac" class="graf graf--h3 graf-after--p">Classes and Prototypes</h3>
             <p name="82df" id="82df" class="graf graf--p graf-after--h3">If we define a prototype object and then use
               <code class="markup--code markup--p-code">Object.create()</code> to create objects that inherit from it,
-              we have defined a JavaScript class.</p>
+              we have defined a JavaScript class.
+            </p>
             <p name="3ee9" id="3ee9" class="graf graf--p graf-after--p">Factory function that returns a new range
               object:</p>
             <pre name="e36f" id="e36f" class="graf graf--pre graf-after--p">function range(from, to) {</pre>
@@ -2623,7 +2655,8 @@ body {
                 class="markup--code markup--p-code">has()</code> to check whether a map includes the specified key; use
               <code class="markup--code markup--p-code">delete()</code> to remove a key (and its associated value) from
               the map; use <code class="markup--code markup--p-code">clear()</code> to remove all key/value pairs from
-              the map; and use the size property to find out how many keys a map contains.</p>
+              the map; and use the size property to find out how many keys a map contains.
+            </p>
             <p name="ac82" id="ac82" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">set()</code> method of Map can be chained.</p>
             <p name="a9c7" id="a9c7" class="graf graf--p graf-after--p">Any JavaScript value can be used as a key or a
@@ -2669,7 +2702,8 @@ body {
             <pre name="13ce" id="13ce" class="graf graf--pre graf-after--pre">[...m.values()]</pre>
             <pre name="0bff" id="0bff" class="graf graf--pre graf-after--pre">[...m.entries()]</pre>
             <p name="7dd2" id="7dd2" class="graf graf--p graf-after--pre">Map objects can also be iterated using the
-              <code class="markup--code markup--p-code">forEach()</code></p>
+              <code class="markup--code markup--p-code">forEach()</code>
+            </p>
             <pre name="87d8" id="87d8" class="graf graf--pre graf-after--p">m.forEach((value, key) =&gt; {...}</pre>
             <p name="dc7c" id="dc7c" class="graf graf--p graf-after--pre">Note that the value parameter comes before the
               key parameter.</p>
@@ -2761,7 +2795,8 @@ body {
             <p name="31f5" id="31f5" class="graf graf--p graf-after--pre">i = case insensitive</p>
             <p name="07d4" id="07d4" class="graf graf--p graf-after--p">Punctuation characters have special meanings in
               regular expressions: <code class="markup--code markup--p-code">^ $ . * + ? = ! : | \ / ( ) [ ] { }.
-              </code>Other punctuation characters, such as quotation marks and @, do not have special meaning and simply
+              </code>Other punctuation characters, such as quotation marks and @, do not have special meaning and
+              simply
               match themselves literally in a regular expression.</p>
             <p name="e772" id="e772" class="graf graf--p graf-after--p">If you use the <code
                 class="markup--code markup--p-code">RegExp()</code> constructor, keep in mind that any backslashes in
@@ -3039,7 +3074,8 @@ body {
             <p name="d57e" id="d57e" class="graf graf--p graf-after--p">-1</p>
             <p name="7924" id="7924" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">search()</code> does not support global searches; it ignores the
-              <code class="markup--code markup--p-code">g</code> flag of its regular expression argument.</p>
+              <code class="markup--code markup--p-code">g</code> flag of its regular expression argument.
+            </p>
             <p name="d791" id="d791" class="graf graf--p graf-after--p">REPLACE()</p>
             <p name="d007" id="d007" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">text.replace(/javascript/gi, &quot;JavaScript&quot;);</code></p>
@@ -3052,16 +3088,14 @@ body {
               other characters:</p>
             <p name="db1c" id="db1c" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let
                 quote = /&quot;([^&quot;]*)&quot;/g;</code></p>
-            <p name="9c86" id="9c86" class="graf graf--p graf-after--p"><code
-                class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
+            <p name="9c86" id="9c86" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
                 &#39;«$1»&#39;)</code></p>
             <p name="354e" id="354e" class="graf graf--p graf--startsWithSingleQuote graf-after--p">‘He said «stop»’</p>
             <p name="a23f" id="a23f" class="graf graf--p graf-after--p">If your RegExp uses named capture groups, then
               you can refer to the matching text by name rather than by number:</p>
             <p name="0620" id="0620" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">let
                 quote = /&quot;(?&lt;quotedText&gt;[^&quot;]*)&quot;/g;</code></p>
-            <p name="8c54" id="8c54" class="graf graf--p graf-after--p"><code
-                class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
+            <p name="8c54" id="8c54" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">&#39;He said &quot;stop&quot;&#39;.replace(quote,
                 &#39;«$&lt;quotedText&gt;»&#39;)</code></p>
             <p name="28c6" id="28c6" class="graf graf--p graf--startsWithSingleQuote graf-after--p">‘He said «stop»’</p>
             <p name="e45e" id="e45e" class="graf graf--p graf-after--p">Instead of passing a replacement string as the
@@ -3083,7 +3117,8 @@ body {
               <code class="markup--code markup--p-code">g</code> flag set, <code
                 class="markup--code markup--p-code">match()</code> does not do a global search; it simply searches for
               the first match. In this nonglobal case, <code class="markup--code markup--p-code">match()</code> still
-              returns an array, but the array elements are completely different.</p>
+              returns an array, but the array elements are completely different.
+            </p>
             <p name="3d88" id="3d88" class="graf graf--p graf-after--p">Thus, if <code
                 class="markup--code markup--p-code">match()</code> returns an array a, a[0] contains the complete match,
               a[1] contains the substring that matched the first parenthesized expression, and so on.</p>
@@ -3198,7 +3233,8 @@ body {
                 class="markup--code markup--p-code">test()</code> methods because the behavior of these methods depends
               on <code class="markup--code markup--p-code">lastIndex</code>, and the value of <code
                 class="markup--code markup--p-code">lastIndex</code> depends on what you have previously done with the
-              RegExp object.</p>
+              RegExp object.
+            </p>
             <p name="de1e" id="de1e" class="graf graf--p graf-after--p">To find the index of all &lt;p&gt; tags within a
               string of HTML text:</p>
             <pre name="499e" id="499e" class="graf graf--pre graf-after--p">let match, positions = [];</pre>
@@ -3233,7 +3269,8 @@ body {
                 class="markup--code markup--p-code">exec()</code>) starts searching for a match at the position
               specified by <code class="markup--code markup--p-code">lastIndex</code>. After matching the &quot;pp&quot;
               in &quot;apple&quot;, <code class="markup--code markup--p-code">lastIndex</code> is 3, and so we start
-              searching the word &quot;book&quot; at position 3 and do not see the &quot;oo&quot; that it contains.</p>
+              searching the word &quot;book&quot; at position 3 and do not see the &quot;oo&quot; that it contains.
+            </p>
             <h3 name="ccfb" id="ccfb" class="graf graf--h3 graf-after--p">Dates and Times</h3>
             <pre name="2f75" id="2f75" class="graf graf--pre graf-after--h3">let now = new Date();</pre>
             <p name="eb95" id="eb95" class="graf graf--p graf-after--pre">The current time</p>
@@ -3373,7 +3410,8 @@ body {
             <p name="135d" id="135d" class="graf graf--p graf-after--pre">Typically, you pass only a single argument to
               <code class="markup--code markup--p-code">JSON.stringify()</code> and <code
                 class="markup--code markup--p-code">JSON.parse()</code>. Both functions accept an optional second
-              argument that allows us to extend the JSON format.</p>
+              argument that allows us to extend the JSON format.
+            </p>
             <p name="8f61" id="8f61" class="graf graf--p graf-after--p"><code
                 class="markup--code markup--p-code">JSON.stringify()</code> also takes an optional third argument. If
               you would like your JSONformatted string to be human-readable (if it is being used as a configuration
@@ -3868,15 +3906,15 @@ body {
             <p name="7e91" id="7e91" class="graf graf--p graf-after--h3">Asynchronous operations, particularly those
               that involve networking, can typically fail in a number of ways, and robust code has to be written to
               handle the errors that will inevitably occur.</p>
-            <p name="54c7" id="54c7" class="graf graf--p graf-after--p"><code
-                class="markup--code markup--p-code">getJSON(&quot;/api/user/profile&quot;).then(displayUserProfile,
+            <p name="54c7" id="54c7" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">getJSON(&quot;/api/user/profile&quot;).then(displayUserProfile,
                 handleProfileError);</code></p>
             <p name="33c1" id="33c1" class="graf graf--p graf-after--p">if <code
                 class="markup--code markup--p-code">getJSON()</code> runs normally, it passes its result to <code
                 class="markup--code markup--p-code">displayUserProfile()</code>. If there is an error (the user is not
               logged in, the server is down, the user’s internet connection dropped, the request timed out, etc.), then
               <code class="markup--code markup--p-code">getJSON()</code> passes an Error object to <code
-                class="markup--code markup--p-code">handleProfileError()</code>.</p>
+                class="markup--code markup--p-code">handleProfileError()</code>.
+            </p>
             <p name="5f02" id="5f02" class="graf graf--p graf-after--p">In practice, it is rare to see two functions
               passed to then(). There is a better and more idiomatic way of handling errors when working with Promises.
             </p>
@@ -3885,7 +3923,8 @@ body {
                 class="markup--code markup--p-code">displayUserProfile()</code>. That callback function is invoked
               asynchronously when <code class="markup--code markup--p-code">getJSON()</code> returns, so it is also
               asynchronous and cannot meaningfully throw an exception (because there is no code on the call stack to
-              handle it).</p>
+              handle it).
+            </p>
             <pre name="26fd" id="26fd"
               class="graf graf--pre graf-after--p">getJSON(&quot;/api/user/profile&quot;).then(displayUserProfile).catch(handleProfileError);</pre>
             <p name="e1ee" id="e1ee" class="graf graf--p graf-after--pre">With this code, a normal result from<code
@@ -3894,12 +3933,14 @@ body {
                 class="markup--code markup--p-code">getJSON()</code> or in <code
                 class="markup--code markup--p-code">displayUserProfile()</code> (including any exceptions thrown by
               <code class="markup--code markup--p-code">displayUserProfile</code>) get passed to <code
-                class="markup--code markup--p-code">handleProfileError()</code>.</p>
+                class="markup--code markup--p-code">handleProfileError()</code>.
+            </p>
             <h3 name="d268" id="d268" class="graf graf--h3 graf-after--p">Chaining Promises</h3>
             <p name="21c0" id="21c0" class="graf graf--p graf-after--h3">One of the most important benefits of Promises
               is that they provide a natural way to express a sequence of asynchronous operations as a linear chain of
               <code class="markup--code markup--p-code">then()</code> method invocations, without having to nest each
-              operation within the callback of the previous one.</p>
+              operation within the callback of the previous one.
+            </p>
             <pre name="193e" id="193e" class="graf graf--pre graf-after--p">fetch(documentURL)</pre>
             <pre name="2a33" id="2a33"
               class="graf graf--pre graf-after--pre">.then(response =&gt; response.json())</pre>
@@ -4158,7 +4199,8 @@ body {
               Promises at once but may only care about the value of the first one to fulfill. In that case, you can use
               <code class="markup--code markup--p-code">Promise.race()</code> instead of <code
                 class="markup--code markup--p-code">Promise.all()</code>. It returns a Promise that is fulfilled or
-              rejected when the first of the Promises in the input array is fulfilled or rejected.</p>
+              rejected when the first of the Promises in the input array is fulfilled or rejected.
+            </p>
             <h3 name="ff11" id="ff11" class="graf graf--h3 graf-after--p">Making Promises</h3>
             <h3 name="d013" id="d013" class="graf graf--h3 graf-after--h3">Promises in Sequence</h3>
             <h3 name="a552" id="a552" class="graf graf--h3 graf-after--h3">async and await</h3>
@@ -4285,7 +4327,7 @@ body {
           class="p-canonical">Canonical link</a></p>
       <p>Exported from <a href="https://medium.com">Medium</a> on March 11, 2021.</p>
     </footer>
-    </article>
-    </body>
+  </article>
+</body>
 
-    </html>
+</html>
