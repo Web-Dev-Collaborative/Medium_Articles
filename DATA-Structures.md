@@ -47,6 +47,7 @@ function merge(array1, array2) {
 }
 ```
 
+
 If your JavaScript is rusty, don't freak out! Here are a few cool JS patterns that we leverage above.
 
 -   `0` is considered a falsey value, meaning it acts like `false` when used in boolean expressions. All other numbers are truthy.
@@ -55,7 +56,8 @@ If your JavaScript is rusty, don't freak out! Here are a few cool JS patterns th
 
 Is the code still hazy? Let's look at an annotated version:
 
-````js
+```
+`js
 // commented```js
 function merge(array1, array2) {
     let merged = [];
@@ -83,7 +85,8 @@ function merge(array1, array2) {
 
     return merged;
 }
-````
+```
+`
 
 By using `Infinity` as the default ele when an array is empty, we are able to elegantly handle the scenario where one array empties before the other. We know that any actual element will be less than `Infinity` so we will continually take the other element into our merged array.
 
@@ -93,13 +96,16 @@ In other words, we can safely handle this edge case:
 merge([10, 13, 15, 25], []); // => [10, 13, 15, 25]
 ```
 
+
 Nice! We now have a way to merge two sorted arrays into a single sorted array. It's worth mentioning that `merge` will have a `O(n)` runtime where `n` is the combined length of the two input arrays. This is what we meant when we said it was "easy" to merge two sorted arrays; linear time is fast! We'll find fact this useful later.
 
 ### Merge Sort Recursion
 
 Now that we satisfied the merge idea, let's handle the second point. That is, we say an array of 1 or 0 elements is already sorted. This will be the base case of our recursion. Let's begin adding this code:
 
-```````js
+```
+```
+`js
     function mergeSort(array) {
         if (array.length <= 1) {
             return array;
@@ -142,7 +148,8 @@ Okay, so we have two sorted arrays. We want to return one sorted array. So `merg
         return merge(sortedLeft, sortedRight);
     }
 
-```Wow. that's it. Notice how light the implementation of `mergeSort` is. Much of the heavy lifting (the actually comparisons) is done by the `merge` helper.
+```
+Wow. that's it. Notice how light the implementation of `mergeSort` is. Much of the heavy lifting (the actually comparisons) is done by the `merge` helper.
 
 `mergeSort` is a classic example of a "Divide and Conquer" algorithm. In other words, we keep breaking the array into smaller and smaller sub arrays. This is the same as saying we take the problem and break it down into smaller and smaller subproblems. We do this until the subproblems are so small that we trivially know the answer to them (an array length 0 or 1 is already sorted). Once we have those subanswers we can combine to reconstruct the larger problems that we previously divided (merge the left and right subarrays).
 
@@ -173,7 +180,8 @@ Here is the full code for your reference:
         return merged;
     }
 
-``````js
+```
+```js
     function mergeSort(array) {
         if (array.length <= 1) {
             return array;
@@ -189,7 +197,9 @@ Here is the full code for your reference:
         return merge(sortedLeft, sortedRight);
     }
 
-```````
+```
+```
+`
 
 ## Time and Space Complexity Analysis
 
@@ -272,6 +282,7 @@ function partition(array, pivot) {
 }
 ```
 
+
 ```js
 function partition(array, pivot) {
     let left = array.filter((el) => el < pivot);
@@ -279,6 +290,7 @@ function partition(array, pivot) {
     return [left, right];
 }
 ```
+
 
 Both of the above implementations are correct, but we'll use the second one as it is cleaner. It's worth mentioning that the `partition` function will have a runtime of `O(n)` . `forEach` and `filter` both have linear, `O(n)` , time complexity. Although our fancy `partition` does filter twice, this is a constant we drop, `O(2n) = O(n)` . Linear time is fast so we are quite happy with `partition` .
 
@@ -296,6 +308,7 @@ function quickSort(array) {
 }
 ```
 
+
 If our base case pretains to an array of a very small size, then the design of our recursive case should make progress toward hitting this base scenario. In other words, we should recursively call `quickSort` on smaller and smaller arrays. This is very similar to our previous `mergeSort` , except we don't just split the array down the middle. Instead we should arbitrarily choose an element of the array as a pivot and partition the remaining elements relative to this pivot:
 
 ```js
@@ -306,12 +319,14 @@ If our base case pretains to an array of a very small size, then the design of o
 
 ```
 
+
 ```js
 let pivot = array.shift();
 let left = array.filter((el) => el < pivot);
 let right = array.filter((el) => el >= pivot);
 //...some code here
 ```
+
 
 Here is what to notice about the partition step above: 1. the pivot is an element of the array; we arbitrarily chose the first element 2. we removed the pivot from the master array before we filter into the left and right partitions
 
@@ -332,6 +347,7 @@ Now that we have the two subarrays of `left` and `right` we have our subproblems
        //...some code here
 ```
 
+
 Okay, so we have the two sorted partitions. This means we have the two subsolutions. But how do we put them together? Think about how we partitioned them in the first place. Everything in `leftSorted` is **guaranteed** to be less than everything in `rightSorted` . On top of that, `pivot` should be placed after the last element in `leftSorted` , but before the first element in `rightSorted` . So all we need to do is to combine the elements in the order "left, pivot, right"!
 
 ```js
@@ -351,6 +367,7 @@ function quickSort(array) {
 }
 ```
 
+
 That last `concat` line is a bit clunky. Bonus JS Lesson: we can use the spread `...` operator to elegantly concat arrays. In general:
 
 ```js
@@ -359,6 +376,7 @@ let two = ["d", "e", "f"];
 let newArr = [...one, "c", ...two];
 newArr; // =>  [ 'a', 'b', 'c', 'd', 'e', 'f' ]
 ```
+
 
 Utilizing that spread pattern gives us this final implementation:
 
@@ -378,6 +396,7 @@ function quickSort(array) {
     return [...leftSorted, pivot, ...rightSorted];
 }
 ```
+
 
 I'd hire that programmer.
 
@@ -401,6 +420,7 @@ function quickSort(array) {
     return [...leftSorted, pivot, ...rightSorted];
 }
 ```
+
 
 ## Time and Space Complexity Analysis
 
@@ -473,6 +493,7 @@ binarySearch([5, 10, 12, 15, 20, 30, 70], 12); // => true
 binarySearch([5, 10, 12, 15, 20, 30, 70], 24); // => false
 ```
 
+
 Before we move on, really internalize the fact that `binarySearch` will only work on **sorted** arrays! Obviously we can search any array, sorted or unsorted, in `O(n)` time. But now our goal is be able to search the array with a sub-linear time complexity (less than `O(n)` ).
 
 ### Binary Search Recursion
@@ -488,6 +509,7 @@ function binarySearch(array, target) {
 }
 ```
 
+
 Now for our recursive case. If we want to get a time complexity less than `O(n)` , we must avoid touching all `n` elements. Adopting our dictionary strategy, let's find the middle element and grab references to the left and right halves of the sorted array:
 
 ```js
@@ -502,6 +524,7 @@ function binarySearch(array, target) {
     //...some code here
 }
 ```
+
 
 It's worth pointing out that the left and right halves do not contain the middle element we chose.
 
@@ -526,6 +549,7 @@ function binarySearch(array, target) {
 }
 ```
 
+
 We know `binarySeach` will return the correct boolean, so we just pass that result up by returning it ourselves. However, something is lacking in our code. It is only possible to get a false from the literal `return false` line, but there is no `return true` . Looking at our conditionals, we handle the cases where the target is less than middle or the target is greater than the middle, but what if the product is **equal** to the middle? If the target is equal to the middle, then we found the target and should `return true` ! This is easy to add with an `else` :
 
 ```js
@@ -547,6 +571,7 @@ function binarySearch(array, target) {
     }
 }
 ```
+
 
 To wrap up, we have confidence of our base case will eventually be hit because we are continually halving the array. We halve the array until it's length is 0 or we actually find the target.
 
@@ -573,6 +598,7 @@ function binarySearch(array, target) {
     }
 }
 ```
+
 
 ## Time and Space Complexity Analysis
 
@@ -644,6 +670,7 @@ factorial(5); // => 120, requires 5 calls
 factorial(7); // => 5040, requires 7 calls
 ```
 
+
 From our plain `factorial` above, it is clear that every time we call `factorial(6)` we should get the same result of `720` each time. The code is somewhat inefficient because we must go down the full recursive stack for each top level call to `factorial(6)` . It would be great if we could store the result of `factorial(6)` the first time we calculate it, then on subsequent calls to `factorial(6)` we simply fetch the stored result in constant time. We can accomplish exactly this by memoizing with an object! We'll refactor the code later, but for now:
 
     let memo = {}
@@ -661,6 +688,7 @@ function factorial(n) {
 }
 ```
 
+
 ```js
 factorial(6); // => 720, requires 6 calls
 factorial(6); // => 720, requires 1 call
@@ -669,6 +697,7 @@ factorial(7); // => 5040, requires 2 calls
 
 memo; // => { '2': 2, '3': 6, '4': 24, '5': 120, '6': 720, '7': 5040 }
 ```
+
 
 The `memo` object above will map an argument of `factorial` to it's return value. That is, the keys will be arguments and their values will be the corresponding results returned. By using the memo, we are able to avoid duplicate recursive calls! Here's some food for thought: By the time our first call to `factorial(6)` returns, we will not have just the arg `6` stored in the memo. Rather, we will have _all_ args 2 to 6 stored in the memo.
 
@@ -689,6 +718,7 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 ```
+
 
     fib(6);     // => 8
 
@@ -711,6 +741,7 @@ function fastFib(n, memo = {}) {
     return memo[n];
 }
 ```
+
 
     fastFib(6);     // => 8
     fastFib(50);    // => 12586269025
@@ -764,6 +795,7 @@ Let's tabulate `fib` . As always, we want `fib(n)` to return the n-th number of 
 // fib(7);      // => 13
 ```
 
+
 Let's jump straight into the code:
 
 ```js
@@ -785,6 +817,7 @@ function tabulatedFib(n) {
     return table[n];
 }
 ```
+
 
     console.log(tabulatedFib(7));      // => 13
 
@@ -827,6 +860,7 @@ function fib(n) {
     return last;
 }
 ```
+
 
 Bam! We now have O(n) runtime and O(1) space. This is the most optimal algorithm for calculating `fib` . Note that this strategy is not quite Tabulation, since there is no table array being used. However, this still falls under the overarching category of Dynamic Programming since we saved previous subproblem results in order to calculate the final answer. There's no fancy name for this strategy; it's just amazing.
 
@@ -908,12 +942,12 @@ There are four flavors of Linked List you should be familiar with when walking i
 
 **Linked List Types:**
 
-| List Type | Description | Directionality |
-| --- | --- | --- |
-| Singly Linked | Nodes have a single pointer connecting them in a single direction. | Head→Tail |
-| Doubly Linked | Nodes have two pointers connecting them bi-directionally. | Head⇄Tail |
-| Mulitply Linked | Nodes have two or more pointers, providing a variety of potential node orderings. | Head⇄Tail, A→Z, Jan→Dec, etc. |
-| Circularly Linked | Final node's `next` pointer points to the first node, creating a non-linear, circular version of a Linked List. | Head→Tail→Head→Tail |
+| List Type         | Description                                                                                                     | Directionality                |
+| ----------------- | --------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Singly Linked     | Nodes have a single pointer connecting them in a single direction.                                              | Head→Tail                     |
+| Doubly Linked     | Nodes have two pointers connecting them bi-directionally.                                                       | Head⇄Tail                     |
+| Mulitply Linked   | Nodes have two or more pointers, providing a variety of potential node orderings.                               | Head⇄Tail, A→Z, Jan→Dec, etc. |
+| Circularly Linked | Final node's `next` pointer points to the first node, creating a non-linear, circular version of a Linked List. | Head→Tail→Head→Tail           |
 
 **NOTE:** These Linked List types are not always mutually exclusive.
 
@@ -931,29 +965,29 @@ Linked Lists are great foundation builders when learning about data structures b
 
 In the project that follows, we will implement the following Linked List methods:
 
-| Type | Name | Description | Returns |
-| --- | --- | --- | --- |
-| Insertion | `addToTail` | Adds a new node to the tail of the Linked List. | Updated Linked List |
-| Insertion | `addToHead` | Adds a new node to the head of the Linked List. | Updated Linked List |
-| Insertion | `insertAt` | Inserts a new node at the "index", or position, specified. | Boolean |
-| Deletion | `removeTail` | Removes the node at the tail of the Linked List. | Removed node |
-| Deletion | `removeHead` | Removes the node at the head of the Linked List. | Removed node |
-| Deletion | `removeFrom` | Removes the node at the "index", or position, specified. | Removed node |
-| Search | `contains` | Searches the Linked List for a node with the value specified. | Boolean |
-| Access | `get` | Gets the node at the "index", or position, specified. | Node at index |
-| Access | `set` | Updates the value of a node at the "index", or position, specified. | Boolean |
-| Meta | `size` | Returns the current size of the Linked List. | Integer |
+| Type      | Name         | Description                                                         | Returns             |
+| --------- | ------------ | ------------------------------------------------------------------- | ------------------- |
+| Insertion | `addToTail`  | Adds a new node to the tail of the Linked List.                     | Updated Linked List |
+| Insertion | `addToHead`  | Adds a new node to the head of the Linked List.                     | Updated Linked List |
+| Insertion | `insertAt`   | Inserts a new node at the "index", or position, specified.          | Boolean             |
+| Deletion  | `removeTail` | Removes the node at the tail of the Linked List.                    | Removed node        |
+| Deletion  | `removeHead` | Removes the node at the head of the Linked List.                    | Removed node        |
+| Deletion  | `removeFrom` | Removes the node at the "index", or position, specified.            | Removed node        |
+| Search    | `contains`   | Searches the Linked List for a node with the value specified.       | Boolean             |
+| Access    | `get`        | Gets the node at the "index", or position, specified.               | Node at index       |
+| Access    | `set`        | Updates the value of a node at the "index", or position, specified. | Boolean             |
+| Meta      | `size`       | Returns the current size of the Linked List.                        | Integer             |
 
 ## Time and Space Complexity Analysis
 
 Before we begin our analysis, here is a quick summary of the Time and Space constraints of each Linked List Operation. The complexities below apply to both Singly and Doubly Linked Lists:
 
 | Data Structure Operation | Time Complexity (Avg) | Time Complexity (Worst) | Space Complexity (Worst) |
-| --- | --- | --- | --- |
-| Access | `Θ(n)` | `O(n)` | `O(n)` |
-| Search | `Θ(n)` | `O(n)` | `O(n)` |
-| Insertion | `Θ(1)` | `O(1)` | `O(n)` |
-| Deletion | `Θ(1)` | `O(1)` | `O(n)` |
+| ------------------------ | --------------------- | ----------------------- | ------------------------ |
+| Access                   | `Θ(n)`                | `O(n)`                  | `O(n)`                   |
+| Search                   | `Θ(n)`                | `O(n)`                  | `O(n)`                   |
+| Insertion                | `Θ(1)`                | `O(1)`                  | `O(n)`                   |
+| Deletion                 | `Θ(1)`                | `O(1)`                  | `O(n)`                   |
 
 Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
 
@@ -1074,11 +1108,11 @@ Stacks and Queues are so similar in composition that we can discuss their proper
 
 **Stack Properties | Queue Properties:**
 
-| Stack Property | Description | Queue Property | Description |
-| --- | --- | --- | --- |
-| `top` | The first node in the Stack | `front` | The first node in the Queue |
-| `bottom` | The last node in the Stack. (Optional) | `back` | The last node in the Queue. |
-| `length` | The number of nodes in the Stack; the Stack's length. | `length` | The number of nodes in the Queue; the Queue's length. |
+| Stack Property | Description                                           | Queue Property | Description                                           |
+| -------------- | ----------------------------------------------------- | -------------- | ----------------------------------------------------- |
+| `top`          | The first node in the Stack                           | `front`        | The first node in the Queue                           |
+| `bottom`       | The last node in the Stack. (Optional)                | `back`         | The last node in the Queue.                           |
+| `length`       | The number of nodes in the Stack; the Stack's length. | `length`       | The number of nodes in the Queue; the Queue's length. |
 
 Notice that rather than having a `head` and a `tail` like Linked Lists, Stacks have a `top` and a `bottom` , and Queues have a `front` and a `back` instead. These properties are essentially the same; pointers to the end points of the respective List ADT where important actions way take place. The differences in naming conventions are strictly for human comprehension.
 
@@ -1097,11 +1131,11 @@ Similarly to Linked Lists, the values stored inside a Stack or a Queue are actua
 
 In the exercise that follows, we will implement a Stack data structure along with the following Stack methods:
 
-| Type | Name | Description | Returns |
-| --- | --- | --- | --- |
-| Insertion | `push` | Adds a Node to the top of the Stack. | Integer - New size of stack |
-| Deletion | `pop` | Removes a Node from the top of the Stack. | Node removed from top of Stack |
-| Meta | `size` | Returns the current size of the Stack. | Integer |
+| Type      | Name   | Description                               | Returns                        |
+| --------- | ------ | ----------------------------------------- | ------------------------------ |
+| Insertion | `push` | Adds a Node to the top of the Stack.      | Integer - New size of stack    |
+| Deletion  | `pop`  | Removes a Node from the top of the Stack. | Node removed from top of Stack |
+| Meta      | `size` | Returns the current size of the Stack.    | Integer                        |
 
 ## Stack JavaScript Implementation
 
@@ -1154,15 +1188,16 @@ class Stack {
 }
 ```
 
+
 ## Queue Methods
 
 In the exercise that follows, we will implement a Queue data structure along with the following Queue methods:
 
-| Type | Name | Description | Returns |
-| --- | --- | --- | --- |
-| Insertion | `enqueue` | Adds a Node to the front of the Queue. | Integer - New size of Queue |
-| Deletion | `dequeue` | Removes a Node from the front of the Queue. | Node removed from front of Queue |
-| Meta | `size` | Returns the current size of the Queue. | Integer |
+| Type      | Name      | Description                                 | Returns                          |
+| --------- | --------- | ------------------------------------------- | -------------------------------- |
+| Insertion | `enqueue` | Adds a Node to the front of the Queue.      | Integer - New size of Queue      |
+| Deletion  | `dequeue` | Removes a Node from the front of the Queue. | Node removed from front of Queue |
+| Meta      | `size`    | Returns the current size of the Queue.      | Integer                          |
 
 ## Queue JavaScript Implementation
 
@@ -1214,16 +1249,17 @@ class Queue {
 }
 ```
 
+
 ## Time and Space Complexity Analysis
 
 Before we begin our analysis, here is a quick summary of the Time and Space constraints of each Stack Operation.
 
 | Data Structure Operation | Time Complexity (Avg) | Time Complexity (Worst) | Space Complexity (Worst) |
-| --- | --- | --- | --- |
-| Access | `Θ(n)` | `O(n)` | `O(n)` |
-| Search | `Θ(n)` | `O(n)` | `O(n)` |
-| Insertion | `Θ(1)` | `O(1)` | `O(n)` |
-| Deletion | `Θ(1)` | `O(1)` | `O(n)` |
+| ------------------------ | --------------------- | ----------------------- | ------------------------ |
+| Access                   | `Θ(n)`                | `O(n)`                  | `O(n)`                   |
+| Search                   | `Θ(n)`                | `O(n)`                  | `O(n)`                   |
+| Insertion                | `Θ(1)`                | `O(1)`                  | `O(n)`                   |
+| Deletion                 | `Θ(1)`                | `O(1)`                  | `O(n)`                   |
 
 Before moving forward, see if you can reason to yourself why each operation has the time and space complexity listed above!
 
@@ -1349,6 +1385,7 @@ Constructing a tree is a matter of creating the nodes and setting `left` and `ri
     c.right = f;
 ```
 
+
 The visual representation of the tree is:
 
 
@@ -1379,6 +1416,7 @@ function inOrderPrint(root) {
 }
 ```
 
+
 Note that taking in an entire tree as input is really just a matter of taking in the root node. This is because the root node can access every other node through a path of edges. Our base case says, "if the tree is empty, return since there is nothing to print."
 
 Here is where the meat of the algorithm comes in. Given the root of a tree, the steps for `inOrderPrint` are:
@@ -1389,7 +1427,8 @@ Here is where the meat of the algorithm comes in. Given the root of a tree, the 
 
 Translating this into code:
 
-````js
+```
+`js
     function inOrderPrint(root) {
         if (!root) return;
 
@@ -1423,7 +1462,8 @@ Translating this into code:
         preOrderPrint(root.right);
     }
 
-````
+```
+`
 
 Given our tree, `preOrderPrint` would print the values in the order: `a, b, d, e, c, f`
 
@@ -1451,6 +1491,7 @@ function postOrderPrint(root) {
     console.log(root.val);
 }
 ```
+
 
 Given our Tree, `postOrderPrint` would print the values in the order: `d, e, b, f, c, a`
 
@@ -1504,6 +1545,7 @@ function inOrderPrint(root) {
 }
 ```
 
+
 If we run `inOrderPrint` on the three BSTs, we will get the following output:
 
     BST 1: 42
@@ -1552,6 +1594,7 @@ class BST {
     }
 }
 ```
+
 
     // commented naive BST class
 
@@ -1608,6 +1651,7 @@ We can call `insert` to build up the `BST` without worrying about breaking the s
     tree2.insert(16);
 ```
 
+
 The insertions above will yield the following trees:
 
 
@@ -1635,6 +1679,7 @@ tree.search(7); // => true
 tree.search(16); // => true
 tree.search(14); // => false
 ```
+
 
 As with many tree problems, this problem lends itself nicely to recursion! Like always, our base case should capture the scenario where the input tree is trivial and we know the answer to the problem without further calculation. If the given tree is empty, then we can be certain that the target is not found in the tree. The logic of our `BST#search` method will be much the same compared to our `binarySearch` function for sorted arrays. Try to interpret the code below and scroll further to the annotated version when you need clarification
 
@@ -1683,6 +1728,7 @@ class BST {
     }
 }
 ```
+
 
 ### Height Balance
 
@@ -1774,7 +1820,8 @@ Performing DF on our tree will hit the nodes in the order: `A, B, D, E, C, F`
 
 To travel the nodes of a tree according to Depth-First behavior, we'll utilize a **stack.** Recall from earlier that a stack is LIFO (Last In, First Out). Our strategy is to use an array as a stack. We'll use `push` to add to the top of our stack and `pop` to remove the top. Below is a complete implementation of `depthFirst` . Try to interpret the code below and scroll further to see the annotated version:
 
-````js
+```
+`js
     function depthFirst(root) {
         let stack = [ root ];
         while (stack.length) {
@@ -1807,7 +1854,8 @@ To travel the nodes of a tree according to Depth-First behavior, we'll utilize a
         }
     }
 
-````
+```
+`
 
 You should watch the video lecture that follows this reading for a visual on how a stack inherently gives us DF order. For now, a key idea to take away is that we only consider a node "visited" once we pop it. We do not consider a node "visited" when we push it.
 
@@ -1821,6 +1869,7 @@ function depthFirstRecur(root) {
     depthFirstRecur(root.right);
 }
 ```
+
 
 Does this code look familiar? It's identical to the `preOrderPrint` function we wrote previously. That's right, pre-order and depth-first are identical tree node orderings.
 
@@ -1842,7 +1891,8 @@ Perform BF on our tree will hit the nodes in the order: `A, B, C, D, E, F`
 
 While DF uses a stack, BF will use a **queue**. Recall that a queue is FIFO (First In, First Out). The code is very similar to our iterative DF, except we will use an array as a queue. `shift` will remove the front of the queue and `push` will add to the back of the queue. Interpret the implementation below and scroll further to the annotated version when you need more insight:
 
-````js
+```
+`js
     function breadthFirst(root) {
         let queue = [ root ];
         while (queue.length) {
@@ -1875,7 +1925,8 @@ While DF uses a stack, BF will use a **queue**. Recall that a queue is FIFO (Fir
         }
     }
 
-````
+```
+`
 
 We'll rarely run into a recursive BF implementation (probably never) because recursion uses an underlying call stack, but we really want the opposite of a stack (a queue).
 
@@ -1931,6 +1982,7 @@ c.neighbors = [b, d];
 e.neighbors = [a];
 f.neighbors = [e];
 ```
+
 
 This implementation is great because it feels familiar to how we implemented trees. However, this implementation is clunky in that we have no easy way to refer to the entire graph. How can we pass this graph to a function? Recall that there is no root to act as the definite starting point.
 
@@ -2002,6 +2054,7 @@ e.neighbors = [a];
 f.neighbors = [e];
 ```
 
+
 One thing we'll have to decide on is what node to begin our traversal. Depending on the structure of the graph, there may not be a suitable starting point. Remember that a graph may not have a "root". However in our candidate, `F` is like a root. It is the only valid choice because it is the only node that may access all other nodes through some path of edges. We admit, the choice of `F` is somewhat contrived and in a practical setting you may not have a nice starting point like this. We'll cover how to overcome this obstacle soon. For now we'll take `F` .
 
 We want to build a recursive `depthFirstRecur` function that accepts a node and performs a Depth-First traversal through the graph. Let's begin with a baseline solution, although it is not yet complete to handle all graphs: // broken
@@ -2016,7 +2069,9 @@ function depthFirstRecur(node) {
 }
 ```
 
-````
+
+```
+`
 
     depthFirstRecur(f);
 
@@ -2039,7 +2094,8 @@ Can you see where this code goes wrong? It will get caught in an infinite cycle 
         });
     }
 
-````
+```
+`
 
     depthFirstRecur(f);
 
@@ -2069,6 +2125,7 @@ function depthFirstIter(node) {
 }
 ```
 
+
     depthFirstIter(f);
 
 ### Graph Traversal w/ Adjacency List
@@ -2084,6 +2141,7 @@ Let's now assume our candidate graph in the form of an Adjacency List:
         'f': ['e']
     };
 ```
+
 Bear in mind that the nodes are just strings now, not `GraphNode` s. Other than that, the code shares many details from our previous implementations:
 
     // using Adjacency List representation
@@ -2101,6 +2159,7 @@ function depthFirstRecur(node, graph, visited = new Set()) {
 }
 ```
 
+
     depthFirstRecur('f', graph);
 
 Cool! We print values in the order `f, e, a, b, c, d` . We'll leave the iterative version to you as an exercise for later.
@@ -2109,7 +2168,8 @@ Instead, let's draw our attention to a point from before: having to choose `f` a
 
 We can fix this. A big advantage of using an Adjacency List is that it contains the full graph! We can use a surrounding loop to allow our traversal to jump between disconnected regions of the graph. Refactoring our code:
 
-````js
+```
+`js
     function depthFirst(graph) {
         let visited = new Set();
 
@@ -2129,7 +2189,8 @@ We can fix this. A big advantage of using an Adjacency List is that it contains 
         });
     }
 
-````
+```
+`
 
     depthFirst(graph);
 
@@ -2151,8 +2212,10 @@ It is easy to represent this graph using an Adjacency List. We can then pass the
 
 ```
 
+
     depthFirst(graph);
     // prints h, i, j, k, l, m
 
 Here's the description for how `depthFirst` operates above. We enter `depthFirst` and the for loop begins on `h` . This means we enter our `_depthFirstRecur` , which will continue to explore the "local" region as far as possible. When this recursion ends, we would have explored the entire connected region of `h, i, j, k` (note that we add these nodes to visited as well). Our recursive call then returns to the main `depthFirst` function, where we continue the for loop. We iterate it until we hit an unvisited node ( `l` ) and then explore it's local region as far as possible using `_depthFirstRecur` , hitting the last node `m` .
 ```
+

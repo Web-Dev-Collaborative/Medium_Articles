@@ -5,7 +5,7 @@ code {
   word-break: break-word;
 
   // Streamline the style when inside anchors to avoid broken underline and more
-  a > & {
+  a>& {
     color: inherit;
   }
 }
@@ -46,6 +46,7 @@ pre {
   max-height: $pre-scrollable-max-height;
   overflow-y: scroll;
 }
+
 // Inline code
 code {
   @include font-size($code-font-size);
@@ -53,7 +54,7 @@ code {
   word-break: break-word;
 
   // Streamline the style when inside anchors to avoid broken underline and more
-  a > & {
+  a>& {
     color: inherit;
   }
 }
