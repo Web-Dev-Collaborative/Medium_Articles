@@ -38,11 +38,11 @@
           <div class="section-inner sectionLayout--insetColumn">
             <h4 name="ecf9" id="ecf9" class="graf graf--h4 graf--leading graf--kicker"><a href="http://medium.com/codex"
                 data-href="http://medium.com/codex" class="markup--anchor markup--h4-anchor">CODEX</a></h4>
-            <h3 name="9caf" id="9caf" class="graf graf--h3 graf-after--h4 graf--title">PostgreSQL Cheat Sheet</h3>
+            <h3 name="9caf" id="9caf" class="graf graf--h3 graf-after--h4 graf--title">PostgreSQL Cheat Sheet</h3>
             <h4 name="018d" id="018d" class="graf graf--h4 graf-after--h3 graf--subtitle"><strong
                 class="markup--strong markup--h4-strong">Each table is made up of rows and columns. If you think of a
                 table as a grid, the column go from left to right across the grid and each entry of data is listed down
-                as a row.</strong></h4>
+                as a row.</strong></h4>
             <p name="971d" id="971d" class="graf graf--p graf-after--h4">Each row in a relational is uniquely identified
               by a primary key. This can be by one or more sets of column values. In most scenarios it is a single
               column, such as employeeID.</p>
@@ -207,7 +207,7 @@
             <p name="b329" id="b329" class="graf graf--p graf-after--pre">Removing a specified index from a table</p>
             <pre name="895b" id="895b"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">DROP INDEX index_name;</code></pre>
-            <h3 name="fe6a" id="fe6a" class="graf graf--h3 graf-after--pre">Querying data from tables</h3>
+            <h3 name="fe6a" id="fe6a" class="graf graf--h3 graf-after--pre">Querying data from tables</h3>
             <p name="6138" id="6138" class="graf graf--p graf-after--h3">Query all data from a table:</p>
             <pre name="39e6" id="39e6"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT * FROM table_name;</code></pre>
@@ -370,15 +370,15 @@
         </div>
         <div class="section-content">
           <div class="section-inner sectionLayout--insetColumn">
-            <h3 name="da6f" id="da6f" class="graf graf--h3 graf--leading">Postgres &amp; JSON:</h3>
-            <h3 name="1d65" id="1d65" class="graf graf--h3 graf-after--h3">Creating the DB and the Table</h3>
+            <h3 name="da6f" id="da6f" class="graf graf--h3 graf--leading">Postgres &amp; JSON:</h3>
+            <h3 name="1d65" id="1d65" class="graf graf--h3 graf-after--h3">Creating the DB and the Table</h3>
             <pre name="c75d" id="c75d"
               class="graf graf--pre graf-after--h3"><code class="markup--code markup--pre-code">DROP DATABASE IF EXISTS books_db;<br>CREATE DATABASE books_db WITH ENCODING=&#39;UTF8&#39; TEMPLATE template0;</code></pre>
             <pre name="4851" id="4851"
               class="graf graf--pre graf-after--pre"><code class="markup--code markup--pre-code">DROP TABLE IF EXISTS books;</code></pre>
             <pre name="8bc3" id="8bc3"
               class="graf graf--pre graf-after--pre"><code class="markup--code markup--pre-code">CREATE TABLE books (<br>  id SERIAL PRIMARY KEY,<br>  client VARCHAR NOT NULL,<br>  data JSONb NOT NULL<br>);</code></pre>
-            <h3 name="4d07" id="4d07" class="graf graf--h3 graf-after--pre">Populating the DB</h3>
+            <h3 name="4d07" id="4d07" class="graf graf--h3 graf-after--pre">Populating the DB</h3>
             <pre name="e5f6" id="e5f6"
               class="graf graf--pre graf-after--h3">INSERT INTO books(client, data) values( &#39;Joe&#39;, &#39;{ &quot;title&quot;: &quot;Siddhartha&quot;, &quot;author&quot;: { &quot;first_name&quot;: &quot;Herman&quot;, &quot;last_name&quot;: &quot;Hesse&quot; } }&#39; ); INSERT INTO books(client, data) values(&#39;Jenny&#39;, &#39;{ &quot;title&quot;: &quot;Bryan Guner&quot;, &quot;author&quot;: { &quot;first_name&quot;: &quot;Jack&quot;, &quot;last_name&quot;: &quot;Kerouac&quot; } }&#39;); INSERT INTO books(client, data) values(&#39;Jenny&#39;, &#39;{ &quot;title&quot;: &quot;100 años de soledad&quot;, &quot;author&quot;: { &quot;first_name&quot;: &quot;Gabo&quot;, &quot;last_name&quot;: &quot;Marquéz&quot; } }&#39;);</pre>
             <p name="cb97" id="cb97" class="graf graf--p graf-after--pre">Lets see everything inside the table books:
@@ -390,7 +390,7 @@
                 data-image-id="0*GOQQ0qNGak2yIrtQ" data-width="794" data-height="87"
                 src="https://cdn-images-1.medium.com/max/800/0*GOQQ0qNGak2yIrtQ"></figure>
             <h3 name="afcf" id="afcf" class="graf graf--h3 graf-after--figure"><code
-                class="markup--code markup--h3-code">-&gt;</code> operator returns values out of JSON columns</h3>
+                class="markup--code markup--h3-code">-&gt;</code> operator returns values out of JSON columns</h3>
             <p name="32cf" id="32cf" class="graf graf--p graf-after--h3">Selecting 1 column:</p>
             <pre name="288b" id="288b"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">SELECT client, <br>    data-&gt;&#39;title&#39; AS title<br>    FROM books;</code></pre>
@@ -406,12 +406,12 @@
                 data-image-id="0*fEzPkSY8yGexKOk4" data-width="592" data-height="93"
                 src="https://cdn-images-1.medium.com/max/800/0*fEzPkSY8yGexKOk4"></figure>
             <h3 name="d26b" id="d26b" class="graf graf--h3 graf-after--figure"><code
-                class="markup--code markup--h3-code">-&gt;</code> vs <code
+                class="markup--code markup--h3-code">-&gt;</code> vs <code
                 class="markup--code markup--h3-code">-&gt;&gt;</code></h3>
             <p name="c1ea" id="c1ea" class="graf graf--p graf-after--h3">The <code
                 class="markup--code markup--p-code">-&gt;</code> operator returns the original JSON type (which might be
               an object), whereas <code class="markup--code markup--p-code">-&gt;&gt;</code> returns text.</p>
-            <h3 name="505f" id="505f" class="graf graf--h3 graf-after--p">Return NESTED objects</h3>
+            <h3 name="505f" id="505f" class="graf graf--h3 graf-after--p">Return NESTED objects</h3>
             <p name="94a8" id="94a8" class="graf graf--p graf-after--h3">You can use the <code
                 class="markup--code markup--p-code">-&gt;</code> to return a nested object and thus chain the operators:
             </p>
@@ -445,10 +445,10 @@
             <figure name="3c44" id="3c44" class="graf graf--figure graf-after--p"><img class="graf-image"
                 data-image-id="0*R1kOhDK19ntdUYkq" data-width="212" data-height="52"
                 src="https://cdn-images-1.medium.com/max/800/0*R1kOhDK19ntdUYkq"></figure>
-            <h3 name="2b05" id="2b05" class="graf graf--h3 graf-after--figure">A real world example</h3>
+            <h3 name="2b05" id="2b05" class="graf graf--h3 graf-after--figure">A real world example</h3>
             <pre name="013d" id="013d"
               class="graf graf--pre graf-after--h3"><code class="markup--code markup--pre-code">CREATE TABLE events (<br>  name varchar(200),<br>  visitor_id varchar(200),<br>  properties json,<br>  browser json<br>);</code></pre>
-            <p name="98c5" id="98c5" class="graf graf--p graf-after--pre">We’re going to store events in this table,
+            <p name="98c5" id="98c5" class="graf graf--p graf-after--pre">We 're going to store events in this table,
               like pageviews. Each event has properties, which could be anything (e.g. current page) and also sends
               information about the browser (like OS, screen resolution, etc). Both of these are completely free form
               and could change over time (as we think of extra stuff to track).</p>
@@ -503,10 +503,10 @@
                 data-image-id="0*iyv4Iv4Rc8M8mwt1" data-width="305" data-height="54"
                 src="https://cdn-images-1.medium.com/max/800/0*iyv4Iv4Rc8M8mwt1"></figure>
             <h4 name="4640" id="4640" class="graf graf--h4 graf-after--figure">If you found this guide helpful feel free
-              to checkout my github/gists where I host similar content:</h4>
+              to checkout my github/gists where I host similar content:</h4>
             <p name="1c2f" id="1c2f" class="graf graf--p graf-after--h4"><a href="https://gist.github.com/bgoonz"
                 data-href="https://gist.github.com/bgoonz" class="markup--anchor markup--p-anchor" rel="noopener"
-                target="_blank">bgoonz’s gists · GitHub</a></p>
+                target="_blank">bgoonz''s gists · GitHub</a></p>
             <div name="3585" id="3585" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://github.com/bgoonz"
                 data-href="https://github.com/bgoonz" class="markup--anchor markup--mixtapeEmbed-anchor"
                 title="https://github.com/bgoonz"><strong
@@ -530,11 +530,11 @@
                 style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*kHvsYWw7LFYl0PB_);"></a>
             </div>
             <h3 name="9ece" id="9ece" class="graf graf--h3 graf-after--mixtapeEmbed">If you found this guide helpful
-              feel free to checkout my GitHub/gists where I host similar content:</h3>
+              feel free to checkout my GitHub/gists where I host similar content:</h3>
             <div name="d77e" id="d77e" class="graf graf--mixtapeEmbed graf-after--h3"><a
                 href="https://gist.github.com/bgoonz" data-href="https://gist.github.com/bgoonz"
                 class="markup--anchor markup--mixtapeEmbed-anchor" title="https://gist.github.com/bgoonz"><strong
-                  class="markup--strong markup--mixtapeEmbed-strong">bgoonz’s gists</strong><br><em
+                  class="markup--strong markup--mixtapeEmbed-strong">bgoonz''s gists</strong><br><em
                   class="markup--em markup--mixtapeEmbed-em">Instantly share code, notes, and snippets. Web Developer,
                   Electrical Engineer JavaScript | CSS | Bootstrap | Python |…</em>gist.github.com</a><a
                 href="https://gist.github.com/bgoonz" class="js-mixtapeImage mixtapeImage u-ignoreBlock"
@@ -552,7 +552,7 @@
                 style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*Udg3rbeFyslZ9dyl);"></a>
             </div>
             <h3 name="26c7" id="26c7" class="graf graf--h3 graf-after--mixtapeEmbed">Or Checkout my personal
-              Resource Site:</h3>
+              Resource Site:</h3>
             <div name="b88c" id="b88c" class="graf graf--mixtapeEmbed graf-after--h3 graf--trailing"><a
                 href="https://web-dev-resource-hub.netlify.app/" data-href="https://web-dev-resource-hub.netlify.app/"
                 class="markup--anchor markup--mixtapeEmbed-anchor"

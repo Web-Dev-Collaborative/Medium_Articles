@@ -37,17 +37,18 @@
         </div>
         <div class="section-content">
           <div class="section-inner sectionLayout--insetColumn">
-            <h3 name="874f" id="874f" class="graf graf--h3 graf--leading graf--title">Writing Files Using Python</h3>
+            <h3 name="874f" id="874f" class="graf graf--h3 graf--leading graf--title">Writing Files Using Python</h3>
             <p name="5ad7" id="5ad7" class="graf graf--p graf-after--h3">Basics of Writing Files in Python<br>The common
               methods to operate with files are open() to open a file,</p>
-            <p name="556c" id="556c" class="graf graf--p graf-after--p">seek() to set the file’s current position at the
+            <p name="556c" id="556c" class="graf graf--p graf-after--p">seek() to set the file 's current position at
+              the
               given offset, and</p>
             <p name="62e1" id="62e1" class="graf graf--p graf-after--p">close() to close th</p>
             <p name="e6a7" id="e6a7" class="graf graf--p graf-after--p">As pointed out in a previous article that deals
               with reading data from files, file handling belongs to the essential knowledge of every professional
               Python programmer. This feature is a core part of the Python language, and no extra module needs to be
               loaded to do it properly.</p>
-            <h3 name="1d2b" id="1d2b" class="graf graf--h3 graf-after--p">Basics of Writing Files in Python</h3>
+            <h3 name="1d2b" id="1d2b" class="graf graf--h3 graf-after--p">Basics of Writing Files in Python</h3>
             <p name="5b5f" id="5b5f" class="graf graf--p graf-after--h3">The common methods to operate with files are
               <code class="markup--code markup--p-code">open()</code> to open a file, <code
                 class="markup--code markup--p-code">seek()</code> to set the file&#39;s current position at the given
@@ -64,9 +65,9 @@
               exists. The according abbreviations are “w”, and “a”, and have to be specified before opening a file.</p>
             <p name="a4b1" id="a4b1" class="graf graf--p graf-after--p">In this article we will explain how to write
               data to a file line by line, as a list of lines, and appending data at the end of a file.</p>
-            <h3 name="037c" id="037c" class="graf graf--h3 graf-after--p">Writing a Single Line to a File</h3>
+            <h3 name="037c" id="037c" class="graf graf--h3 graf-after--p">Writing a Single Line to a File</h3>
             <p name="1cc9" id="1cc9" class="graf graf--p graf-after--h3">This first example is pretty similar to writing
-              to files with the popular programming languages C and C++, as you’ll see in <em
+              to files with the popular programming languages C and C++, as you''ll see in <em
                 class="markup--em markup--p-em">Listing 1</em>. The process is pretty straightforward. First, we open
               the file using the <code class="markup--code markup--p-code">open()</code> method for writing, write a
               single line of text to the file using the <code class="markup--code markup--p-code">write()</code> method,
@@ -87,10 +88,10 @@
               class="graf graf--pre graf-after--p">with open(&#39;helloworld.txt&#39;, &#39;w&#39;) as filehandle:<br>    filehandle.write(&#39;Hello, world!\n&#39;)</pre>
             <p name="84b9" id="84b9" class="graf graf--p graf-after--pre"><em class="markup--em markup--p-em">Listing
                 2</em></p>
-            <h3 name="7ded" id="7ded" class="graf graf--h3 graf-after--p">Writing a List of Lines to a File</h3>
+            <h3 name="7ded" id="7ded" class="graf graf--h3 graf-after--p">Writing a List of Lines to a File</h3>
             <p name="5123" id="5123" class="graf graf--p graf-after--h3">In reality a file does not consist only of a
               single line, but much more data. Therefore, the contents of the file are stored in a list that represents
-              a file buffer. To write the entire file buffer we’ll use the <code
+              a file buffer. To write the entire file buffer we''ll use the <code
                 class="markup--code markup--p-code">writelines()</code> method. <em
                 class="markup--em markup--p-em">Listing 3</em> gives you an example of this.</p>
             <pre name="5995" id="5995"
@@ -160,11 +161,11 @@
                 8</em></p>
             <p name="dd9d" id="dd9d" class="graf graf--p graf-after--p">This is not necessarily best practice, but it
               does give you other options for writing lines to a file.</p>
-            <h3 name="cb84" id="cb84" class="graf graf--h3 graf-after--p">Appending Data to a File</h3>
+            <h3 name="cb84" id="cb84" class="graf graf--h3 graf-after--p">Appending Data to a File</h3>
             <p name="e29e" id="e29e" class="graf graf--p graf-after--h3">So far, we have stored data in new files or in
               overwritten data in existing files. But what if we want to append data to the end of an existing file? In
-              this case we would need to open the existing file using a different access mode. We change that to ‘a’
-              instead of ‘w’.</p>
+              this case we would need to open the existing file using a different access mode. We change that to ‘a''
+              instead of ‘w''.</p>
             <p name="4063" id="4063" class="graf graf--p graf-after--p"><em class="markup--em markup--p-em">Listing
                 9</em> shows how to handle that. And <em class="markup--em markup--p-em">Listing 10</em> does the same
               thing, but it uses the <code class="markup--code markup--p-code">with</code> statement rather.</p>
@@ -187,10 +188,10 @@
               writing or appending data, Python triggers a synchronization call. As a result, the updated file is
               immediately written to disk.</p>
             <h4 name="e63e" id="e63e" class="graf graf--h4 graf-after--p">If you found this guide helpful feel free to
-              checkout my github/gists where I host similar content:</h4>
+              checkout my github/gists where I host similar content:</h4>
             <p name="1c2f" id="1c2f" class="graf graf--p graf-after--h4"><a href="https://gist.github.com/bgoonz"
                 data-href="https://gist.github.com/bgoonz" class="markup--anchor markup--p-anchor" rel="noopener"
-                target="_blank">bgoonz’s gists · GitHub</a></p>
+                target="_blank">bgoonz''s gists · GitHub</a></p>
             <div name="3585" id="3585" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://github.com/bgoonz"
                 data-href="https://github.com/bgoonz" class="markup--anchor markup--mixtapeEmbed-anchor"
                 title="https://github.com/bgoonz"><strong

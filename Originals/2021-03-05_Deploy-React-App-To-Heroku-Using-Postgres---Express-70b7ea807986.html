@@ -37,7 +37,7 @@
         <div class="section-content">
           <div class="section-inner sectionLayout--insetColumn">
             <h3 name="9805" id="9805" class="graf graf--h3 graf--leading graf--title">Deploy React App To Heroku Using
-              Postgres &amp; Express</h3>
+              Postgres &amp; Express</h3>
             <p name="9ce5" id="9ce5" class="graf graf--p graf-after--h3">Heroku is an web application that makes
               deploying applications easy for a beginner.</p>
             <figure name="9fca" id="9fca" class="graf graf--figure graf--iframe graf-after--p">
@@ -63,7 +63,7 @@
                 class="markup--code markup--p-code">start</code> scripts to install, build your React application, and
               start the Express production server.</p>
             <h3 name="6c67" id="6c67" class="graf graf--h3 graf-after--p">Phase 1: Heroku Connection</h3>
-            <p name="983d" id="983d" class="graf graf--p graf-after--h3">If you haven’t created a Heroku account yet,
+            <p name="983d" id="983d" class="graf graf--p graf-after--h3">If you haven 't created a Heroku account yet,
               create one <a href="https://signup.heroku.com/" data-href="https://signup.heroku.com/"
                 class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">here</a>.</p>
             <p name="fd5c" id="fd5c" class="graf graf--p graf-after--p">Add a new application in your <a
@@ -78,7 +78,7 @@
               Afterwards, login to Heroku in your terminal by running the following:</p>
             <pre name="bcfa" id="bcfa"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">heroku login</code></pre>
-            <p name="eb37" id="eb37" class="graf graf--p graf-after--pre">Add Heroku as a remote to your project’s git
+            <p name="eb37" id="eb37" class="graf graf--p graf-after--pre">Add Heroku as a remote to your project''s git
               repository in the following command and replace <code
                 class="markup--code markup--p-code">&lt;name-of-Heroku-app&gt;</code> with the name of the application
               you created in the <a href="https://dashboard.heroku.com/" data-href="https://dashboard.heroku.com/"
@@ -92,14 +92,15 @@
               application</h3>
             <p name="6a49" id="6a49" class="graf graf--p graf-after--h3">Right now, your React application is on a
               different localhost port than your Express application. However, since your React application only
-              consists of static files that don’t need to bundled continuously with changes in production, your Express
+              consists of static files that don''t need to bundled continuously with changes in production, your Express
               application can serve the React assets in production too. These static files live in the <code
                 class="markup--code markup--p-code">frontend/build</code> folder after running <code
                 class="markup--code markup--p-code">npm run build</code> in the <code
                 class="markup--code markup--p-code">frontend</code> folder.</p>
             <p name="ed99" id="ed99" class="graf graf--p graf-after--p">Add the following changes into your <code
                 class="markup--code markup--p-code">backend/routes.index.js</code> file.</p>
-            <p name="0d3e" id="0d3e" class="graf graf--p graf-after--p">At the root route, serve the React application’s
+            <p name="0d3e" id="0d3e" class="graf graf--p graf-after--p">At the root route, serve the React
+              application''s
               static <code class="markup--code markup--p-code">index.html</code> file along with <code
                 class="markup--code markup--p-code">XSRF-TOKEN</code> cookie. Then serve up all the React
               application&#39;s static files using the <code class="markup--code markup--p-code">express.static</code>
@@ -122,7 +123,7 @@
               class="graf graf--pre graf-after--pre"><code class="markup--code markup--pre-code">// Add a XSRF-TOKEN cookie in development<br>if (process.env.NODE_ENV !== &#39;production&#39;) {<br>  router.get(&#39;/api/csrf/restore&#39;, (req, res) =&gt; {<br>    res.cookie(&#39;XSRF-TOKEN&#39;, req.csrfToken());<br>    res.status(201).json({});<br>  });<br>}</code></pre>
             <pre name="dd71" id="dd71"
               class="graf graf--pre graf-after--pre"><code class="markup--code markup--pre-code">module.exports = router;</code></pre>
-            <p name="532c" id="532c" class="graf graf--p graf-after--pre">Your Express backend’s <code
+            <p name="532c" id="532c" class="graf graf--p graf-after--pre">Your Express backend''s <code
                 class="markup--code markup--p-code">package.json</code> should include scripts to run the <code
                 class="markup--code markup--p-code">sequelize</code> CLI commands.</p>
             <p name="6174" id="6174" class="graf graf--p graf-after--p">The <code
@@ -171,9 +172,9 @@
                 class="markup--code markup--p-code">dev:frontend</code> scripts are optional and will not be used for
               Heroku.</p>
             <p name="5899" id="5899" class="graf graf--p graf-after--p">Finally, commit your changes.</p>
-            <h3 name="827c" id="827c" class="graf graf--h3 graf-after--p">Phase 3: Deploy to Heroku</h3>
-            <p name="8f37" id="8f37" class="graf graf--p graf-after--h3">Once you’re finished setting this up, navigate
-              to your application’s Heroku dashboard. Under “Settings” there is a section for “Config Vars”. Click the
+            <h3 name="827c" id="827c" class="graf graf--h3 graf-after--p">Phase 3: Deploy to Heroku</h3>
+            <p name="8f37" id="8f37" class="graf graf--p graf-after--h3">Once you''re finished setting this up, navigate
+              to your application''s Heroku dashboard. Under “Settings” there is a section for “Config Vars”. Click the
               <code class="markup--code markup--p-code">Reveal Config Vars</code> button to see all your production
               environment variables. You should have a <code class="markup--code markup--p-code">DATABASE_URL</code>
               environment variable already from the Heroku Postgres add-on.
@@ -215,7 +216,7 @@
             <pre name="26b8" id="26b8"
               class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">heroku run npm run sequelize db:seed:all</code></pre>
             <p name="c703" id="c703" class="graf graf--p graf-after--pre">Note: You can interact with your database this
-              way as you’d like, but beware that <code class="markup--code markup--p-code">db:drop</code> cannot be run
+              way as you''d like, but beware that <code class="markup--code markup--p-code">db:drop</code> cannot be run
               in the Heroku environment. If you want to drop and create the database, you need to remove and add back
               the &quot;Heroku Postgres&quot; add-on.</p>
             <p name="97ba" id="97ba" class="graf graf--p graf-after--p">Another way to interact with the production
@@ -239,10 +240,10 @@
             <p name="3611" id="3611" class="graf graf--p graf-after--pre">The logs may clue you into why you are
               experiencing errors or different behavior.</p>
             <h4 name="4553" id="4553" class="graf graf--h4 graf-after--p">If you found this guide helpful feel free to
-              checkout my github/gists where I host similar content:</h4>
+              checkout my github/gists where I host similar content:</h4>
             <p name="1c2f" id="1c2f" class="graf graf--p graf-after--h4"><a href="https://gist.github.com/bgoonz"
                 data-href="https://gist.github.com/bgoonz" class="markup--anchor markup--p-anchor" rel="noopener"
-                target="_blank">bgoonz’s gists · GitHub</a></p>
+                target="_blank">bgoonz''s gists · GitHub</a></p>
             <div name="3585" id="3585" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://github.com/bgoonz"
                 data-href="https://github.com/bgoonz" class="markup--anchor markup--mixtapeEmbed-anchor"
                 title="https://github.com/bgoonz"><strong

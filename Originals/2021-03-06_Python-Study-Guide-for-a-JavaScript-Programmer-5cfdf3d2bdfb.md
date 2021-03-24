@@ -1,37 +1,30 @@
-Python Study Guide for a JavaScript Programmer {#python-study-guide-for-a-javascript-programmer .p-name}
-==============================================
-
+# Python Study Guide for a JavaScript Programmer 
 
 A guide to commands in Python from what you know in JavaScript
 
 
- 
-{.section .section .section--body .section--first name="24ac"}
- 
 
-------------------------------------------------------------------------
+---
 
-
-  
 ### Python Study Guide for a JavaScript Programmer {#03e2 .graf .graf--h3 .graf--leading .graf--title name="03e2"}
 
-![](https://cdn-images-1.medium.com/max/800/1*3V9VOfPk_hrFdbEAd3j-QQ.png) 
+![](https://cdn-images-1.medium.com/max/800/1*3V9VOfPk_hrFdbEAd3j-QQ.png)
 
 ### Applications of Tutorial & Cheat Sheet Respectivley (At Bottom Of Tutorial): {#5a5b .graf .graf--h3 .graf-after--figure name="5a5b"}
 
 ### Basics {#b0f3 .graf .graf--h3 .graf-after--h3 name="b0f3"}
 
--   [**PEP8** : Python Enhancement Proposals, style-guide for
-    Python.]{#f893}
--   [`print`{.markup--code .markup--li-code} is the equivalent of
-    `console.log`{.markup--code .markup--li-code}.]{#c0bf}
+- [**PEP8** : Python Enhancement Proposals, style-guide for
+  Python.]{#f893}
+- [`print`{.markup--code .markup--li-code} is the equivalent of
+  `console.log`{.markup--code .markup--li-code}.]{#c0bf}
 
 > 'print() == console.log()'
 
 ### `#` is used to make comments in your code. {#117c .graf .graf--h3 .graf-after--blockquote name="117c"}
 
 ```
- {#02b0 .graf .graf--pre .graf-after--h3 name="02b0"}
+
 def foo():
     """
     The foo function does many amazing things that you
@@ -41,24 +34,15 @@ def foo():
     secretThing()
 ```
 
-
-> *Python has a built in help function that let's you see a description
+> _Python has a built in help function that let's you see a description
 > of the source code without having to navigate to it... "-SickNasty ...
-> Autor Unknown"*
+> Autor Unknown"_
 
+---
 
-
-
- ="f301"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 ### Numbers {#e708 .graf .graf--h3 .graf--leading name="e708"}
- 
--   [Python has three types of numbers:]{#4060}
+
+- [Python has three types of numbers:]{#4060}
 
 1.  [**Integer**]{#8aef}
 2.  [**Positive and Negative Counting Numbers.**]{#723f}
@@ -68,13 +52,12 @@ No Decimal Point
 > Created by a literal non-decimal point number ... **or** ... with the
 > `int()`{.markup--code .markup--blockquote-code} constructor.
 
-```
+```py
  {#7bd4 .graf .graf--pre .graf-after--blockquote name="7bd4"}
-print(3) # => 3 
-print(int(19)) # => 19 
+print(3) # => 3
+print(int(19)) # => 19
 print(int()) # => 0
 ```
-
 
 **3. Complex Numbers**
 
@@ -85,101 +68,88 @@ print(int()) # => 0
 > If you came from a background in JavaScript and learned to accept the
 > premise(s) of the following meme...
 
-![](https://cdn-images-1.medium.com/max/800/0*eC4EvZcv6hhH88jX.png) 
+![](https://cdn-images-1.medium.com/max/800/0*eC4EvZcv6hhH88jX.png)
 
 > Than I am sure you will find the means to suspend your disbelief.
 
-```
+```py
  {#ba74 .graf .graf--pre .graf-after--blockquote name="ba74"}
-print(2.24) # => 2.24 
-print(2.) # => 2.0 
-print(float()) # => 0.0 
+print(2.24) # => 2.24
+print(2.) # => 2.0
+print(float()) # => 0.0
 print(27e-5) # => 0.00027
 ```
-
 
 ### KEEP IN MIND: {#2c13 .graf .graf--h3 .graf-after--pre name="2c13"}
 
 > **The** `i`{.markup--code .markup--blockquote-code} **is switched to
 > a** `j`{.markup--code .markup--blockquote-code} **in programming.**
 
-[T]{.graf-dropCap}*his is because the letter i is common place as the de
+[T]{.graf-dropCap}\*his is because the letter i is common place as the de
 facto index for any and all enumerable entities so it just makes sense
-not to compete for name-****space*** *when there's another 25 letters
+not to compete for name-\***_space_** _when there's another 25 letters
 that don't get used for every loop under the sun. My most medium
-apologies to Leonhard Euler.*
+apologies to Leonhard Euler._
 
-```
+```py
  {#3750 .graf .graf--pre .graf-after--p name="3750"}
-print(7j) # => 7j 
-print(5.1+7.7j)) # => 5.1+7.7j 
-print(complex(3, 5)) # => 3+5j 
-print(complex(17)) # => 17+0j 
+print(7j) # => 7j
+print(5.1+7.7j)) # => 5.1+7.7j
+print(complex(3, 5)) # => 3+5j
+print(complex(17)) # => 17+0j
 print(complex()) # => 0j
 ```
 
+- [**Type Casting** : The process of converting one number to
+  another.]{#2579}
 
--   [**Type Casting** : The process of converting one number to
-    another.]{#2579}
-
-```
+```py
  {#7273 .graf .graf--pre .graf-after--li name="7273"}
 # Using Float
 print(17)               # => 17
 print(float(17))        # => 17.0
 ```
 
-
-```
+```py
  {#7779 .graf .graf--pre .graf-after--pre name="7779"}
 # Using Int
 print(17.0)             # => 17.0
 print(int(17.0))        # => 17
 ```
 
-
-```
+```py
  {#67f3 .graf .graf--pre .graf-after--pre name="67f3"}
 # Using Str
 print(str(17.0) + ' and ' + str(17))        # => 17.0 and 17
 ```
 
-
 **The arithmetic operators are the same between JS and Python, with two
 additions:**
 
--   [*"\*\*" : Double asterisk for exponent.*]{#8cf4}
--   [*"//" : Integer Division.*]{#03b4}
--   [**There are no spaces between math operations in Python.**]{#2ce5}
--   [**Integer Division gives the other part of the number from Module;
-    it is a way to do round down numbers replacing**
-    `Math.floor()`{.markup--code .markup--li-code} **in JS.**]{#1686}
--   [**There are no** `++`{.markup--code .markup--li-code} **and**
-    `--`{.markup--code .markup--li-code} **in Python, the only shorthand
-    operators are:**]{#a6a3}
+- [*"\*\*" : Double asterisk for exponent.*]{#8cf4}
+- [*"//" : Integer Division.*]{#03b4}
+- [**There are no spaces between math operations in Python.**]{#2ce5}
+- [**Integer Division gives the other part of the number from Module;
+  it is a way to do round down numbers replacing**
+  `Math.floor()`{.markup--code .markup--li-code} **in JS.**]{#1686}
+- [**There are no** `++`{.markup--code .markup--li-code} **and**
+  `--`{.markup--code .markup--li-code} **in Python, the only shorthand
+  operators are:**]{#a6a3}
 
-![](https://cdn-images-1.medium.com/max/600/0*Ez_1PZ93N4FfvkRr.png) 
+![](https://cdn-images-1.medium.com/max/600/0*Ez_1PZ93N4FfvkRr.png)
 
+---
 
-
-
- ="b4ba"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 ### Strings {#f25c .graf .graf--h3 .graf--leading name="f25c"}
 
- es.]{#e98c}
--   [You can escape strings like so
-    `'Jodi asked, "What\'s up, Sam?"'`{.markup--code
-    .markup--li-code}]{#225e}
--   [Multiline strings use triple quotes.]{#9f74}
+es.]
+
+- [You can escape strings like so
+  `'Jodi asked, "What\'s up, Sam?"'`]{#225e}
+- [Multiline strings use triple quotes.]{#9f74}
 
 ```
- {#669b .graf .graf--pre .graf-after--li name="669b"}
+
 print('''My instructions are very long so to make them
 more readable in the code I am putting them on
 more than one line. I can even include "quotes"
@@ -187,85 +157,76 @@ of any kind because they won't get confused with
 the end of the string!''')
 ```
 
-
 **Use the** `len()`{.markup--code .markup--p-code} **function to get the
 length of a string.**
 
-```
+```py
  {#425a .graf .graf--pre .graf-after--p name="425a"}
 print(len("Spaghetti")) # => 9
 ```
 
-
-### **Python uses** `zero-based                   indexing` {#3f9c .graf .graf--h3 .graf-after--pre name="3f9c"}
+### **Python uses** `zero-based indexing` {#3f9c .graf .graf--h3 .graf-after--pre name="3f9c"}
 
 #### Python allows negative indexing (thank god!) {#55b9 .graf .graf--h4 .graf-after--h3 name="55b9"}
 
-```
+```py
  {#7d56 .graf .graf--pre .graf-after--h4 name="7d56"}
-print("Spaghetti"[-1]) # => i 
+print("Spaghetti"[-1]) # => i
 ```
 
-
-```
+```py
  {#f11f .graf .graf--pre .graf-after--pre name="f11f"}
 print("Spaghetti"[-4]) # => e
 ```
 
-
--   [Python let's you use ranges]{#7567}
+- [Python let's you use ranges]{#7567}
 
 You can think of this as roughly equivalent to the slice method called
-on a JavaScript object or string... *(mind you that in JS ... strings
+on a JavaScript object or string... _(mind you that in JS ... strings
 are wrapped in an object (under the hood)... upon which the string
-methods are actually called. As a immutable privative type* ***by
-textbook definition****, a string literal could not hope to invoke most
+methods are actually called. As a immutable privative type_ **\*by
+textbook definition\*\***, a string literal could not hope to invoke most
 of it's methods without violating the state it was bound to on
-initialization if it were not for this bit of syntactic sugar.)*
+initialization if it were not for this bit of syntactic sugar.)\*
 
-```
+```py
  {#f1fb .graf .graf--pre .graf-after--p name="f1fb"}
-print("Spaghetti"[1:4]) # => pag 
-print("Spaghetti"[4:-1]) # => hett 
+print("Spaghetti"[1:4]) # => pag
+print("Spaghetti"[4:-1]) # => hett
 print("Spaghetti"[4:4]) # => (empty string)
 ```
 
+- [The end range is exclusive just like `slice` in JS.]{#1366}
 
--   [The end range is exclusive just like `slice`{.markup--code
-    .markup--li-code} in JS.]{#1366}
-
-```
- {#5f2c .graf .graf--pre .graf-after--li name="5f2c"}
+```py
+ 
 # Shortcut to get from the beginning of a string to a certain index.
 print("Spaghetti"[:4])  # => Spag
 print("Spaghetti"[:-1])    # => Spaghett
 ```
 
+```py
 
-```
- {#b0df .graf .graf--pre .graf-after--pre name="b0df"}
 # Shortcut to get from a certain index to the end of a string.
 print("Spaghetti"[1:])  # => paghetti
 print("Spaghetti"[-4:])    # => etti
-```
+```py
 
+- [The `index`{.markup--code .markup--li-code} string function is the
+  equiv. of `indexOf()`{.markup--code .markup--li-code} in JS]{#c786}
 
--   [The `index`{.markup--code .markup--li-code} string function is the
-    equiv. of `indexOf()`{.markup--code .markup--li-code} in JS]{#c786}
-
-```
+```py
  {#2a43 .graf .graf--pre .graf-after--li name="2a43"}
 print("Spaghetti".index("h"))    # => 4
 print("Spaghetti".index("t"))    # => 6
 ```
 
+- [The `count`{.markup--code .markup--li-code} function finds out how
+  many times a substring appears in a string... pretty nifty for a
+  hard coded feature of the language.]{#fbb6}
 
--   [The `count`{.markup--code .markup--li-code} function finds out how
-    many times a substring appears in a string... pretty nifty for a
-    hard coded feature of the language.]{#fbb6}
+```py
 
-```
- {#6cb2 .graf .graf--pre .graf-after--li name="6cb2"}
 print("Spaghetti".count("h"))    # => 1
 print("Spaghetti".count("t"))    # => 2
 print("Spaghetti".count("s"))    # => 0
@@ -277,13 +238,12 @@ postpone, and one which we intend to win, and the others, too.
 '''.count('the '))                # => 4
 ```
 
-
--   [**You can use** `+`{.markup--code .markup--li-code} **to
-    concatenate strings, just like in JS.**]{#7816}
--   [**You can also use "\*" to repeat strings or multiply
-    strings.**]{#ed0a}
--   [**Use the** `format()`{.markup--code .markup--li-code} **function
-    to use placeholders in a string to input values later on.**]{#f95c}
+- [**You can use** `+`{.markup--code .markup--li-code} **to
+  concatenate strings, just like in JS.**]{#7816}
+- [**You can also use "\*" to repeat strings or multiply
+  strings.**]{#ed0a}
+- [**Use the** `format()`{.markup--code .markup--li-code} **function
+  to use placeholders in a string to input values later on.**]{#f95c}
 
 ```
  {#dd9a .graf .graf--pre .graf-after--li name="dd9a"}
@@ -292,40 +252,32 @@ last_name = "Bob"
 print('Your name is {0} {1}'.format(first_name, last_name))  # => Your name is Billy Bob
 ```
 
-
--   [*Shorthand way to use format function is:\
-    *`print(f'Your name is {first_name} {last_name}')`{.markup--code
-    .markup--li-code}]{#445b}
+- [*Shorthand way to use format function is:\
+  *`print(f'Your name is {first_name} {last_name}')`]{#445b}
 
 #### Some useful string methods. {#8ff4 .graf .graf--h4 .graf-after--li name="8ff4"}
 
--   [**Note that in JS** `join`{.markup--code .markup--li-code} **is
-    used on an Array, in Python it is used on String.**]{#118c}
+- [**Note that in JS** `join`{.markup--code .markup--li-code} **is
+  used on an Array, in Python it is used on String.**]{#118c}
 
-![](https://cdn-images-1.medium.com/max/800/0*eE3E5H0AoqkhqK1z.png) 
+![](https://cdn-images-1.medium.com/max/800/0*eE3E5H0AoqkhqK1z.png)
 
--   [There are also many handy testing methods.]{#e95e}
+- [There are also many handy testing methods.]{#e95e}
 
-![](https://cdn-images-1.medium.com/max/800/0*Q0CMqFd4PozLDFPB.png) 
+![](https://cdn-images-1.medium.com/max/800/0*Q0CMqFd4PozLDFPB.png)
 
+="477c"}
 
+---
 
-
- ="477c"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 ### Variables and Expressions {#920e .graf .graf--h3 .graf--leading name="920e"}
 
--   [**Duck-Typing** : Programming Style which avoids checking an
- do.]{#a255}
--   [Duck Typing is the fundamental approach of Python.]{#6e70}
--   [Assignment of a value automatically declares a variable.]{#5666}
+- [**Duck-Typing** : Programming Style which avoids checking an
+  do.]{#a255}
+- [Duck Typing is the fundamental approach of Python.]{#6e70}
+- [Assignment of a value automatically declares a variable.]{#5666}
 
-```
+```py
  {#302d .graf .graf--pre .graf-after--li name="302d"}
 a = 7
 b = 'Marbles'
@@ -333,9 +285,8 @@ print(a)         # => 7
 print(b)         # => Marbles
 ```
 
-
--   [***You can chain variable assignments to give multiple var names
-    the same value.***]{#f6cf}
+- [***You can chain variable assignments to give multiple var names
+  the same value.***]{#f6cf}
 
 #### Use with caution as this is highly unreadable {#ab40 .graf .graf--h4 .graf-after--li name="ab40"}
 
@@ -347,10 +298,9 @@ print(max)             # => 0
 print(min)             # => 0
 ```
 
-
 #### The value and type of a variable can be re-assigned at any time. {#c91a .graf .graf--h4 .graf-after--pre name="c91a"}
 
-```
+```py
  {#9b2f .graf .graf--pre .graf-after--h4 name="9b2f"}
 a = 17
 print(a)         # => 17
@@ -358,91 +308,73 @@ a = 'seventeen'
 print(a)         # => seventeen
 ```
 
-
--   [`NaN`{.markup--code .markup--li-code} *does not exist in Python,
-    but you can \'create\' it like so:\
-    *`print(float("nan"))`{.markup--code .markup--li-code}]{#4605}
--   [*Python replaces* `null`{.markup--code .markup--li-code} *with*
-    `none`{.markup--code .markup--li-code}*.*]{#d150}
--   [`none`{.markup--code .markup--li-code} ***is an object*** *and can
-    be directly assigned to a variable.*]{#6fa7}
+- [`NaN`{.markup--code .markup--li-code} *does not exist in Python,
+  but you can \'create\' it like so:\
+  *`print(float("nan"))`{.markup--code .markup--li-code}]{#4605}
+- [*Python replaces* `null`{.markup--code .markup--li-code} *with*
+  `none`{.markup--code .markup--li-code}*.*]{#d150}
+- [`none`{.markup--code .markup--li-code} ***is an object*** *and can
+  be directly assigned to a variable.*]{#6fa7}
 
 > Using none is a convenient way to check to see why an action may not
 > be operating correctly in your program.
 
 
 
+---
 
- ="1a73"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 ### Boolean Data Type {#6f4e .graf .graf--h3 .graf--leading name="6f4e"}
 
--   [One of the biggest benefits of Python is that it reads more like
-    English than JS does.]{#b843}
- 
-![](https://cdn-images-1.medium.com/max/800/0*HQpndNhm1Z_xSoHb.png) 
+- [One of the biggest benefits of Python is that it reads more like
+  English than JS does.]{#b843}
 
-```
- {#5ba1 .graf .graf--pre .graf-after--figure name="5ba1"}
+![](https://cdn-images-1.medium.com/max/800/0*HQpndNhm1Z_xSoHb.png)
+
+```py
 # Logical AND
 print(True and True)    # => True
 print(True and False)   # => False
 print(False and False)  # => False
 ```
 
+```py
 
-```
- {#46fe .graf .graf--pre .graf-after--pre name="46fe"}
 # Logical OR
 print(True or True)     # => True
 print(True or False)    # => True
 print(False or False)   # => False
 ```
 
-
-```
- {#4857 .graf .graf--pre .graf-after--pre name="4857"}
+```py
+ 
 # Logical NOT
 print(not True)             # => False
 print(not False and True)   # => True
 print(not True or False)    # => False
 ```
 
-
--   [By default, Python considers an object to be true UNLESS it is one
-    of the following:]{#18cc}
--   [Constant `None`{.markup--code .markup--li-code} or
-    `False`{.markup--code .markup--li-code}]{#6e0a}
--   [Zero of any numeric type.]{#9552}
--   [Empty Sequence or Collection.]{#e7ce}
--   [`True`{.markup--code .markup--li-code} and `False`{.markup--code
-    .markup--li-code} must be capitalized]{#11d6}
+- [By default, Python considers an object to be true UNLESS it is one
+  of the following:]{#18cc}
+- [Constant `None`{.markup--code .markup--li-code} or
+  `False`{.markup--code .markup--li-code}]{#6e0a}
+- [Zero of any numeric type.]{#9552}
+- [Empty Sequence or Collection.]{#e7ce}
+- [`True`{.markup--code .markup--li-code} and `False` must be capitalized]{#11d6}
 
 
 
+---
 
- ="61e9"}
- 
+### Comparison Operators 
 
-------------------------------------------------------------------------
+- [Python uses all the same equality operators as JS.]{#a4fa}
+- [In Python, equality operators are processed from left to
+  right.]
+  order:]
 
-
-  
-### Comparison Operators {#586f .graf .graf--h3 .graf--leading name="586f"}
-
--   [Python uses all the same equality operators as JS.]{#a4fa}
--   [In Python, equality operators are processed from left to
-    right.]{#7f98}
-  order:]{#fb68}
-
-1.  [**NOT**]{#bf08}
-2.  [**AND**]{#4888}
-3.  [**OR**]{#2c55}
+1.  [**NOT**]
+2.  [**AND**]
+3.  [**OR**]
 
 > Just like in JS, you can use `parentheses`{.markup--code
 > .markup--blockquote-code} to change the inherent order of operations.
@@ -451,216 +383,219 @@ print(not True or False)    # => False
 > .markup--blockquote-code} or `false`{.markup--code
 > .markup--blockquote-code} has been reached.
 
-![](https://cdn-images-1.medium.com/max/800/0*qHzGRLTOMTf30miT.png) 
+![](https://cdn-images-1.medium.com/max/800/0*qHzGRLTOMTf30miT.png)
 
 
 
+---
 
- ="ac4f"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 ### Identity vs Equality {#4ed8 .graf .graf--h3 .graf--leading name="4ed8"}
 
-```
- {#c7d8 .graf .graf--pre .graf-after--h3 name="c7d8"}
+```py
+
 print (2 == '2')    # => False
 print (2 is '2')    # => False
 ```
 
- 
-```
- {#2ab6 .graf .graf--pre .graf-after--pre name="2ab6"}
+```py
+
 print ("2" == '2')    # => True
 print ("2" is '2')    # => True
 ```
 
+```py
 
-```
- {#8ce9 .graf .graf--pre .graf-after--pre name="8ce9"}
 # There is a distinction between the number types.
 print (2 == 2.0)    # => True
 print (2 is 2.0)    # => False
 ```
 
-
--   [In the Python community it is better to use `is`{.markup--code
-    .markup--li-code} and `is not`{.markup--code .markup--li-code} over
-    `==`{.markup--code .markup--li-code} or `!=`{.markup--code
-    .markup--li-code}]{#c5a5}
+- [In the Python community it is better to use `is` and `is not`over
+  `==' or `!=`]{#c5a5}
+  `==` or `!=`]{#c5a5}
 
 
 
+---
 
- ="fa32"}
- 
+### If Statements 
 
-------------------------------------------------------------------------
+```py
 
-
-  
-### If Statements {#a959 .graf .graf--h3 .graf--leading name="a959"}
-
-```
- {#5558 .graf .graf--pre .graf-after--h3 name="5558"}
 if name == 'Monica':
     print('Hi, Monica.')
 ```
 
-
-  name="7e04"}
+```py
+name="7e04"}
 if name == 'Monica':
-    print('Hi, Monica.')
+print('Hi, Monica.')
 else:
-    print('Hello, stranger.')
+print('Hello, stranger.')
+
 ```
 
 
-```
- {#4d41 .graf .graf--pre .graf-after--pre name="4d41"}
+```py
+
+
 if name == 'Monica':
-    print('Hi, Monica.')
+print('Hi, Monica.')
 elif age < 12:
-    print('You are not Monica, kiddo.')
+print('You are not Monica, kiddo.')
 elif age > 2000:
-   print('Unlike you, Monica is not an undead, immortal vampire.')
+print('Unlike you, Monica is not an undead, immortal vampire.')
 elif age > 100:
-   print('You are not Monica, grannie.')
+print('You are not Monica, grannie.')
+
 ```
 
 
-> Remember the order of `elif`{.markup--code .markup--blockquote-code}
+> Remember the order of `elif`
 > statements matter.
 
 
 
 
- ="eea8"}
- 
+
+
 
 ------------------------------------------------------------------------
 
 
-  
-### While Statements {#bc26 .graf .graf--h3 .graf--leading name="bc26"}
 
-```
- {#280d .graf .graf--pre .graf-after--h3 name="280d"}
+### While Statements 
+
+```py
+
+
 spam = 0
 while spam < 5:
-  print('Hello, world.')
-  spam = spam + 1
-```
-
- 
--   [`Break`{.markup--code .markup--li-code} statement also exists in
-    Python.]{#c7f3}
+print('Hello, world.')
+spam = spam + 1
 
 ```
- {#1ef2 .graf .graf--pre .graf-after--li name="1ef2"}
+
+
+-   [`Break` statement also exists in
+    Python.]
+
+```py
+
+
 spam = 0
 while True:
-  print('Hello, world.')
-  spam = spam + 1
-  if spam >= 5:
-    break
+print('Hello, world.')
+spam = spam + 1
+if spam >= 5:
+break
+
 ```
 
 
 -   [As are `continue`{.markup--code .markup--li-code}
     statements]{#7a99}
 
-```
- {#5a23 .graf .graf--pre .graf-after--li .graf--trailing name="5a23"}
+```py
+
+{#5a23 .graf .graf--pre .graf-after--li .graf--trailing name="5a23"}
 spam = 0
 while True:
-  print('Hello, world.')
-  spam = spam + 1
-  if spam < 5:
-    continue
-  break
+print('Hello, world.')
+spam = spam + 1
+if spam < 5:
+continue
+break
+
 ```
 
 
 
 
 
- ="d2d3"}
- 
+
+
 
 ------------------------------------------------------------------------
 
 
-  
-### Try/Except Statements {#fb57 .graf .graf--h3 .graf--leading name="fb57"}
+
+### Try/Except Statements
 
 -   [Python equivalent to `try/catch`{.markup--code
     .markup--li-code}]{#72ec}
 
-```
- {#ed26 .graf .graf--pre .graf-after--li name="ed26"}
+```py
+
+{#ed26 .graf .graf--pre .graf-after--li name="ed26"}
 a = 321
 try:
-    print(len(a))
- 
+print(len(a))
+
     print('Silently handle error here')
+
 ```
 
 
-```
- {#62f6 .graf .graf--pre .graf-after--pre name="62f6"}
-    # Optionally include a correction to the issue
-    a = str(a)
-    print(len(a)
+```py
+
+ # Optionally include a correction to the issue
+a = str(a)
+print(len(a)
+
 ```
 
 
-```
- {#b98d .graf .graf--pre .graf-after--pre name="b98d"}
+```py
+
+
 a = '321'
 try:
-    print(len(a))
+print(len(a))
 except:
-    print('Silently handle error here')
+print('Silently handle error here')
+
 ```
 
 
-```
- {#080f .graf .graf--pre .graf-after--pre name="080f"}
-    # Optionally include a correction to the issue
-    a = str(a)
-    print(len(a))
+```py
+
+ # Optionally include a correction to the issue
+a = str(a)
+print(len(a))
+
 ```
 
 
 -   [You can name an error to give the output more specificity.]{#dcd1}
 
-```
- {#d527 .graf .graf--pre .graf-after--li name="d527"}
+```py
+
+
 a = 100
 b = 0
 try:
-    c = a / b
+c = a / b
 except ZeroDivisionError:
-    c = None
+c = None
 print(c)
+
 ```
 
 
 -   [You can also use the `pass`{.markup--code .markup--li-code}
     commmand to by pass a certain error.]{#4027}
 
-```
- {#30f0 .graf .graf--pre .graf-after--li name="30f0"}
+```py
+
+
 a = 100
 b = 0
 try:
-    print(a / b)
+print(a / b)
 except ZeroDivisionError:
-    pass
+pass
+
 ```
 
 
@@ -669,15 +604,19 @@ except ZeroDivisionError:
     like so:]{#030b}
 
 ```
- {#b0c7 .graf .graf--pre .graf-after--li name="b0c7"}
+
+```p
 a = 100
+
 # b = "5"
+
 try:
-    print(a / b)
+print(a / b)
 except ZeroDivisionError:
-    pass
+pass
 except (TypeError, NameError):
-    print("ERROR!")
+print("ERROR!")
+
 ```
 
 
@@ -685,107 +624,115 @@ except (TypeError, NameError):
     end a chain of `except`{.markup--code .markup--li-code}
     statements.]{#bf45}
 
-```
- {#bc50 .graf .graf--pre .graf-after--li name="bc50"}
+```py
+
+
+
 # tuple of file names
+
 files = ('one.txt', 'two.txt', 'three.txt')
-```
 
-
-```
- {#ca0d .graf .graf--pre .graf-after--pre name="ca0d"}
-# simple loop
+                                                   # simple loop
+```py
 for filename in files:
-    try:
-        # open the file in read mode
-        f = open(filename, 'r')
-    except OSError:
-        # handle the case where file does not exist or permission is denied
-        print('cannot open file', filename)
-    else:
-        # do stuff with the file object (f)
-        print(filename, 'opened successfully')
-        print('found', len(f.readlines()), 'lines')
-        f.close()
-```
+try: # open the file in read mode
+f = open(filename, 'r')
+except OSError: # handle the case where file does not exist or permission is denied
+print('cannot open file', filename)
+else: # do stuff with the file object (f)
+print(filename, 'opened successfully')
+print('found', len(f.readlines()), 'lines')
+f.close()
 
+`` . py
 
 -   [`finally`{.markup--code .markup--li-code} is used at the end to
     clean up all actions under any circumstance.]{#0e91}
-
-```
- {#0162 .graf .graf--pre .graf-after--li name="0162"}
+```py
 def divide(x, y):
-    try:
-        result = x / y
-    except ZeroDivisionError:
-        print("Cannot divide by zero")
-    else:
-        print("Result is", result)
-    finally:
-        print("Finally...")
+try:
+result = x / y
+except ZeroDivisionError:
+print("Cannot divide by zero")
+else:
+print("Result is", result)
+finally:
+print("Finally...")
+
 ```
 
 
 -   [Using duck typing to check to see if some value is able to use a
     certain method.]{#84ee}
 
-```
- {#133c .graf .graf--pre .graf-after--li name="133c"}
+```py
+
+
+
 # Try a number - nothing will print out
+```py
 a = 321
-if hasattr(a, '__len__'):
-    print(len(a))
+if hasattr(a, '**len**'):
+print(len(a))
+
 ```
 
 
-```
- {#5dc9 .graf .graf--pre .graf-after--pre .graf--trailing name="5dc9"}
+```py
+
+
 # Try a string - the length will print out (4 in this case)
+```py
 b = "5555"
-if hasattr(b, '__len__'):
-    print(len(b))
+if hasattr(b, '**len**'):
+print(len(b))
+
 ```
 
 
 
 
 
- ="b06a"}
- 
+
 
 ------------------------------------------------------------------------
 
 
-  
+
 ### Pass {#e485 .graf .graf--h3 .graf--leading name="e485"}
 
 -   [Pass Keyword is required to write the JS equivalent of :]{#2b80}
 
-```
- {#650c .graf .graf--pre .graf-after--li name="650c"}
+```p
+
+
 if (true) {
 }
+
 ```
 
 
 ```
- {#add9 .graf .graf--pre .graf-after--pre name="add9"}
- 
+
+
+
 ```
 
 
 ```
- {#72c8 .graf .graf--pre .graf-after--pre name="72c8"}
+
 if True:
-  pass
+pass
+
 ```
 
 
 ```
- {#2576 .graf .graf--pre .graf-after--pre .graf--trailing name="2576"}
+
+
 while True:
-  pass
+pass
+
 ```
 
 
@@ -793,12 +740,12 @@ while True:
 
 
  ="fd82"}
- 
+
 
 ------------------------------------------------------------------------
 
 
-  
+
 ### Functions {#2623 .graf .graf--h3 .graf--leading name="2623"}
 
 -   [**Function definition includes:**]{#7091}
@@ -810,33 +757,45 @@ while True:
 -   [**You can use default parameters just like in JS**]{#bcef}
 
 ```
- {#10df .graf .graf--pre .graf-after--li name="10df"}
- 
+
+{#10df .graf .graf--pre .graf-after--li name="10df"}
+
     print(saying, name)
+
 ```
 
 
 ```
- {#1e17 .graf .graf--pre .graf-after--pre name="1e17"}
+
+{#1e17 .graf .graf--pre .graf-after--pre name="1e17"}
 greeting("Monica")
+
 # Hello Monica
+
 ```
 
 
 ```
- {#3702 .graf .graf--pre .graf-after--pre name="3702"}
+
+{#3702 .graf .graf--pre .graf-after--pre name="3702"}
 greeting("Barry", "Hey")
+
 # Hey Barry
+
 ```
 
 
 #### **Keep in mind, default parameters must always come after regular parameters.** {#f3f1 .graf .graf--h4 .graf-after--pre name="f3f1"}
 
 ```
- {#9657 .graf .graf--pre .graf-after--h4 name="9657"}
+
+{#9657 .graf .graf--pre .graf-after--h4 name="9657"}
+
 # THIS IS BAD CODE AND WILL NOT RUN
+
 def increment(delta=1, value):
-    return delta + value
+return delta + value
+
 ```
 
 
@@ -844,17 +803,24 @@ def increment(delta=1, value):
     Python.*]{#c1aa}
 
 ```
- {#e495 .graf .graf--pre .graf-after--li name="e495"}
+
+{#e495 .graf .graf--pre .graf-after--li name="e495"}
 def greeting(name, saying="Hello"):
-    print(saying, name)
+print(saying, name)
+
 ```
 
 
 ```
- {#e924 .graf .graf--pre .graf-after--pre name="e924"}
+
+{#e924 .graf .graf--pre .graf-after--pre name="e924"}
+
 # name has no default value, so just provide the value
+
 # saying has a default value, so use a keyword argument
+
 greeting("Monica", saying="Hi")
+
 ```
 
 
@@ -868,12 +834,12 @@ greeting("Monica", saying="Hi")
 
 
  ="db19"}
- 
+
 
 ------------------------------------------------------------------------
 
 
-  
+
 ### Notes {#4564 .graf .graf--h3 .graf--leading name="4564"}
 
 #### Formatted Strings {#b43f .graf .graf--h4 .graf-after--h3 name="b43f"}
@@ -884,10 +850,10 @@ greeting("Monica", saying="Hi")
 > format() is also applied directly to strings.
 
 ```
- {#c199 .graf .graf--pre .graf-after--blockquote name="c199"}
+
+{#c199 .graf .graf--pre .graf-after--blockquote name="c199"}
 shopping_list = ['bread','milk','eggs']
 print(','.join(shopping_list))
- 
 
 ### Comma Thousands Separator {#5fda .graf .graf--h3 .graf-after--pre name="5fda"}
 
@@ -896,7 +862,6 @@ print(','.join(shopping_list))
 print('{:,}'.format(1234567890))
 '1,234,567,890'
 ```
-
 
 ### Date and Time {#d948 .graf .graf--h3 .graf-after--pre name="d948"}
 
@@ -907,7 +872,6 @@ print('{:%Y-%m-%d %H:%M:%S}'.format(d))
 '2020–07–04 12:15:58'
 ```
 
-
 ### Percentage {#37d5 .graf .graf--h3 .graf-after--pre name="37d5"}
 
 ```
@@ -917,7 +881,6 @@ total = 220
 print('Correct answers: {:.2%}'.format(points/total))
 Correct answers: 86.36%
 ```
-
 
 ### Data Tables {#92ea .graf .graf--h3 .graf-after--pre name="92ea"}
 
@@ -938,10 +901,9 @@ Programming Script : A set of code that runs in a linear fashion.
 The largest difference between scripts and programs is the level of complexity and purpose. Programs typically have many UI's.
 ```
 
-
 **Python can be used to display html, css, and JS.**\
-*It is common to use Python as an API (Application Programming
-Interface)*
+_It is common to use Python as an API (Application Programming
+Interface)_
 
 #### Structured Data {#71b4 .graf .graf--h4 .graf-after--p name="71b4"}
 
@@ -952,32 +914,20 @@ Interface)*
 > Range\
 > Collections : Unordered data structures, hashable values.
 
+="d4ae"}
 
+---
 
-
- ="d4ae"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 #### Dictionaries Sets {#56c2 .graf .graf--h4 .graf--leading name="56c2"}
 
 #### Iterable : Generic name for a sequence or collection; any object that can be iterated through. {#b683 .graf .graf--h4 .graf-after--h4 name="b683"}
 
 #### Can be mutable or immutable. Built In Data Types {#8011 .graf .graf--h4 .graf-after--h4 .graf--trailing name="8011"}
 
+="dbde"}
 
+---
 
-
- ="dbde"}
- 
-
-------------------------------------------------------------------------
- 
-
-  
 ### Lists are the python equivalent of arrays. {#71e2 .graf .graf--h3 .graf--leading name="71e2"}
 
 ```
@@ -986,7 +936,6 @@ empty_list = []
 departments = ['HR','Development','Sales','Finance','IT','Customer Support']
 ```
 
-
 ### You can instantiate {#97e6 .graf .graf--h3 .graf-after--pre name="97e6"}
 
 ```
@@ -994,9 +943,8 @@ departments = ['HR','Development','Sales','Finance','IT','Customer Support']
 specials = list()
 ```
 
-
 #### Test if a value is in a list. {#e60f .graf .graf--h4 .graf-after--pre name="e60f"}
- 
+
 ```
  {#37ea .graf .graf--pre .graf-after--h4 name="37ea"}
 print(1 in [1, 2, 3]) #> True
@@ -1004,14 +952,12 @@ print(4 in [1, 2, 3]) #> False
 # Tuples : Very similar to lists, but they are immutable
 ```
 
-
 #### Instantiated with parentheses {#6c7d .graf .graf--h4 .graf-after--pre name="6c7d"}
 
 ```
  {#9549 .graf .graf--pre .graf-after--h4 name="9549"}
 time_blocks = ('AM','PM')
 ```
-
 
 #### Sometimes instantiated without {#60f5 .graf .graf--h4 .graf-after--pre name="60f5"}
 
@@ -1021,7 +967,6 @@ colors = 'red','blue','green'
 numbers = 1, 2, 3
 ```
 
-
 #### Tuple() built in can be used to convert other data into a tuple {#5ffb .graf .graf--h4 .graf-after--pre name="5ffb"}
 
 ```
@@ -1030,7 +975,6 @@ tuple('abc') # returns ('a', 'b', 'c')
 tuple([1,2,3]) # returns (1, 2, 3)
 # Think of tuples as constant variables.
 ```
-
 
 #### Ranges : A list of numbers which can't be changed; often used with for loops. {#9fca .graf .graf--h4 .graf-after--pre name="9fca"}
 
@@ -1053,7 +997,6 @@ for let(i = 0; i = 0; i++)
 # Keep in mind that stop is not included in the range.
 ```
 
-
 #### Dictionaries : Mappable collection where a hashable value is used as a key to ref. an object stored in the dictionary. {#926c .graf .graf--h4 .graf-after--pre name="926c"}
 
 #### Mutable. {#364d .graf .graf--h4 .graf-after--h4 name="364d"}
@@ -1066,19 +1009,18 @@ c = dict([('two', 2), ('one', 1), ('three', 3)])
 # a, b, and c are all equal
 ```
 
+**_Declared with curly braces of the built in dict()_**
 
-***Declared with curly braces of the built in dict()***
-
-> *Benefit of dictionaries in Python is that it doesn't matter how it is
+> _Benefit of dictionaries in Python is that it doesn't matter how it is
 > defined, if the keys and values are the same the dictionaries are
-> considered equal.*
+> considered equal._
 
 **Use the in operator to see if a key exists in a dictionary.**
 
 [S]{.graf-dropCap}**ets : Unordered collection of distinct objects;
 objects that need to be hashable.**
 
-> *Always be unique, duplicate items are auto dropped from the set.*
+> _Always be unique, duplicate items are auto dropped from the set._
 
 #### Common Uses: {#e4df .graf .graf--h4 .graf-after--blockquote name="e4df"}
 
@@ -1097,7 +1039,6 @@ school_bag = {'book','paper','pencil','pencil','book','book','book','eraser'}
 print(school_bag)
 ```
 
-
 #### Also can use set constructor to automatically put it into a set. {#08b8 .graf .graf--h4 .graf-after--pre name="08b8"}
 
 ```
@@ -1107,7 +1048,6 @@ print(letters)
 #Built-In Functions
 #Functions using iterables
 ```
-
 
 **filter(function, iterable) : creates new iterable of the same type
 which includes each item for which the function returns true.**
@@ -1135,7 +1075,6 @@ print(enumerate(quarters))
 print(enumerate(quarters, start=1))
 ```
 
-
 #### (0, 'First'), (1, 'Second'), (2, 'Third'), (3, 'Fourth') {#127e .graf .graf--h4 .graf-after--pre name="127e"}
 
 #### (1, 'First'), (2, 'Second'), (3, 'Third'), (4, 'Fourth') {#3da0 .graf .graf--h4 .graf-after--h4 name="3da0"}
@@ -1151,14 +1090,14 @@ arguments.**
 
 **max(iterable, key=None) : returns the largest item in the iterable.**
 
-*key optional function which converts an item to a value to be
+_key optional function which converts an item to a value to be
 compared.\
-min works the same way as max*
+min works the same way as max_
 
 **sum(iterable) : used with a list of numbers to generate the total.**
 
-*There is a faster way to concatenate an array of strings into one
-string, so do not use sum for that.*
+_There is a faster way to concatenate an array of strings into one
+string, so do not use sum for that._
 
 **any(iterable) : returns True if any items in the iterable are true.**
 
@@ -1180,7 +1119,6 @@ b = {2, 4, 6}
 print(a | b) # => {1, 2, 3, 4, 6}
 ```
 
-
 #### Intersection : The & operator ca be used to produce a new set of only the elements that appear in all sets. {#e5aa .graf .graf--h4 .graf-after--pre name="e5aa"}
 
 ```
@@ -1190,7 +1128,6 @@ b = {2, 4, 6}
 print(a & b) # => {2}
 Difference : The — operator can be used to produce a new set of only the elements that appear in the first set and NOT the others.
 ```
-
 
 **Symmetric Difference : The \^ operator can be used to produce a new
 set of only the elements that appear in exactly one set and not in
@@ -1205,17 +1142,10 @@ print(b — a) # => {4, 6}
 print(a ^ b) # => {1, 3, 4, 6}
 ```
 
+="1f43"}
 
+---
 
-
-
- ="1f43"}
- 
-
-------------------------------------------------------------------------
-
-
-  
 ### **For Statements In python, there is only one for loop.** {#ed03 .graf .graf--h3 .graf--leading name="ed03"}
 
 Always Includes:
@@ -1231,15 +1161,17 @@ Always Includes:
 
 **You can use the range function as the iterable for the for loop.**
 
- ame="9439"}
+ame="9439"}
 print('My name is')
 for i in range(5):
 print('Carlita Cinco (' + str(i) + ')')
+
 ```
 
 
 ```
- {#946d .graf .graf--pre .graf-after--pre name="946d"}
+
+{#946d .graf .graf--pre .graf-after--pre name="946d"}
 total = 0
 for num in range(101):
 total += num
@@ -1247,14 +1179,17 @@ print(total)
 Looping over a list in Python
 for c in ['a', 'b', 'c']:
 print(c)
+
 ```
 
 
 ```
- {#9ae7 .graf .graf--pre .graf-after--pre name="9ae7"}
+
+{#9ae7 .graf .graf--pre .graf-after--pre name="9ae7"}
 lst = [0, 1, 2, 3]
 for i in lst:
 print(i)
+
 ```
 
 
@@ -1262,20 +1197,24 @@ print(i)
 loop to iterate over the indices of the list.***
 
 ```
- {#e5df .graf .graf--pre .graf-after--p name="e5df"}
+
+{#e5df .graf .graf--pre .graf-after--p name="e5df"}
 supplies = ['pens', 'staplers', 'flame-throwers', 'binders']
 for i in range(len(supplies)):
 print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
+
 ```
 
 
 **You can loop and destructure at the same time.**
 
 ```
- {#ce98 .graf .graf--pre .graf-after--p name="ce98"}
+
+{#ce98 .graf .graf--pre .graf-after--p name="ce98"}
 l = 1, 2], [3, 4], [5, 6
 for a, b in l:
 print(a, ', ', b)
+
 ```
 
 
@@ -1288,10 +1227,12 @@ print(a, ', ', b)
 **You can use values() and keys() to loop over dictionaries.**
 
 ```
- {#5888 .graf .graf--pre .graf-after--p name="5888"}
+
+{#5888 .graf .graf--pre .graf-after--p name="5888"}
 spam = {'color': 'red', 'age': 42}
 for v in spam.values():
 print(v)
+
 ```
 
 
@@ -1300,9 +1241,11 @@ print(v)
 *Prints 42*
 
 ```
- {#b021 .graf .graf--pre .graf-after--p name="b021"}
+
+{#b021 .graf .graf--pre .graf-after--p name="b021"}
 for k in spam.keys():
 print(k)
+
 ```
 
 
@@ -1315,9 +1258,11 @@ print(k)
 **Getting tuples**
 
 ```
- {#d2cf .graf .graf--pre .graf-after--p name="d2cf"}
+
+{#d2cf .graf .graf--pre .graf-after--p name="d2cf"}
 for i in spam.items():
 print(i)
+
 ```
 
 
@@ -1328,9 +1273,11 @@ print(i)
 *Destructuring to values*
 
 ```
- {#e21f .graf .graf--pre .graf-after--p name="e21f"}
+
+{#e21f .graf .graf--pre .graf-after--p name="e21f"}
 for k, v in spam.items():
 print('Key: ' + k + ' Value: ' + str(v))
+
 ```
 
 
@@ -1341,9 +1288,11 @@ print('Key: ' + k + ' Value: ' + str(v))
 **Looping over string**
 
 ```
- {#e44e .graf .graf--pre .graf-after--p name="e44e"}
+
+{#e44e .graf .graf--pre .graf-after--p name="e44e"}
 for c in "abcdefg":
 print(c)
+
 ```
 
 
@@ -1359,16 +1308,20 @@ need to occur in a particular order:**
 \*\*kwargs
 
 ```
- {#3042 .graf .graf--pre .graf-after--p name="3042"}
-def example(arg_1, arg_2, *args, **kwargs):
+
+{#3042 .graf .graf--pre .graf-after--p name="3042"}
+def example(arg_1, arg_2, \*args, \*\*kwargs):
 pass
+
 ```
 
 
 ```
- {#137b .graf .graf--pre .graf-after--pre .graf--trailing name="137b"}
-def example2(arg_1, arg_2, *args, kw_1="shark", kw_2="blowfish", **kwargs):
+
+{#137b .graf .graf--pre .graf-after--pre .graf--trailing name="137b"}
+def example2(arg_1, arg_2, \*args, kw_1="shark", kw_2="blowfish", \*\*kwargs):
 pass
+
 ```
 
 
@@ -1376,12 +1329,12 @@ pass
 
 
  ="7787"}
- 
+
 
 ------------------------------------------------------------------------
 
 
-  
+
 ### **Importing in Python** {#4451 .graf .graf--h3 .graf--leading name="4451"}
 
 **Modules are similar to packages in Node.js**\
@@ -1399,12 +1352,12 @@ Custom.
 
 
  "}
- 
+
 
 ------------------------------------------------------------------------
 
 
-  
+
 ### **Terms** {#7c4f .graf .graf--h3 .graf--leading name="7c4f"}
 
 > module : Python code in a separate file.\
@@ -1422,8 +1375,9 @@ special file init.py into a folder. pic**
 *Use multiple lines for clarity when importing.*
 
 ```
- {#5b37 .graf .graf--pre .graf-after--p .graf--trailing name="5b37"}
- 
+
+{#5b37 .graf .graf--pre .graf-after--p .graf--trailing name="5b37"}
+
 HTTPDefaultErrorHandler as ErrorHandler,
 HTTPRedirectHandler as RedirectHandler,
 Request,
@@ -1431,18 +1385,19 @@ pathname2url,
 url2pathname,
 urlopen,
 )
+
 ```
 
 
 
 
 
- 
+
 
 ------------------------------------------------------------------------
 
 
-  
+
 ### Watching Out for Python 2 {#7040 .graf .graf--h3 .graf--leading name="7040"}
 
 **Python 3 removed \<\> and only uses !=**
@@ -1464,12 +1419,12 @@ sets were killed in favor of set() class.**
  ee to checkout my github/gists where I host similar content: {#e89c .graf .graf--h4 .graf-after--figure name="e89c"}
 
 [bgoonz's gists ·
-GitHub](https://gist.github.com/bgoonz) 
+GitHub](https://gist.github.com/bgoonz)
 
 [**bgoonz --- Overview**\
 *Web Developer, Electrical Engineer JavaScript \| CSS \| Bootstrap \|
 Python \| React \| Node.js \| Express \|
-Sequelize...*github.com](https://github.com/bgoonz "https://github.com/bgoonz") [](https://github.com/bgoonz) 
+Sequelize...*github.com](https://github.com/bgoonz "https://github.com/bgoonz") [](https://github.com/bgoonz)
 
 
 Or Checkout my personal Resource Site:
@@ -1477,7 +1432,7 @@ Or Checkout my personal Resource Site:
 {#4bce .graf .graf--mixtapeEmbed .graf-after--p name="4bce"}
 [**a/A-Student-Resources**\
 *Edit
-description*goofy-euclid-1cd736.netlify.app]( https://web-dev-resource-hub.netlify.app/ " https://web-dev-resource-hub.netlify.app/") []( https://web-dev-resource-hub.netlify.app/) 
+description*goofy-euclid-1cd736.netlify.app]( https://web-dev-resource-hub.netlify.app/ " https://web-dev-resource-hub.netlify.app/") []( https://web-dev-resource-hub.netlify.app/)
 
 
 ### Python Cheat Sheet: {#2eba .graf .graf--h3 .graf-after--mixtapeEmbed name="2eba"}
@@ -1490,3 +1445,4 @@ By [Bryan Guner](https://medium.com/@bryanguner)  on
 [March 6, 2021](https://medium.com/p/5cfdf3d2bdfb).
 
 
+```

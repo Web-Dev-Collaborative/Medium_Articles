@@ -111,7 +111,7 @@ The first style we would create is an outlined text, with a 3d text">
                   <p>I create some global variable to store the color and the size, $extra-large is 110px. For the
                     color, check my codepen</p>
                 </blockquote>
-                <p>This is a fairly easy style, we don’t even need to use a before or after pseudo-element. This is a
+                <p>This is a fairly easy style, we don 't even need to use a before or after pseudo-element. This is a
                   good place to start as it teaches us two very important property in styling text,
                   <code>text-stroke-width</code> and <code>text-shadow</code>. Say you want a more “3d-looking” text,
                   you could easily add more layer of shadow to it, like so:</p>
@@ -219,7 +219,7 @@ The first style we would create is an outlined text, with a 3d text">
                   <p>You may notice I put the background and <code>background-clip: text</code> in the :after element,
                     instead of the parent. The reason for that is <strong>“background-clip” clip EVERYTHING inside the
                       element</strong>, include :before and :after element. So applying it there <strong>would cause the
-                      3d shadow being clipped as well</strong>. In fact, the HTML don’t need to have the text at all. I
+                      3d shadow being clipped as well</strong>. In fact, the HTML don''t need to have the text at all. I
                     am just adding it there for better sizing (as both after and before element are absolute positioned
                     to parent) and demo purpose.</p>
                 </blockquote>
@@ -238,7 +238,7 @@ The first style we would create is an outlined text, with a 3d text">
                       style="max-width:100%;"></a></p>
                 <p>In all of the style, this one is actually my favourite. It is very different from the other style and
                   our old friend <code>-webkit-text-stroke-width</code> ,<code>-webkit-text-stroke-color</code>
-                  and<code>text-shadow</code> won’t be helping us this time (sorry about that).</p>
+                  and<code>text-shadow</code> won''t be helping us this time (sorry about that).</p>
                 <p>In this style, we have a “cut” in the text, making the upper part of text sliding down in the cut
                   angle. The whole design is also very clean and sharp.</p>
                 <p>The concept for creating this style is very simply, we make two pseudo element (before and after),
@@ -316,9 +316,10 @@ The first style we would create is an outlined text, with a 3d text">
                 <p>SCSS:</p>
                 <blockquote>
                   <p>Looking back to it now, this one is my least favourite one. Mainly due to the background image I
-                    picked doesn’t really resemble wood. (in fact the highlight and shading of it make it looks more
+                    picked doesn''t really resemble wood. (in fact the highlight and shading of it make it looks more
                     like metallic) For this type of text style, background image is the soul of it, and could ruin it
-                    pretty easily. Don’t make the same mistake I did and take your time to pick the perfect picture.</p>
+                    pretty easily. Don''t make the same mistake I did and take your time to pick the perfect picture.
+                    </p>
                 </blockquote>
                 <p><strong>Style 7: Comic-text</strong></p>
                 <p><a target="_blank" rel="noopener noreferrer"
@@ -371,7 +372,7 @@ The first style we would create is an outlined text, with a 3d text">
                       alt="Image for post"
                       data-canonical-src="https://miro.medium.com/max/4712/1*_ZOGCf8dCQAFXHk7pMM42A.png"
                       style="max-width:100%;"></a></p>
-                <p>This style also has the word cut in it, but we won’t actually cut it. Instead, we will use a
+                <p>This style also has the word cut in it, but we won''t actually cut it. Instead, we will use a
                   background gradient and <code>background-clip: text</code> property again. We will stack two
                   background, one with color at the top 50%, transparent at the bottom 50%, and another background a
                   white and transparent stripe.</p>
@@ -382,7 +383,7 @@ The first style we would create is an outlined text, with a 3d text">
                 <div>vague minority</div>
                 <p>SCSS:</p>
                 <blockquote>
-                  <p>Again, another one without any after and before element. In case you don’t know already, you can
+                  <p>Again, another one without any after and before element. In case you don''t know already, you can
                     stack background color as much as you want to. Using background property alone could already give us
                     a lot of stunning pattern. If you are interested and want to learn more, you can check out this CSS3
                     Pattern Gallery: <a href="https://leaverou.github.io/css3patterns/"
@@ -410,7 +411,7 @@ The first style we would create is an outlined text, with a 3d text">
                 <p>SCSS:</p>
                 <blockquote>
                   <p>One side note regarding <code>text-stroke-width</code>, it seems all powerful but has it own
-                    limitation. If the font you are using don’t have a beautiful and continuous stroke, your will get a
+                    limitation. If the font you are using don''t have a beautiful and continuous stroke, your will get a
                     “broken” stroke from the property. Also, be aware that if you set the stroke width too high, there
                     may be unexpected “edge” from the stroke of the text, like below:</p>
                 </blockquote>
