@@ -1,62 +1,73 @@
-a {
-  color: black;
-}
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
 
-li {
-  border: 1px solid black !important;
-  font-size: 20px;
-  letter-spacing: 0px;
-  font-weight: 700;
-  line-height: 16px;
-  text-decoration: none !important;
-  text-transform: uppercase;
-  background: #194ccdaf !important;
-  color: black !important;
-  border: none;
-  cursor: pointer;
-  justify-content: center;
-  padding: 30px 60px;
-  height: 48px;
-  text-align: center;
-  white-space: normal;
-  border-radius: 10px;
-  min-width: 45em;
-  padding: 1.2em 1em 0;
-  box-shadow: 0 0 5px;
-  margin: 1em;
-  display: grid;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-#ToC {
-  z-index: -1 !important;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(136, 247, 221);
-  background-color: whitesmoke;
-  border-radius: 15px;
-  position: fixed;
-  top: 800px;
-  right: 0;
-  width: 8%;
-  border: 3px solid gold;
-  padding: 2px;
-  margin: 10px;
-  overflow: auto;
-  overflow-y: scroll;
-  height: 450px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  overflow-wrap: break-word;
-}
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
 
-div.my_class {
-  resize: both;
-  overflow: auto;
-  /* something other than visible */
-  z-index: -1;
-}
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+
+      header {
+        width: 640px;
+        margin: auto;
+      }
+
+      section {
+        width: 640px;
+        margin: auto;
+      }
+
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      section img {
+        max-width: 640px;
+      }
+
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
